@@ -1,0 +1,17 @@
+[5.800s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play': PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play/build --no-deps symlink_data
+[6.908s] running develop
+[7.325s] running egg_info
+[7.332s] writing sound_play.egg-info/PKG-INFO
+[7.333s] writing dependency_links to sound_play.egg-info/dependency_links.txt
+[7.336s] writing entry points to sound_play.egg-info/entry_points.txt
+[7.336s] writing requirements to sound_play.egg-info/requires.txt
+[7.336s] writing top-level names to sound_play.egg-info/top_level.txt
+[7.354s] reading manifest file 'sound_play.egg-info/SOURCES.txt'
+[7.373s] writing manifest file 'sound_play.egg-info/SOURCES.txt'
+[7.399s] running build_ext
+[7.399s] Creating /home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/lib/python3.10/site-packages/sound-play.egg-link (link to .)
+[7.402s] Installing sound_play_node script to /home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/lib/sound_play
+[7.402s] 
+[7.402s] Installed /home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play
+[7.402s] running symlink_data
+[7.716s] Invoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play' returned '0': PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play/build --no-deps symlink_data

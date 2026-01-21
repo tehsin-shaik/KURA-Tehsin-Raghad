@@ -1,0 +1,29 @@
+[0.220s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface -- -j5 -l5
+[0.581s] [  0%] Built target vision_interface__cpp
+[0.731s] [  0%] Built target ament_cmake_python_symlink_vision_interface
+[0.919s] [ 12%] Built target vision_interface__rosidl_typesupport_introspection_cpp
+[2.385s] Traceback (most recent call last):
+[2.387s]   File "/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface/ament_cmake_python/vision_interface/setup.py", line 1, in <module>
+[2.388s]     from setuptools import find_packages
+[2.388s]   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 16, in <module>
+[2.388s]     import setuptools.version
+[2.389s]   File "/usr/lib/python3/dist-packages/setuptools/version.py", line 1, in <module>
+[2.389s]     import pkg_resources
+[2.389s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3267, in <module>
+[2.389s]     def _initialize_master_working_set():
+[2.389s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3241, in _call_aside
+[2.389s]     f(*args, **kwargs)
+[2.389s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3292, in _initialize_master_working_set
+[2.410s]     tuple(
+[2.412s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3293, in <genexpr>
+[2.414s]     dist.activate(replace=False)
+[2.414s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2793, in activate
+[2.415s]     self.insert_on(path, replace=replace)
+[2.416s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2906, in insert_on
+[2.418s]     npath = [(p and _normalize_cached(p) or p) for p in path]
+[2.419s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2906, in <listcomp>
+[2.421s]     npath = [(p and _normalize_cached(p) or p) for p in path]
+[2.421s] KeyboardInterrupt
+[2.669s] gmake[2]: *** [CMakeFiles/ament_cmake_python_build_vision_interface_egg.dir/build.make:70: CMakeFiles/ament_cmake_python_build_vision_interface_egg] Interrupt
+[2.670s] gmake[1]: *** [CMakeFiles/Makefile2:447: CMakeFiles/ament_cmake_python_build_vision_interface_egg.dir/all] Interrupt
+[2.671s] gmake: *** [Makefile:146: all] Interrupt

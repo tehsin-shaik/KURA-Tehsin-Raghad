@@ -1,0 +1,233 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-72241661a4ba39ef532a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "vision_interface__py",
+					"jsonFile" : "directory-vision_interface__py-3c712b999689d28d6ff0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/booster/Workspace/Booster_T1_3v3_Demo/src/build/vision_interface/vision_interface__py",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "vision_interface",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_vision_interface_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_vision_interface_egg-16bcd0f5fa5a2842b408.json",
+					"name" : "ament_cmake_python_build_vision_interface_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_vision_interface::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_vision_interface-1879bd1dfe0558d66af0.json",
+					"name" : "ament_cmake_python_copy_vision_interface",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-56c1a8b735c9b1472576.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_interface::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_interface-fb4b008d27a5b76cbfc6.json",
+					"name" : "vision_interface",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_interface__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_interface__cpp-ace49fd27b7faa153ffd.json",
+					"name" : "vision_interface__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "vision_interface__py::@42abf3d3aa63d666cd8e",
+					"jsonFile" : "target-vision_interface__py-0db57cf83d894088f6ab.json",
+					"name" : "vision_interface__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_interface__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_interface__rosidl_generator_c-20b16af8b9fa32573e40.json",
+					"name" : "vision_interface__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_interface__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_interface__rosidl_generator_py-c79cbc98693767983f0c.json",
+					"name" : "vision_interface__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_interface__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_interface__rosidl_typesupport_c-122aca7d9a3d5da34d4d.json",
+					"name" : "vision_interface__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_interface__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_interface__rosidl_typesupport_c__pyext-18480fdfcaf79ea3faa6.json",
+					"name" : "vision_interface__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_interface__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_interface__rosidl_typesupport_cpp-06f74a7a420e9039e133.json",
+					"name" : "vision_interface__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_interface__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_interface__rosidl_typesupport_fastrtps_c-a703a8070f5a53793a0a.json",
+					"name" : "vision_interface__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_interface__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_interface__rosidl_typesupport_fastrtps_c__pyext-b8f5b33387aff418c3b1.json",
+					"name" : "vision_interface__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_interface__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_interface__rosidl_typesupport_fastrtps_cpp-3530d15b2072edfdbedd.json",
+					"name" : "vision_interface__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_interface__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_interface__rosidl_typesupport_introspection_c-190275b639c18fb91199.json",
+					"name" : "vision_interface__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_interface__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_interface__rosidl_typesupport_introspection_c__pyext-fac70517794aa64f860a.json",
+					"name" : "vision_interface__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_interface__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_interface__rosidl_typesupport_introspection_cpp-a85cc8757f868c10c0c0.json",
+					"name" : "vision_interface__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_interface_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_interface_uninstall-137ea3348c268c3086fd.json",
+					"name" : "vision_interface_uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/booster/Workspace/Booster_T1_3v3_Demo/src/build/vision_interface",
+		"source" : "/home/booster/Workspace/Booster_T1_3v3_Demo/src/robocup_ros2_interface/src/vision_interface"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

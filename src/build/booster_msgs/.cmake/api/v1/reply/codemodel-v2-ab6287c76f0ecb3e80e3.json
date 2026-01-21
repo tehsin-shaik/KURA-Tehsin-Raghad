@@ -1,0 +1,233 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-f223da2690ef62301bc7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "booster_msgs__py",
+					"jsonFile" : "directory-booster_msgs__py-be7a0a5ce6311b0c0ef2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/booster/Workspace/Booster_T1_3v3_Demo/src/build/booster_msgs/booster_msgs__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "booster_msgs",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_booster_msgs_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_booster_msgs_egg-6662d86199e2211a2054.json",
+					"name" : "ament_cmake_python_build_booster_msgs_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_booster_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_booster_msgs-ce5fd8d80d07f336be01.json",
+					"name" : "ament_cmake_python_copy_booster_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "booster_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booster_msgs-b04c3bab35ca2c65a689.json",
+					"name" : "booster_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "booster_msgs__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booster_msgs__cpp-471804ad449f20d062d9.json",
+					"name" : "booster_msgs__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "booster_msgs__py::@88eee465f6a1af1d70cc",
+					"jsonFile" : "target-booster_msgs__py-5b6f889b420a84d9d03b.json",
+					"name" : "booster_msgs__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "booster_msgs__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booster_msgs__rosidl_generator_c-f6118600ef434bf88ce2.json",
+					"name" : "booster_msgs__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "booster_msgs__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booster_msgs__rosidl_generator_py-de4270c3b81a2b4012e4.json",
+					"name" : "booster_msgs__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "booster_msgs__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booster_msgs__rosidl_typesupport_c-df981b9744fe39a57a52.json",
+					"name" : "booster_msgs__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "booster_msgs__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booster_msgs__rosidl_typesupport_c__pyext-33286b4b50ea92c9f4e8.json",
+					"name" : "booster_msgs__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "booster_msgs__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booster_msgs__rosidl_typesupport_cpp-36f5f45b3deb102882e7.json",
+					"name" : "booster_msgs__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "booster_msgs__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booster_msgs__rosidl_typesupport_fastrtps_c-cb2020987b52db57ebdf.json",
+					"name" : "booster_msgs__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "booster_msgs__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booster_msgs__rosidl_typesupport_fastrtps_c__pyext-fb5d48eb382c0e5a84e8.json",
+					"name" : "booster_msgs__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "booster_msgs__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booster_msgs__rosidl_typesupport_fastrtps_cpp-d4237f88569eee454efe.json",
+					"name" : "booster_msgs__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "booster_msgs__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booster_msgs__rosidl_typesupport_introspection_c-139cf58415cd6a275e53.json",
+					"name" : "booster_msgs__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "booster_msgs__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booster_msgs__rosidl_typesupport_introspection_c__pyext-55a3cfe3068948609199.json",
+					"name" : "booster_msgs__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "booster_msgs__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booster_msgs__rosidl_typesupport_introspection_cpp-f69f010d39c6bfaf694f.json",
+					"name" : "booster_msgs__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "booster_msgs_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-booster_msgs_uninstall-2140c745558c84acc228.json",
+					"name" : "booster_msgs_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-9659e3c3ddea54ad1396.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/booster/Workspace/Booster_T1_3v3_Demo/src/build/booster_msgs",
+		"source" : "/home/booster/Workspace/Booster_T1_3v3_Demo/src/booster_msgs"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

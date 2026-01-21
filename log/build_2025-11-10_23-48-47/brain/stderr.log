@@ -1,0 +1,13 @@
+[01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus Y_Keeper::tick()[m[K’:
+[01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:2696:23:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around assignment used as truth value [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;[m[K]
+ 2696 |              if ([01;35m[KtmID = brain->config->playerId[m[K)
+      |                  [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:64[m[K,
+                 from [01m[K/usr/include/c++/11/bits/specfun.h:45[m[K,
+                 from [01m[K/usr/include/c++/11/cmath:1935[m[K,
+                 from [01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:1[m[K:
+/usr/include/c++/11/bits/stl_pair.h: In instantiation of ‘[01m[Kconstexpr std::pair<typename std::__strip_reference_wrapper<typename std::decay<_Tp>::type>::__type, typename std::__strip_reference_wrapper<typename std::decay<_Tp2>::type>::__type> std::make_pair(_T1&&, _T2&&) [with _T1 = double; _T2 = const double&; typename std::__strip_reference_wrapper<typename std::decay<_Tp2>::type>::__type = double; typename std::decay<_Tp2>::type = double; typename std::__strip_reference_wrapper<typename std::decay<_Tp>::type>::__type = double; typename std::decay<_Tp>::type = double][m[K’:
+[01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:2970:26:[m[K   required from here
+[01m[K/usr/include/c++/11/bits/stl_pair.h:567:5:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<double, double>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+  567 |     [01;36m[Kmake_pair[m[K(_T1&& __x, _T2&& __y)
+      |     [01;36m[K^~~~~~~~~[m[K

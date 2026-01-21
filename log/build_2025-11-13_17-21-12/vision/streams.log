@@ -1,0 +1,53 @@
+[0.025s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision -- -j5 -l5
+[0.188s] [ 27%] Built target yolov8_trt
+[0.334s] [ 42%] Built target booster_vision_base
+[0.381s] [ 48%] Built target yolov8_seg
+[0.441s] [ 57%] Built target booster_vision_calibration
+[0.506s] [ 63%] Built target yolov8_det
+[0.564s] [ 72%] Built target yolov8_model
+[0.624s] [ 78%] Built target booster_vision_pose_estimator
+[0.696s] [ 90%] Built target vision_node
+[0.772s] [100%] Built target calibration_node
+[0.812s] Invoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision' returned '0': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision -- -j5 -l5
+[0.817s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision
+[0.838s] -- Install configuration: ""
+[0.839s] -- Execute custom install script
+[0.839s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/libbooster_vision_base.so
+[0.840s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/libyolov8_trt.so
+[0.840s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/vision/yolov8_det
+[0.841s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/vision/yolov8_seg
+[0.841s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/libyolov8_model.so
+[0.841s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/libbooster_vision_pose_estimator.so
+[0.842s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/vision/calibration_node
+[0.842s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/libbooster_vision_calibration.so
+[0.842s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/vision/vision_node
+[0.843s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/launch/launch.py
+[0.844s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/config/field.yaml
+[0.844s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/config/vision.yaml
+[0.844s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/model/best_orin.engine
+[0.844s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/model/best_orin_10.3.engine
+[0.845s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/model/best_seg_orin.engine
+[0.845s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/model/best_seg_orin_10.3.engine
+[0.846s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/ament_index/resource_index/package_run_dependencies/vision
+[0.846s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/ament_index/resource_index/parent_prefix_path/vision
+[0.847s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/environment/ament_prefix_path.sh
+[0.848s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/environment/ament_prefix_path.dsv
+[0.858s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/environment/path.sh
+[0.860s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/environment/path.dsv
+[0.861s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/local_setup.bash
+[0.861s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/local_setup.sh
+[0.861s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/local_setup.zsh
+[0.861s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/local_setup.dsv
+[0.861s] -- Symlinking: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/package.dsv
+[0.880s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/ament_index/resource_index/packages/vision
+[0.880s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.880s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/cmake/visionConfig.cmake
+[0.880s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/cmake/visionConfig-version.cmake
+[0.880s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/package.xml
+[0.882s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib
+[0.883s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/libceres.so
+[0.884s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/cmake
+[0.884s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/cmake/Ceres
+[0.884s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/libceres.so.4
+[0.884s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/libceres.so.2.2.0
+[0.891s] Invoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision' returned '0': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision

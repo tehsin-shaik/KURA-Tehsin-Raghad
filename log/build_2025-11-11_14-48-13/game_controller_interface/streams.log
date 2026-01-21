@@ -1,0 +1,33 @@
+[0.181s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller_interface -- -j5 -l5
+[0.669s] [  2%] Built target game_controller_interface__cpp
+[0.933s] [  2%] Built target ament_cmake_python_symlink_game_controller_interface
+[1.057s] [ 12%] Built target game_controller_interface__rosidl_typesupport_introspection_cpp
+[2.459s] Traceback (most recent call last):
+[2.459s]   File "/home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller_interface/ament_cmake_python/game_controller_interface/setup.py", line 1, in <module>
+[2.463s]     from setuptools import find_packages
+[2.470s]   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 16, in <module>
+[2.471s]     import setuptools.version
+[2.471s]   File "/usr/lib/python3/dist-packages/setuptools/version.py", line 1, in <module>
+[2.471s]     import pkg_resources
+[2.471s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3267, in <module>
+[2.477s]     def _initialize_master_working_set():
+[2.477s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3241, in _call_aside
+[2.477s]     f(*args, **kwargs)
+[2.484s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3279, in _initialize_master_working_set
+[2.495s]     working_set = WorkingSet._build_master()
+[2.500s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 564, in _build_master
+[2.501s]     ws = cls()
+[2.502s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 557, in __init__
+[2.502s]     self.add_entry(entry)
+[2.506s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 613, in add_entry
+[2.507s]     for dist in find_distributions(entry, True):
+[2.507s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2077, in find_on_path
+[2.507s]     for dist in factory(fullpath):
+[2.507s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2133, in distributions_from_metadata
+[2.507s]     root = os.path.dirname(path)
+[2.507s]   File "/usr/lib/python3.10/posixpath.py", line 150, in dirname
+[2.518s]     def dirname(p):
+[2.521s] KeyboardInterrupt
+[2.624s] gmake[2]: *** [CMakeFiles/ament_cmake_python_build_game_controller_interface_egg.dir/build.make:70: CMakeFiles/ament_cmake_python_build_game_controller_interface_egg] Interrupt
+[2.626s] gmake[1]: *** [CMakeFiles/Makefile2:447: CMakeFiles/ament_cmake_python_build_game_controller_interface_egg.dir/all] Interrupt
+[2.626s] gmake: *** [Makefile:146: all] Interrupt

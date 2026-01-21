@@ -1,0 +1,35 @@
+[0.185s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/brain': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/brain -- -j5 -l5
+[0.487s] [  2%] Built target brain__cpp
+[0.626s] [  2%] Built target ament_cmake_python_symlink_brain
+[0.704s] [  9%] Built target brain__rosidl_typesupport_introspection_cpp
+[1.347s] running egg_info
+[1.348s] writing brain.egg-info/PKG-INFO
+[1.349s] writing dependency_links to brain.egg-info/dependency_links.txt
+[1.352s] writing top-level names to brain.egg-info/top_level.txt
+[1.356s] reading manifest file 'brain.egg-info/SOURCES.txt'
+[1.357s] writing manifest file 'brain.egg-info/SOURCES.txt'
+[1.438s] [  9%] Built target ament_cmake_python_build_brain_egg
+[1.477s] [ 17%] Built target brain__rosidl_typesupport_fastrtps_cpp
+[1.559s] [ 24%] Built target brain__rosidl_typesupport_cpp
+[1.625s] [ 31%] Built target brain__rosidl_generator_c
+[1.668s] [35m[1mConsolidate compiler generated dependencies of target brain_node[0m
+[1.803s] [ 34%] [32mBuilding CXX object CMakeFiles/brain_node.dir/src/brain_tree.cpp.o[0m
+[21.641s] [01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus Y_Keeper::tick()[m[K’:
+[21.641s] [01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:2696:23:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around assignment used as truth value [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;[m[K]
+[21.641s]  2696 |              if ([01;35m[KtmID = brain->config->playerId[m[K)
+[21.643s]       |                  [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[22.803s] In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:64[m[K,
+[22.803s]                  from [01m[K/usr/include/c++/11/bits/specfun.h:45[m[K,
+[22.803s]                  from [01m[K/usr/include/c++/11/cmath:1935[m[K,
+[22.803s]                  from [01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:1[m[K:
+[22.803s] /usr/include/c++/11/bits/stl_pair.h: In instantiation of ‘[01m[Kconstexpr std::pair<typename std::__strip_reference_wrapper<typename std::decay<_Tp>::type>::__type, typename std::__strip_reference_wrapper<typename std::decay<_Tp2>::type>::__type> std::make_pair(_T1&&, _T2&&) [with _T1 = double; _T2 = const double&; typename std::__strip_reference_wrapper<typename std::decay<_Tp2>::type>::__type = double; typename std::decay<_Tp2>::type = double; typename std::__strip_reference_wrapper<typename std::decay<_Tp>::type>::__type = double; typename std::decay<_Tp>::type = double][m[K’:
+[22.803s] [01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:2970:26:[m[K   required from here
+[22.806s] [01m[K/usr/include/c++/11/bits/stl_pair.h:567:5:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<double, double>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+[22.807s]   567 |     [01;36m[Kmake_pair[m[K(_T1&& __x, _T2&& __y)
+[22.807s]       |     [01;36m[K^~~~~~~~~[m[K
+[38.136s] [ 36%] [32m[1mLinking CXX executable brain_node[0m
+[46.386s] gmake[2]: *** Deleting file 'brain_node'
+[46.387s] gmake[2]: *** [CMakeFiles/brain_node.dir/build.make:389: brain_node] Interrupt
+[46.387s] gmake[1]: *** [CMakeFiles/Makefile2:593: CMakeFiles/brain_node.dir/all] Interrupt
+[46.390s] gmake: *** [Makefile:146: all] Interrupt
+[46.435s] Invoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/brain' returned '-2': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/brain -- -j5 -l5

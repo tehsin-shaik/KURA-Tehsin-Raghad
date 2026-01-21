@@ -1,0 +1,43 @@
+[0.314s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs -- -j5 -l5
+[0.739s] [  2%] Built target booster_msgs__cpp
+[0.880s] [  2%] Built target ament_cmake_python_symlink_booster_msgs
+[1.254s] [ 12%] Built target booster_msgs__rosidl_typesupport_cpp
+[2.359s] Traceback (most recent call last):
+[2.360s]   File "/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs/ament_cmake_python/booster_msgs/setup.py", line 1, in <module>
+[2.478s]     from setuptools import find_packages
+[2.478s]   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 16, in <module>
+[2.483s]     import setuptools.version
+[2.484s]   File "/usr/lib/python3/dist-packages/setuptools/version.py", line 1, in <module>
+[2.484s]     import pkg_resources
+[2.487s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 78, in <module>
+[2.488s]     __import__('pkg_resources.extern.packaging.requirements')
+[2.488s]   File "/usr/lib/python3/dist-packages/pkg_resources/_vendor/packaging/requirements.py", line 56, in <module>
+[2.493s]     VERSION_PEP440 = Regex(Specifier._regex_str, re.VERBOSE | re.IGNORECASE)
+[2.493s]   File "/usr/lib/python3/dist-packages/pkg_resources/_vendor/pyparsing.py", line 2792, in __init__
+[2.496s]     self.re = re.compile(self.pattern, self.flags)
+[2.496s]   File "/usr/lib/python3.10/re.py", line 251, in compile
+[2.496s]     return _compile(pattern, flags)
+[2.496s]   File "/usr/lib/python3.10/re.py", line 303, in _compile
+[2.496s]     p = sre_compile.compile(pattern, flags)
+[2.496s]   File "/usr/lib/python3.10/sre_compile.py", line 788, in compile
+[2.496s]     p = sre_parse.parse(p, flags)
+[2.497s]   File "/usr/lib/python3.10/sre_parse.py", line 955, in parse
+[2.497s]     p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+[2.497s]   File "/usr/lib/python3.10/sre_parse.py", line 444, in _parse_sub
+[2.503s]     itemsappend(_parse(source, state, verbose, nested + 1,
+[2.504s]   File "/usr/lib/python3.10/sre_parse.py", line 841, in _parse
+[2.504s]     p = _parse_sub(source, state, sub_verbose, nested + 1)
+[2.504s]   File "/usr/lib/python3.10/sre_parse.py", line 444, in _parse_sub
+[2.504s]     itemsappend(_parse(source, state, verbose, nested + 1,
+[2.504s]   File "/usr/lib/python3.10/sre_parse.py", line 841, in _parse
+[2.507s]     p = _parse_sub(source, state, sub_verbose, nested + 1)
+[2.507s]   File "/usr/lib/python3.10/sre_parse.py", line 444, in _parse_sub
+[2.509s]     itemsappend(_parse(source, state, verbose, nested + 1,
+[2.509s]   File "/usr/lib/python3.10/sre_parse.py", line 606, in _parse
+[2.509s]     set = _uniq(set)
+[2.509s]   File "/usr/lib/python3.10/sre_parse.py", line 434, in _uniq
+[2.510s]     return list(dict.fromkeys(items))
+[2.510s] KeyboardInterrupt
+[2.567s] gmake[2]: *** [CMakeFiles/ament_cmake_python_build_booster_msgs_egg.dir/build.make:70: CMakeFiles/ament_cmake_python_build_booster_msgs_egg] Interrupt
+[2.571s] gmake[1]: *** [CMakeFiles/Makefile2:447: CMakeFiles/ament_cmake_python_build_booster_msgs_egg.dir/all] Interrupt
+[2.571s] gmake: *** [Makefile:146: all] Interrupt

@@ -1,0 +1,262 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-1443063b8e2c0fea8065.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						4,
+						6
+					]
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						5,
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src-46cc53d27a4868bfba23.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "src/base",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.base-e4c0c2a3ea2a22cbad44.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/base",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "src/model",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.model-fec8d183a62772f92278.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/model",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
+					"build" : "src/model/trt",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.model.trt-97dc66087cdf9853fb42.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 0,
+					"source" : "src/model/trt",
+					"targetIndexes" : 
+					[
+						7,
+						9,
+						10
+					]
+				},
+				{
+					"build" : "src/pose_estimator",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.pose_estimator-15bf046070c3c90289a2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/pose_estimator",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "src/calibration",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src.calibration-874193373c791e5aec29.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/calibration",
+					"targetIndexes" : 
+					[
+						1,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					],
+					"name" : "vision",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "booster_vision_base::@da17c8cd1000ca7e4b79",
+					"jsonFile" : "target-booster_vision_base-964d51fb6234788f0bdc.json",
+					"name" : "booster_vision_base",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "booster_vision_calibration::@1e32fe08d28c36fb7f93",
+					"jsonFile" : "target-booster_vision_calibration-80e9ef126acd8923c7bd.json",
+					"name" : "booster_vision_calibration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "booster_vision_pose_estimator::@abb948db4a7ea4f10cc1",
+					"jsonFile" : "target-booster_vision_pose_estimator-f4f231d2883469015ea7.json",
+					"name" : "booster_vision_pose_estimator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "calibration_node::@1e32fe08d28c36fb7f93",
+					"jsonFile" : "target-calibration_node-1785edeb0d6db4d7fd4d.json",
+					"name" : "calibration_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-fe119e3e057a5f79d437.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "vision_node::@145eef247bfb46b6828c",
+					"jsonFile" : "target-vision_node-cc0f6bbf75d39d43b54b.json",
+					"name" : "vision_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "vision_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-vision_uninstall-21b46399c26884823580.json",
+					"name" : "vision_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "yolov8_det::@7281d2ee4857f8206782",
+					"jsonFile" : "target-yolov8_det-42083df52ec38464fdcb.json",
+					"name" : "yolov8_det",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "yolov8_model::@dd52281f56f5d51f359a",
+					"jsonFile" : "target-yolov8_model-29db6d6542638438d803.json",
+					"name" : "yolov8_model",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "yolov8_seg::@7281d2ee4857f8206782",
+					"jsonFile" : "target-yolov8_seg-c14be1977da41e359fd5.json",
+					"name" : "yolov8_seg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "yolov8_trt::@7281d2ee4857f8206782",
+					"jsonFile" : "target-yolov8_trt-d6c4de6d9e67c6800434.json",
+					"name" : "yolov8_trt",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/booster/Workspace/Booster_T1_3v3_Demo/src/build/vision",
+		"source" : "/home/booster/Workspace/Booster_T1_3v3_Demo/src/vision"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

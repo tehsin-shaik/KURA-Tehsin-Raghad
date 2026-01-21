@@ -1,0 +1,4 @@
+Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs -- -j8 -l8
+Invoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs -- -j8 -l8
+Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs
+Invoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs

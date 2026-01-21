@@ -1,0 +1,299 @@
+[0.052s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/build/game_controller_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/booster/Workspace/Booster_T1_3v3_Demo/src/robocup_ros2_interface/src/game_controller_interface -DCMAKE_INSTALL_PREFIX=/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface
+[0.316s] -- The C compiler identification is GNU 11.4.0
+[0.603s] -- The CXX compiler identification is GNU 11.4.0
+[0.621s] -- Detecting C compiler ABI info
+[0.960s] -- Detecting C compiler ABI info - done
+[0.970s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.970s] -- Detecting C compile features
+[0.971s] -- Detecting C compile features - done
+[0.977s] -- Detecting CXX compiler ABI info
+[1.285s] -- Detecting CXX compiler ABI info - done
+[1.358s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.362s] -- Detecting CXX compile features
+[1.365s] -- Detecting CXX compile features - done
+[1.373s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.826s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.279s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[2.499s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.520s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.555s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.610s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.678s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.885s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.895s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[3.353s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[3.404s] -- Found FastRTPS: /opt/ros/humble/include  
+[3.479s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[3.498s] -- Looking for pthread.h
+[3.859s] -- Looking for pthread.h - found
+[3.860s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[4.099s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[4.105s] -- Found Threads: TRUE  
+[4.310s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[5.287s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[6.140s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[6.678s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[6.756s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[6.759s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[6.902s] -- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[6.902s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[6.902s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[6.902s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[6.977s] -- Found PythonExtra: .so  
+[7.565s] -- Using numpy include directory: /home/booster/.local/lib/python3.10/site-packages/numpy/core/include
+[7.581s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[7.674s] -- Added test 'lint_cmake' to check CMake code style
+[7.676s] -- Added test 'xmllint' to check XML markup files
+[7.692s] -- Configuring done
+[7.947s] -- Generating done
+[8.007s] -- Build files have been written to: /home/booster/Workspace/Booster_T1_3v3_Demo/src/build/game_controller_interface
+[8.071s] Invoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/build/game_controller_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/booster/Workspace/Booster_T1_3v3_Demo/src/robocup_ros2_interface/src/game_controller_interface -DCMAKE_INSTALL_PREFIX=/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface
+[8.072s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/build/game_controller_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/src/build/game_controller_interface -- -j5 -l5
+[8.295s] [  2%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[11.613s] [  2%] Built target game_controller_interface__cpp
+[11.837s] [  2%] Built target ament_cmake_python_copy_game_controller_interface
+[11.914s] [  4%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[14.444s] [  6%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/game_controller_interface/msg/detail/game_control_data__type_support.cpp.o[0m
+[16.300s] [  8%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/game_controller_interface/msg/detail/robot_info__type_support.cpp.o[0m
+[17.408s] [ 10%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/game_controller_interface/msg/detail/team_info__type_support.cpp.o[0m
+[18.708s] [ 12%] [32m[1mLinking CXX shared library libgame_controller_interface__rosidl_typesupport_introspection_cpp.so[0m
+[18.889s] [ 12%] Built target game_controller_interface__rosidl_typesupport_introspection_cpp
+[19.842s] running egg_info
+[19.847s] creating game_controller_interface.egg-info
+[19.847s] writing game_controller_interface.egg-info/PKG-INFO
+[19.847s] writing dependency_links to game_controller_interface.egg-info/dependency_links.txt
+[19.847s] writing top-level names to game_controller_interface.egg-info/top_level.txt
+[19.853s] writing manifest file 'game_controller_interface.egg-info/SOURCES.txt'
+[19.859s] reading manifest file 'game_controller_interface.egg-info/SOURCES.txt'
+[19.864s] writing manifest file 'game_controller_interface.egg-info/SOURCES.txt'
+[19.978s] [ 12%] Built target ament_cmake_python_build_game_controller_interface_egg
+[20.007s] [ 14%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[23.042s] [ 17%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/game_controller_interface/msg/detail/dds_fastrtps/game_control_data__type_support.cpp.o[0m
+[24.094s] [ 19%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/game_controller_interface/msg/detail/dds_fastrtps/team_info__type_support.cpp.o[0m
+[25.429s] [ 21%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/game_controller_interface/msg/detail/dds_fastrtps/robot_info__type_support.cpp.o[0m
+[26.644s] [ 23%] [32m[1mLinking CXX shared library libgame_controller_interface__rosidl_typesupport_fastrtps_cpp.so[0m
+[26.924s] [ 23%] Built target game_controller_interface__rosidl_typesupport_fastrtps_cpp
+[27.000s] [ 25%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[29.367s] [ 27%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/game_controller_interface/msg/game_control_data__type_support.cpp.o[0m
+[30.301s] [ 29%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/game_controller_interface/msg/team_info__type_support.cpp.o[0m
+[31.086s] [ 31%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/game_controller_interface/msg/robot_info__type_support.cpp.o[0m
+[31.938s] [ 34%] [32m[1mLinking CXX shared library libgame_controller_interface__rosidl_typesupport_cpp.so[0m
+[32.104s] [ 34%] Built target game_controller_interface__rosidl_typesupport_cpp
+[32.138s] [ 36%] [34m[1mGenerating C code for ROS interfaces[0m
+[35.201s] [ 38%] [32mBuilding C object CMakeFiles/game_controller_interface__rosidl_generator_c.dir/rosidl_generator_c/game_controller_interface/msg/detail/game_control_data__functions.c.o[0m
+[35.426s] [ 40%] [32mBuilding C object CMakeFiles/game_controller_interface__rosidl_generator_c.dir/rosidl_generator_c/game_controller_interface/msg/detail/team_info__functions.c.o[0m
+[35.620s] [ 42%] [32mBuilding C object CMakeFiles/game_controller_interface__rosidl_generator_c.dir/rosidl_generator_c/game_controller_interface/msg/detail/robot_info__functions.c.o[0m
+[35.777s] [ 44%] [32m[1mLinking C shared library libgame_controller_interface__rosidl_generator_c.so[0m
+[35.894s] [ 44%] Built target game_controller_interface__rosidl_generator_c
+[35.935s] [ 46%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[38.897s] [ 48%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/game_controller_interface/msg/detail/game_control_data__type_support_c.cpp.o[0m
+[40.232s] [ 51%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/game_controller_interface/msg/detail/team_info__type_support_c.cpp.o[0m
+[41.585s] [ 53%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/game_controller_interface/msg/detail/robot_info__type_support_c.cpp.o[0m
+[43.022s] [ 55%] [32m[1mLinking CXX shared library libgame_controller_interface__rosidl_typesupport_fastrtps_c.so[0m
+[43.285s] [ 55%] Built target game_controller_interface__rosidl_typesupport_fastrtps_c
+[43.302s] [ 57%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[44.934s] [ 59%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/game_controller_interface/msg/game_control_data__type_support.cpp.o[0m
+[45.009s] [ 61%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/game_controller_interface/msg/team_info__type_support.cpp.o[0m
+[45.107s] [ 63%] [32mBuilding CXX object CMakeFiles/game_controller_interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/game_controller_interface/msg/robot_info__type_support.cpp.o[0m
+[45.208s] [ 65%] [32m[1mLinking CXX shared library libgame_controller_interface__rosidl_typesupport_c.so[0m
+[45.402s] [ 65%] Built target game_controller_interface__rosidl_typesupport_c
+[45.448s] [ 68%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[47.827s] [ 70%] [32mBuilding C object CMakeFiles/game_controller_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/game_controller_interface/msg/detail/game_control_data__type_support.c.o[0m
+[48.008s] [ 72%] [32mBuilding C object CMakeFiles/game_controller_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/game_controller_interface/msg/detail/team_info__type_support.c.o[0m
+[48.109s] [ 74%] [32mBuilding C object CMakeFiles/game_controller_interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/game_controller_interface/msg/detail/robot_info__type_support.c.o[0m
+[48.164s] [ 76%] [32m[1mLinking C shared library libgame_controller_interface__rosidl_typesupport_introspection_c.so[0m
+[48.218s] [ 76%] Built target game_controller_interface__rosidl_typesupport_introspection_c
+[48.258s] [ 76%] Built target game_controller_interface
+[48.325s] [ 78%] [34m[1mGenerating Python code for ROS interfaces[0m
+[52.127s] [ 78%] Built target game_controller_interface__py
+[52.282s] [ 80%] [32mBuilding C object CMakeFiles/game_controller_interface__rosidl_generator_py.dir/rosidl_generator_py/game_controller_interface/msg/_game_control_data_s.c.o[0m
+[52.519s] [ 82%] [32mBuilding C object CMakeFiles/game_controller_interface__rosidl_generator_py.dir/rosidl_generator_py/game_controller_interface/msg/_team_info_s.c.o[0m
+[52.741s] [ 85%] [32mBuilding C object CMakeFiles/game_controller_interface__rosidl_generator_py.dir/rosidl_generator_py/game_controller_interface/msg/_robot_info_s.c.o[0m
+[53.114s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/game_controller_interface/libgame_controller_interface__rosidl_generator_py.so[0m
+[53.296s] [ 87%] Built target game_controller_interface__rosidl_generator_py
+[53.388s] [ 89%] [32mBuilding C object CMakeFiles/game_controller_interface__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/game_controller_interface/_game_controller_interface_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[53.638s] [ 91%] [32m[1mLinking C shared library rosidl_generator_py/game_controller_interface/game_controller_interface_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[53.720s] [ 91%] Built target game_controller_interface__rosidl_typesupport_fastrtps_c__pyext
+[53.818s] [ 93%] [32mBuilding C object CMakeFiles/game_controller_interface__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/game_controller_interface/_game_controller_interface_s.ep.rosidl_typesupport_c.c.o[0m
+[54.071s] [ 95%] [32m[1mLinking C shared library rosidl_generator_py/game_controller_interface/game_controller_interface_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
+[54.139s] [ 95%] Built target game_controller_interface__rosidl_typesupport_c__pyext
+[54.187s] [ 97%] [32mBuilding C object CMakeFiles/game_controller_interface__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/game_controller_interface/_game_controller_interface_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[54.395s] [100%] [32m[1mLinking C shared library rosidl_generator_py/game_controller_interface/game_controller_interface_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[54.454s] [100%] Built target game_controller_interface__rosidl_typesupport_introspection_c__pyext
+[54.502s] Invoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/build/game_controller_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/src/build/game_controller_interface -- -j5 -l5
+[54.503s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/build/game_controller_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/src/build/game_controller_interface
+[54.524s] -- Install configuration: ""
+[54.525s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/ament_index/resource_index/rosidl_interfaces/game_controller_interface
+[54.527s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface
+[54.528s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg
+[54.528s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/game_control_data.h
+[54.530s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/robot_info.h
+[54.532s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/rosidl_generator_c__visibility_control.h
+[54.534s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail
+[54.535s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/game_control_data__functions.c
+[54.538s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/team_info__struct.h
+[54.538s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/team_info__functions.c
+[54.538s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/robot_info__functions.h
+[54.540s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/robot_info__type_support.h
+[54.540s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/robot_info__functions.c
+[54.541s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/game_control_data__type_support.h
+[54.541s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/team_info__functions.h
+[54.541s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/team_info__type_support.h
+[54.541s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/robot_info__struct.h
+[54.541s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/game_control_data__struct.h
+[54.541s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/game_control_data__functions.h
+[54.548s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/team_info.h
+[54.548s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/environment/library_path.sh
+[54.549s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/environment/library_path.dsv
+[54.549s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_generator_c.so
+[54.550s] -- Set runtime path of "/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_generator_c.so" to ""
+[54.550s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface
+[54.551s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg
+[54.552s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail
+[54.552s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/game_control_data__rosidl_typesupport_fastrtps_c.h
+[54.552s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/team_info__rosidl_typesupport_fastrtps_c.h
+[54.554s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/robot_info__rosidl_typesupport_fastrtps_c.h
+[54.554s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[54.554s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_typesupport_fastrtps_c.so
+[54.555s] -- Set runtime path of "/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_typesupport_fastrtps_c.so" to ""
+[54.555s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface
+[54.555s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg
+[54.555s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/game_control_data.hpp
+[54.556s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail
+[54.556s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/robot_info__type_support.hpp
+[54.556s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/game_control_data__struct.hpp
+[54.556s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/team_info__struct.hpp
+[54.558s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/team_info__type_support.hpp
+[54.559s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/team_info__builder.hpp
+[54.560s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/robot_info__builder.hpp
+[54.560s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/team_info__traits.hpp
+[54.560s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/robot_info__struct.hpp
+[54.560s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/game_control_data__type_support.hpp
+[54.562s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/game_control_data__traits.hpp
+[54.562s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/game_control_data__builder.hpp
+[54.562s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/robot_info__traits.hpp
+[54.563s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/rosidl_generator_cpp__visibility_control.hpp
+[54.563s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/team_info.hpp
+[54.563s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/robot_info.hpp
+[54.563s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface
+[54.564s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg
+[54.564s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail
+[54.564s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/game_control_data__rosidl_typesupport_fastrtps_cpp.hpp
+[54.566s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/team_info__rosidl_typesupport_fastrtps_cpp.hpp
+[54.566s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/robot_info__rosidl_typesupport_fastrtps_cpp.hpp
+[54.566s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/dds_fastrtps
+[54.567s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[54.567s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_typesupport_fastrtps_cpp.so
+[54.568s] -- Set runtime path of "/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_typesupport_fastrtps_cpp.so" to ""
+[54.568s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface
+[54.569s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg
+[54.570s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail
+[54.570s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/robot_info__rosidl_typesupport_introspection_c.h
+[54.570s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/team_info__rosidl_typesupport_introspection_c.h
+[54.570s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/game_control_data__rosidl_typesupport_introspection_c.h
+[54.570s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/team_info__type_support.c
+[54.570s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/game_control_data__type_support.c
+[54.571s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/robot_info__type_support.c
+[54.574s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[54.574s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_typesupport_introspection_c.so
+[54.575s] -- Set runtime path of "/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_typesupport_introspection_c.so" to ""
+[54.575s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_typesupport_c.so
+[54.576s] -- Set runtime path of "/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_typesupport_c.so" to ""
+[54.576s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface
+[54.578s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg
+[54.578s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail
+[54.578s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/game_control_data__type_support.cpp
+[54.579s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/team_info__rosidl_typesupport_introspection_cpp.hpp
+[54.579s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/robot_info__rosidl_typesupport_introspection_cpp.hpp
+[54.579s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/team_info__type_support.cpp
+[54.579s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/robot_info__type_support.cpp
+[54.579s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/include/game_controller_interface/game_controller_interface/msg/detail/game_control_data__rosidl_typesupport_introspection_cpp.hpp
+[54.579s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_typesupport_introspection_cpp.so
+[54.583s] -- Set runtime path of "/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_typesupport_introspection_cpp.so" to ""
+[54.583s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_typesupport_cpp.so
+[54.583s] -- Set runtime path of "/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_typesupport_cpp.so" to ""
+[54.583s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/environment/pythonpath.sh
+[54.583s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/environment/pythonpath.dsv
+[54.584s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface-1.0.0-py3.10.egg-info
+[54.593s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface-1.0.0-py3.10.egg-info/dependency_links.txt
+[54.593s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface-1.0.0-py3.10.egg-info/PKG-INFO
+[54.593s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface-1.0.0-py3.10.egg-info/top_level.txt
+[54.593s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface-1.0.0-py3.10.egg-info/SOURCES.txt
+[54.594s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface
+[54.594s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/__init__.py
+[54.594s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/libgame_controller_interface__rosidl_generator_py.so
+[54.594s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/msg
+[54.594s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/msg/__init__.py
+[54.594s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/msg/_robot_info_s.c
+[54.594s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/msg/_team_info_s.c
+[54.595s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/msg/_game_control_data.py
+[54.595s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/msg/_robot_info.py
+[54.595s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/msg/_team_info.py
+[54.595s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/msg/_game_control_data_s.c
+[54.595s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/game_controller_interface_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[54.596s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/game_controller_interface_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[54.596s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/_game_controller_interface_s.ep.rosidl_typesupport_fastrtps_c.c
+[54.596s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/_game_controller_interface_s.ep.rosidl_typesupport_c.c
+[54.596s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/_game_controller_interface_s.ep.rosidl_typesupport_introspection_c.c
+[54.596s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/game_controller_interface_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[54.674s] Listing '/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface'...
+[54.674s] Compiling '/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/__init__.py'...
+[54.674s] Listing '/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/msg'...
+[54.675s] Compiling '/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/msg/__init__.py'...
+[54.675s] Compiling '/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/msg/_game_control_data.py'...
+[54.675s] Compiling '/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/msg/_robot_info.py'...
+[54.675s] Compiling '/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/msg/_team_info.py'...
+[54.685s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/game_controller_interface_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[54.685s] -- Set runtime path of "/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/game_controller_interface_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""
+[54.685s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/game_controller_interface_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[54.685s] -- Set runtime path of "/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/game_controller_interface_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""
+[54.686s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/game_controller_interface_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[54.686s] -- Set runtime path of "/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/local/lib/python3.10/dist-packages/game_controller_interface/game_controller_interface_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""
+[54.686s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_generator_py.so
+[54.687s] -- Set runtime path of "/home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/lib/libgame_controller_interface__rosidl_generator_py.so" to ""
+[54.687s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/msg/GameControlData.idl
+[54.687s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/msg/RobotInfo.idl
+[54.687s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/msg/TeamInfo.idl
+[54.688s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/msg/GameControlData.msg
+[54.688s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/msg/RobotInfo.msg
+[54.688s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/msg/TeamInfo.msg
+[54.688s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/ament_index/resource_index/package_run_dependencies/game_controller_interface
+[54.689s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/ament_index/resource_index/parent_prefix_path/game_controller_interface
+[54.689s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/environment/ament_prefix_path.sh
+[54.689s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/environment/ament_prefix_path.dsv
+[54.689s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/environment/path.sh
+[54.689s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/environment/path.dsv
+[54.690s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/local_setup.bash
+[54.690s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/local_setup.sh
+[54.694s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/local_setup.zsh
+[54.694s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/local_setup.dsv
+[54.695s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/package.dsv
+[54.695s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/ament_index/resource_index/packages/game_controller_interface
+[54.695s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/export_game_controller_interface__rosidl_generator_cExport.cmake
+[54.696s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/export_game_controller_interface__rosidl_generator_cExport-noconfig.cmake
+[54.696s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/export_game_controller_interface__rosidl_typesupport_fastrtps_cExport.cmake
+[54.696s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/export_game_controller_interface__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[54.696s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/export_game_controller_interface__rosidl_generator_cppExport.cmake
+[54.696s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/export_game_controller_interface__rosidl_typesupport_fastrtps_cppExport.cmake
+[54.697s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/export_game_controller_interface__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[54.697s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/game_controller_interface__rosidl_typesupport_introspection_cExport.cmake
+[54.697s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/game_controller_interface__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[54.697s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/game_controller_interface__rosidl_typesupport_cExport.cmake
+[54.698s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/game_controller_interface__rosidl_typesupport_cExport-noconfig.cmake
+[54.698s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/game_controller_interface__rosidl_typesupport_introspection_cppExport.cmake
+[54.698s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/game_controller_interface__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[54.698s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/game_controller_interface__rosidl_typesupport_cppExport.cmake
+[54.699s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/game_controller_interface__rosidl_typesupport_cppExport-noconfig.cmake
+[54.699s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/export_game_controller_interface__rosidl_generator_pyExport.cmake
+[54.699s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/export_game_controller_interface__rosidl_generator_pyExport-noconfig.cmake
+[54.699s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/rosidl_cmake-extras.cmake
+[54.699s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/ament_cmake_export_include_directories-extras.cmake
+[54.700s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/ament_cmake_export_libraries-extras.cmake
+[54.700s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/ament_cmake_export_targets-extras.cmake
+[54.700s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[54.700s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/ament_cmake_export_dependencies-extras.cmake
+[54.701s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[54.701s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/game_controller_interfaceConfig.cmake
+[54.701s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/cmake/game_controller_interfaceConfig-version.cmake
+[54.701s] -- Installing: /home/booster/Workspace/Booster_T1_3v3_Demo/src/install/game_controller_interface/share/game_controller_interface/package.xml
+[54.710s] Invoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/build/game_controller_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/src/build/game_controller_interface

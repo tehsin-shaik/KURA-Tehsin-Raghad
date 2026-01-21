@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "brain__py",
+		"source" : "/home/booster/Workspace/Booster_T1_3v3_Demo/src/build/brain/brain__py"
+	}
+}

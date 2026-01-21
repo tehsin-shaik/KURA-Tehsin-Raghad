@@ -1,0 +1,14 @@
+[0.115s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface -- -j5 -l5
+[0.369s] [  0%] Built target booster_interface__cpp
+[0.483s] [  0%] Built target ament_cmake_python_symlink_booster_interface
+[0.634s] [ 12%] Built target booster_interface__rosidl_typesupport_introspection_cpp
+[1.749s] running egg_info
+[1.753s] writing booster_interface.egg-info/PKG-INFO
+[1.756s] writing dependency_links to booster_interface.egg-info/dependency_links.txt
+[1.756s] writing top-level names to booster_interface.egg-info/top_level.txt
+[1.802s] reading manifest file 'booster_interface.egg-info/SOURCES.txt'
+[1.811s] writing manifest file 'booster_interface.egg-info/SOURCES.txt'
+[2.058s] gmake[2]: *** [CMakeFiles/ament_cmake_python_build_booster_interface_egg.dir/build.make:70: CMakeFiles/ament_cmake_python_build_booster_interface_egg] Interrupt
+[2.072s] gmake[1]: *** [CMakeFiles/Makefile2:447: CMakeFiles/ament_cmake_python_build_booster_interface_egg.dir/all] Interrupt
+[2.072s] gmake: *** [Makefile:146: all] Interrupt
+[2.084s] Invoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface' returned '-2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface -- -j5 -l5

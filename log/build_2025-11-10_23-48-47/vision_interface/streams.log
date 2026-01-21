@@ -1,0 +1,284 @@
+[0.094s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface -- -j5 -l5
+[0.302s] [  0%] Built target vision_interface__cpp
+[0.402s] [  0%] Built target ament_cmake_python_symlink_vision_interface
+[0.471s] [35m[1mConsolidate compiler generated dependencies of target vision_interface__rosidl_typesupport_introspection_cpp[0m
+[0.597s] [ 12%] Built target vision_interface__rosidl_typesupport_introspection_cpp
+[1.599s] running egg_info
+[1.604s] writing vision_interface.egg-info/PKG-INFO
+[1.605s] writing dependency_links to vision_interface.egg-info/dependency_links.txt
+[1.606s] writing top-level names to vision_interface.egg-info/top_level.txt
+[1.616s] reading manifest file 'vision_interface.egg-info/SOURCES.txt'
+[1.618s] writing manifest file 'vision_interface.egg-info/SOURCES.txt'
+[1.758s] [ 12%] Built target ament_cmake_python_build_vision_interface_egg
+[1.816s] [35m[1mConsolidate compiler generated dependencies of target vision_interface__rosidl_typesupport_fastrtps_cpp[0m
+[1.987s] [ 23%] Built target vision_interface__rosidl_typesupport_fastrtps_cpp
+[2.071s] [35m[1mConsolidate compiler generated dependencies of target vision_interface__rosidl_typesupport_cpp[0m
+[2.169s] [ 35%] Built target vision_interface__rosidl_typesupport_cpp
+[2.218s] [35m[1mConsolidate compiler generated dependencies of target vision_interface__rosidl_generator_c[0m
+[2.295s] [ 47%] Built target vision_interface__rosidl_generator_c
+[2.336s] [35m[1mConsolidate compiler generated dependencies of target vision_interface__rosidl_typesupport_fastrtps_c[0m
+[2.439s] [ 59%] Built target vision_interface__rosidl_typesupport_fastrtps_c
+[2.473s] [35m[1mConsolidate compiler generated dependencies of target vision_interface__rosidl_typesupport_c[0m
+[2.519s] [ 70%] Built target vision_interface__rosidl_typesupport_c
+[2.628s] [35m[1mConsolidate compiler generated dependencies of target vision_interface__rosidl_typesupport_introspection_c[0m
+[2.751s] [ 82%] Built target vision_interface__rosidl_typesupport_introspection_c
+[2.839s] [ 82%] Built target vision_interface
+[3.071s] [ 83%] Built target vision_interface__py
+[3.130s] [35m[1mConsolidate compiler generated dependencies of target vision_interface__rosidl_generator_py[0m
+[3.326s] [ 94%] Built target vision_interface__rosidl_generator_py
+[3.407s] [35m[1mConsolidate compiler generated dependencies of target vision_interface__rosidl_typesupport_fastrtps_c__pyext[0m
+[3.564s] [ 96%] Built target vision_interface__rosidl_typesupport_fastrtps_c__pyext
+[3.743s] [35m[1mConsolidate compiler generated dependencies of target vision_interface__rosidl_typesupport_c__pyext[0m
+[3.794s] [ 98%] Built target vision_interface__rosidl_typesupport_c__pyext
+[3.831s] [35m[1mConsolidate compiler generated dependencies of target vision_interface__rosidl_typesupport_introspection_c__pyext[0m
+[3.902s] [100%] Built target vision_interface__rosidl_typesupport_introspection_c__pyext
+[3.939s] Invoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface -- -j5 -l5
+[3.943s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface
+[3.972s] -- Install configuration: ""
+[3.973s] -- Execute custom install script
+[3.973s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/ament_index/resource_index/rosidl_interfaces/vision_interface
+[3.973s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/ball.h
+[3.973s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/cal_param.h
+[3.974s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/ball__functions.h
+[3.974s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/ball__struct.h
+[3.974s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/ball__type_support.h
+[3.975s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/cal_param__functions.h
+[3.975s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/cal_param__struct.h
+[3.975s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/cal_param__type_support.h
+[3.975s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detected_object__functions.h
+[3.975s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detected_object__struct.h
+[3.975s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detected_object__type_support.h
+[3.975s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections__functions.h
+[3.976s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections__struct.h
+[3.976s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections__type_support.h
+[3.976s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections_track__functions.h
+[3.976s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections_track__struct.h
+[3.976s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections_track__type_support.h
+[3.977s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/image_head_position__functions.h
+[3.977s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/image_head_position__struct.h
+[3.977s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/image_head_position__type_support.h
+[3.977s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/line_segments__functions.h
+[3.977s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/line_segments__struct.h
+[3.977s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/line_segments__type_support.h
+[3.977s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_line__functions.h
+[3.978s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_line__struct.h
+[3.978s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_line__type_support.h
+[3.978s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_point__functions.h
+[3.978s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_point__struct.h
+[3.978s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_point__type_support.h
+[3.979s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_result__functions.h
+[3.979s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_result__struct.h
+[3.979s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_result__type_support.h
+[3.979s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detected_object.h
+[3.979s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detections.h
+[3.979s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detections_track.h
+[3.980s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/image_head_position.h
+[3.980s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/line_segments.h
+[3.980s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/rosidl_generator_c__visibility_control.h
+[3.980s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/segmentation_line.h
+[3.980s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/segmentation_point.h
+[3.981s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/segmentation_result.h
+[3.981s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/environment/library_path.sh
+[3.981s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/environment/library_path.dsv
+[3.987s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/ball__rosidl_typesupport_fastrtps_c.h
+[3.987s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/cal_param__rosidl_typesupport_fastrtps_c.h
+[3.987s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detected_object__rosidl_typesupport_fastrtps_c.h
+[3.988s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections__rosidl_typesupport_fastrtps_c.h
+[3.988s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections_track__rosidl_typesupport_fastrtps_c.h
+[3.988s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/image_head_position__rosidl_typesupport_fastrtps_c.h
+[3.988s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/line_segments__rosidl_typesupport_fastrtps_c.h
+[3.989s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_line__rosidl_typesupport_fastrtps_c.h
+[3.989s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_point__rosidl_typesupport_fastrtps_c.h
+[4.000s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_result__rosidl_typesupport_fastrtps_c.h
+[4.000s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[4.002s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/ball.hpp
+[4.002s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/cal_param.hpp
+[4.003s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/ball__builder.hpp
+[4.003s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/ball__struct.hpp
+[4.003s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/ball__traits.hpp
+[4.003s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/ball__type_support.hpp
+[4.004s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/cal_param__builder.hpp
+[4.004s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/cal_param__struct.hpp
+[4.005s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/cal_param__traits.hpp
+[4.005s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/cal_param__type_support.hpp
+[4.005s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detected_object__builder.hpp
+[4.005s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detected_object__struct.hpp
+[4.006s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detected_object__traits.hpp
+[4.006s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detected_object__type_support.hpp
+[4.006s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections__builder.hpp
+[4.007s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections__struct.hpp
+[4.007s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections__traits.hpp
+[4.007s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections__type_support.hpp
+[4.007s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections_track__builder.hpp
+[4.007s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections_track__struct.hpp
+[4.007s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections_track__traits.hpp
+[4.008s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections_track__type_support.hpp
+[4.008s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/image_head_position__builder.hpp
+[4.008s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/image_head_position__struct.hpp
+[4.008s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/image_head_position__traits.hpp
+[4.009s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/image_head_position__type_support.hpp
+[4.009s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/line_segments__builder.hpp
+[4.009s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/line_segments__struct.hpp
+[4.009s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/line_segments__traits.hpp
+[4.009s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/line_segments__type_support.hpp
+[4.009s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_line__builder.hpp
+[4.009s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_line__struct.hpp
+[4.009s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_line__traits.hpp
+[4.010s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_line__type_support.hpp
+[4.010s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_point__builder.hpp
+[4.010s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_point__struct.hpp
+[4.010s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_point__traits.hpp
+[4.010s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_point__type_support.hpp
+[4.010s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_result__builder.hpp
+[4.011s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_result__struct.hpp
+[4.011s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_result__traits.hpp
+[4.011s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_result__type_support.hpp
+[4.011s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detected_object.hpp
+[4.011s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detections.hpp
+[4.011s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detections_track.hpp
+[4.011s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/image_head_position.hpp
+[4.011s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/line_segments.hpp
+[4.013s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/rosidl_generator_cpp__visibility_control.hpp
+[4.014s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/segmentation_line.hpp
+[4.014s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/segmentation_point.hpp
+[4.014s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/segmentation_result.hpp
+[4.015s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/ball__rosidl_typesupport_fastrtps_cpp.hpp
+[4.016s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/cal_param__rosidl_typesupport_fastrtps_cpp.hpp
+[4.016s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detected_object__rosidl_typesupport_fastrtps_cpp.hpp
+[4.016s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections__rosidl_typesupport_fastrtps_cpp.hpp
+[4.017s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections_track__rosidl_typesupport_fastrtps_cpp.hpp
+[4.017s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/image_head_position__rosidl_typesupport_fastrtps_cpp.hpp
+[4.017s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/line_segments__rosidl_typesupport_fastrtps_cpp.hpp
+[4.017s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_line__rosidl_typesupport_fastrtps_cpp.hpp
+[4.020s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_point__rosidl_typesupport_fastrtps_cpp.hpp
+[4.020s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_result__rosidl_typesupport_fastrtps_cpp.hpp
+[4.020s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[4.024s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/ball__rosidl_typesupport_introspection_c.h
+[4.024s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/cal_param__rosidl_typesupport_introspection_c.h
+[4.025s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detected_object__rosidl_typesupport_introspection_c.h
+[4.025s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections__rosidl_typesupport_introspection_c.h
+[4.025s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections_track__rosidl_typesupport_introspection_c.h
+[4.025s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/image_head_position__rosidl_typesupport_introspection_c.h
+[4.026s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/line_segments__rosidl_typesupport_introspection_c.h
+[4.026s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_line__rosidl_typesupport_introspection_c.h
+[4.028s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_point__rosidl_typesupport_introspection_c.h
+[4.029s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_result__rosidl_typesupport_introspection_c.h
+[4.029s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[4.029s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/ball__rosidl_typesupport_introspection_cpp.hpp
+[4.029s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/cal_param__rosidl_typesupport_introspection_cpp.hpp
+[4.031s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detected_object__rosidl_typesupport_introspection_cpp.hpp
+[4.032s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections__rosidl_typesupport_introspection_cpp.hpp
+[4.033s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/detections_track__rosidl_typesupport_introspection_cpp.hpp
+[4.033s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/image_head_position__rosidl_typesupport_introspection_cpp.hpp
+[4.033s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/line_segments__rosidl_typesupport_introspection_cpp.hpp
+[4.033s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_line__rosidl_typesupport_introspection_cpp.hpp
+[4.033s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_point__rosidl_typesupport_introspection_cpp.hpp
+[4.033s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/include/vision_interface/vision_interface/msg/detail/segmentation_result__rosidl_typesupport_introspection_cpp.hpp
+[4.034s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/environment/pythonpath.sh
+[4.035s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/environment/pythonpath.dsv
+[4.035s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface-1.0.0-py3.10.egg-info/PKG-INFO
+[4.035s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface-1.0.0-py3.10.egg-info/SOURCES.txt
+[4.036s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface-1.0.0-py3.10.egg-info/dependency_links.txt
+[4.037s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface-1.0.0-py3.10.egg-info/top_level.txt
+[4.037s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/__init__.py
+[4.038s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/_vision_interface_s.ep.rosidl_typesupport_c.c
+[4.039s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/_vision_interface_s.ep.rosidl_typesupport_fastrtps_c.c
+[4.040s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/_vision_interface_s.ep.rosidl_typesupport_introspection_c.c
+[4.041s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/libvision_interface__rosidl_generator_py.so
+[4.043s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/__init__.py
+[4.043s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_ball.py
+[4.043s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_ball_s.c
+[4.043s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_cal_param.py
+[4.044s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_cal_param_s.c
+[4.044s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_detected_object.py
+[4.045s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_detected_object_s.c
+[4.046s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_detections.py
+[4.047s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_detections_s.c
+[4.047s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_detections_track.py
+[4.048s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_detections_track_s.c
+[4.048s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_image_head_position.py
+[4.049s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_image_head_position_s.c
+[4.050s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_line_segments.py
+[4.050s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_line_segments_s.c
+[4.051s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_segmentation_line.py
+[4.051s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_segmentation_line_s.c
+[4.051s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_segmentation_point.py
+[4.053s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_segmentation_point_s.c
+[4.053s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_segmentation_result.py
+[4.053s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg/_segmentation_result_s.c
+[4.053s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/vision_interface_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[4.053s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/vision_interface_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[4.054s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/vision_interface_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[4.054s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/vision_interface_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[4.055s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/vision_interface_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[4.055s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/vision_interface_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[4.055s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/DetectedObject.idl
+[4.055s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/Detections.idl
+[4.056s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/LineSegments.idl
+[4.056s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/CalParam.idl
+[4.057s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/DetectionsTrack.idl
+[4.057s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/SegmentationPoint.idl
+[4.058s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/SegmentationLine.idl
+[4.058s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/SegmentationResult.idl
+[4.058s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/ImageHeadPosition.idl
+[4.058s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/Ball.idl
+[4.059s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/DetectedObject.msg
+[4.060s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/Detections.msg
+[4.060s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/LineSegments.msg
+[4.060s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/CalParam.msg
+[4.060s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/DetectionsTrack.msg
+[4.060s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/SegmentationPoint.msg
+[4.060s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/SegmentationLine.msg
+[4.061s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/SegmentationResult.msg
+[4.061s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/ImageHeadPosition.msg
+[4.061s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/msg/Ball.msg
+[4.061s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/ament_index/resource_index/package_run_dependencies/vision_interface
+[4.062s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/ament_index/resource_index/parent_prefix_path/vision_interface
+[4.062s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/environment/ament_prefix_path.sh
+[4.062s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/environment/ament_prefix_path.dsv
+[4.063s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/environment/path.sh
+[4.063s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/environment/path.dsv
+[4.063s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/local_setup.bash
+[4.063s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/local_setup.sh
+[4.063s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/local_setup.zsh
+[4.063s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/local_setup.dsv
+[4.063s] -- Symlinking: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/package.dsv
+[4.086s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/ament_index/resource_index/packages/vision_interface
+[4.087s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/rosidl_cmake-extras.cmake
+[4.087s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/ament_cmake_export_dependencies-extras.cmake
+[4.087s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/ament_cmake_export_include_directories-extras.cmake
+[4.087s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/ament_cmake_export_libraries-extras.cmake
+[4.088s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/ament_cmake_export_targets-extras.cmake
+[4.088s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[4.088s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[4.088s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/vision_interfaceConfig.cmake
+[4.088s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/vision_interfaceConfig-version.cmake
+[4.088s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/package.xml
+[4.089s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib/libvision_interface__rosidl_generator_c.so
+[4.089s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib/libvision_interface__rosidl_typesupport_fastrtps_c.so
+[4.089s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib/libvision_interface__rosidl_typesupport_fastrtps_cpp.so
+[4.090s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib/libvision_interface__rosidl_typesupport_introspection_c.so
+[4.090s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib/libvision_interface__rosidl_typesupport_c.so
+[4.091s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib/libvision_interface__rosidl_typesupport_introspection_cpp.so
+[4.091s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib/libvision_interface__rosidl_typesupport_cpp.so
+[4.262s] Listing '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface'...
+[4.262s] Listing '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages/vision_interface/msg'...
+[4.266s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib/libvision_interface__rosidl_generator_py.so
+[4.269s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/export_vision_interface__rosidl_generator_cExport.cmake
+[4.276s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/export_vision_interface__rosidl_generator_cExport-noconfig.cmake
+[4.276s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/export_vision_interface__rosidl_typesupport_fastrtps_cExport.cmake
+[4.280s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/export_vision_interface__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[4.281s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/export_vision_interface__rosidl_generator_cppExport.cmake
+[4.284s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/export_vision_interface__rosidl_typesupport_fastrtps_cppExport.cmake
+[4.286s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/export_vision_interface__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[4.286s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/vision_interface__rosidl_typesupport_introspection_cExport.cmake
+[4.287s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/vision_interface__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[4.288s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/vision_interface__rosidl_typesupport_cExport.cmake
+[4.289s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/vision_interface__rosidl_typesupport_cExport-noconfig.cmake
+[4.289s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/vision_interface__rosidl_typesupport_introspection_cppExport.cmake
+[4.291s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/vision_interface__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[4.292s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/vision_interface__rosidl_typesupport_cppExport.cmake
+[4.294s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/vision_interface__rosidl_typesupport_cppExport-noconfig.cmake
+[4.296s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/export_vision_interface__rosidl_generator_pyExport.cmake
+[4.301s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/cmake/export_vision_interface__rosidl_generator_pyExport-noconfig.cmake
+[4.813s] Invoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface

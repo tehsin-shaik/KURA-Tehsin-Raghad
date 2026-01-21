@@ -1,0 +1,242 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-25fa164217af7832c981.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "brain__py",
+					"jsonFile" : "directory-brain__py-32edbf195b9ce5cda05d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/booster/Workspace/Booster_T1_3v3_Demo/build/brain/brain__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "brain",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_brain_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_brain_egg-fb87b3c96b2f73b52eb9.json",
+					"name" : "ament_cmake_python_build_brain_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_brain::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_brain-651ce478be56c47bfb55.json",
+					"name" : "ament_cmake_python_symlink_brain",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain-e9bd2ee39d21d96ca461.json",
+					"name" : "brain",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain__cpp-4305dab271f34f868964.json",
+					"name" : "brain__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "brain__py::@6342d4f608d24cce0572",
+					"jsonFile" : "target-brain__py-e24f6769bafe5ffcc8d8.json",
+					"name" : "brain__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain__rosidl_generator_c-c2c9244aa73d68e8f5bc.json",
+					"name" : "brain__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain__rosidl_generator_py-4a0bfb30124471fc14b4.json",
+					"name" : "brain__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain__rosidl_typesupport_c-05794235854e67967a58.json",
+					"name" : "brain__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain__rosidl_typesupport_c__pyext-044581825359925cdaec.json",
+					"name" : "brain__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain__rosidl_typesupport_cpp-f6045d3941e11139bb24.json",
+					"name" : "brain__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain__rosidl_typesupport_fastrtps_c-cae0c2e54cbdfed8d56e.json",
+					"name" : "brain__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain__rosidl_typesupport_fastrtps_c__pyext-931b413624cca7f0017a.json",
+					"name" : "brain__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain__rosidl_typesupport_fastrtps_cpp-814ae7dcf35e2368cb46.json",
+					"name" : "brain__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain__rosidl_typesupport_introspection_c-31e0d286fa369d6bbf56.json",
+					"name" : "brain__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain__rosidl_typesupport_introspection_c__pyext-d0ee065a9bb6a01833f3.json",
+					"name" : "brain__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain__rosidl_typesupport_introspection_cpp-df24e9c64d01c6a52da8.json",
+					"name" : "brain__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain_node-f884146b182ac38a9c40.json",
+					"name" : "brain_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brain_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brain_uninstall-4787dcf11ed57b6e920e.json",
+					"name" : "brain_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-ccd2abbe0082367d9d81.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/booster/Workspace/Booster_T1_3v3_Demo/build/brain",
+		"source" : "/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

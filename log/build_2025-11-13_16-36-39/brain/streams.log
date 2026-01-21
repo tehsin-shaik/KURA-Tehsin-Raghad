@@ -1,0 +1,161 @@
+[0.235s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/brain': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/brain -- -j5 -l5
+[0.481s] [  2%] Built target brain__cpp
+[0.679s] [  2%] Built target ament_cmake_python_symlink_brain
+[0.834s] [  9%] Built target brain__rosidl_typesupport_introspection_cpp
+[1.545s] running egg_info
+[1.545s] writing brain.egg-info/PKG-INFO
+[1.547s] writing dependency_links to brain.egg-info/dependency_links.txt
+[1.548s] writing top-level names to brain.egg-info/top_level.txt
+[1.548s] reading manifest file 'brain.egg-info/SOURCES.txt'
+[1.548s] writing manifest file 'brain.egg-info/SOURCES.txt'
+[1.606s] [  9%] Built target ament_cmake_python_build_brain_egg
+[1.659s] [ 17%] Built target brain__rosidl_typesupport_fastrtps_cpp
+[1.710s] [ 24%] Built target brain__rosidl_typesupport_cpp
+[1.794s] [ 31%] Built target brain__rosidl_generator_c
+[1.886s] [ 34%] [32mBuilding CXX object CMakeFiles/brain_node.dir/src/brain_tree.cpp.o[0m
+[22.295s] [01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus GoToReadyPosition::tick()[m[K’:
+[22.295s] [01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:2334:12:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Ktx[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+[22.295s]  2334 |     double [01;35m[Ktx[m[K = 0.0, ty = 0.0, ttheta = 0.0;
+[22.295s]       |            [01;35m[K^~[m[K
+[22.296s] [01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:2334:22:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Kty[m[K’ set but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-but-set-variable-Wunused-but-set-variable]8;;[m[K]
+[22.296s]  2334 |     double tx = 0.0, [01;35m[Kty[m[K = 0.0, ttheta = 0.0;
+[22.296s]       |                      [01;35m[K^~[m[K
+[22.313s] [01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus Y_Keeper::tick()[m[K’:
+[22.313s] [01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:2739:23:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around assignment used as truth value [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;[m[K]
+[22.313s]  2739 |              if ([01;35m[KtmID = brain->config->playerId[m[K)
+[22.313s]       |                  [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[23.620s] In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:64[m[K,
+[23.620s]                  from [01m[K/usr/include/c++/11/bits/specfun.h:45[m[K,
+[23.620s]                  from [01m[K/usr/include/c++/11/cmath:1935[m[K,
+[23.620s]                  from [01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:1[m[K:
+[23.620s] /usr/include/c++/11/bits/stl_pair.h: In instantiation of ‘[01m[Kconstexpr std::pair<typename std::__strip_reference_wrapper<typename std::decay<_Tp>::type>::__type, typename std::__strip_reference_wrapper<typename std::decay<_Tp2>::type>::__type> std::make_pair(_T1&&, _T2&&) [with _T1 = double; _T2 = const double&; typename std::__strip_reference_wrapper<typename std::decay<_Tp2>::type>::__type = double; typename std::decay<_Tp2>::type = double; typename std::__strip_reference_wrapper<typename std::decay<_Tp>::type>::__type = double; typename std::decay<_Tp>::type = double][m[K’:
+[23.625s] [01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:3015:26:[m[K   required from here
+[23.625s] [01m[K/usr/include/c++/11/bits/stl_pair.h:567:5:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<double, double>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+[23.625s]   567 |     [01;36m[Kmake_pair[m[K(_T1&& __x, _T2&& __y)
+[23.625s]       |     [01;36m[K^~~~~~~~~[m[K
+[40.184s] [ 36%] [32m[1mLinking CXX executable brain_node[0m
+[56.067s] [ 56%] Built target brain_node
+[56.106s] [ 63%] Built target brain__rosidl_typesupport_c
+[56.151s] [ 70%] Built target brain__rosidl_typesupport_introspection_c
+[56.200s] [ 78%] Built target brain__rosidl_typesupport_fastrtps_c
+[56.236s] [ 78%] Built target brain
+[56.272s] [ 80%] Built target brain__py
+[56.311s] [ 85%] Built target brain__rosidl_generator_py
+[56.352s] [ 90%] Built target brain__rosidl_typesupport_fastrtps_c__pyext
+[56.387s] [ 95%] Built target brain__rosidl_typesupport_c__pyext
+[56.425s] [100%] Built target brain__rosidl_typesupport_introspection_c__pyext
+[56.482s] Invoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/brain' returned '0': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/brain -- -j5 -l5
+[56.489s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/brain': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/brain
+[56.513s] -- Install configuration: ""
+[56.514s] -- Execute custom install script
+[56.515s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/ament_index/resource_index/rosidl_interfaces/brain
+[56.517s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/detail/kick__functions.h
+[56.517s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/detail/kick__struct.h
+[56.519s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/detail/kick__type_support.h
+[56.520s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/kick.h
+[56.521s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/rosidl_generator_c__visibility_control.h
+[56.521s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/environment/library_path.sh
+[56.522s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/environment/library_path.dsv
+[56.524s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/detail/kick__rosidl_typesupport_fastrtps_c.h
+[56.525s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[56.526s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/detail/kick__builder.hpp
+[56.527s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/detail/kick__struct.hpp
+[56.527s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/detail/kick__traits.hpp
+[56.528s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/detail/kick__type_support.hpp
+[56.530s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/kick.hpp
+[56.530s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/rosidl_generator_cpp__visibility_control.hpp
+[56.532s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/detail/kick__rosidl_typesupport_fastrtps_cpp.hpp
+[56.533s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[56.537s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/detail/kick__rosidl_typesupport_introspection_c.h
+[56.537s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[56.537s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/include/brain/brain/msg/detail/kick__rosidl_typesupport_introspection_cpp.hpp
+[56.538s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/environment/pythonpath.sh
+[56.538s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/environment/pythonpath.dsv
+[56.539s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain-0.0.0-py3.10.egg-info/PKG-INFO
+[56.541s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain-0.0.0-py3.10.egg-info/SOURCES.txt
+[56.542s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain-0.0.0-py3.10.egg-info/dependency_links.txt
+[56.543s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain-0.0.0-py3.10.egg-info/top_level.txt
+[56.545s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/__init__.py
+[56.546s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/_brain_s.ep.rosidl_typesupport_c.c
+[56.547s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/_brain_s.ep.rosidl_typesupport_fastrtps_c.c
+[56.548s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/_brain_s.ep.rosidl_typesupport_introspection_c.c
+[56.548s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/brain_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[56.549s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/brain_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[56.552s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/brain_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[56.552s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/libbrain__rosidl_generator_py.so
+[56.553s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/msg/__init__.py
+[56.554s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/msg/_kick.py
+[56.555s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/msg/_kick_s.c
+[56.556s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/brain_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[56.557s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/brain_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[56.558s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/brain_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[56.559s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/msg/Kick.idl
+[56.560s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/msg/Kick.msg
+[56.562s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib/brain/brain_node
+[56.564s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/launch/launch.py
+[56.565s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/config/config.yaml
+[56.568s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/assist.xml
+[56.568s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/chase.xml
+[56.569s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/game.xml
+[56.571s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/subtrees/defender.xml
+[56.571s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/subtrees/goalie.xml
+[56.572s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/subtrees/subtree_auto_standup_and_locate.xml
+[56.576s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/subtrees/subtree_cam_find_and_track_ball.xml
+[56.578s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/subtrees/subtree_defender_freekick.xml
+[56.578s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/subtrees/subtree_find_ball.xml
+[56.580s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/subtrees/subtree_goal_keeper_freekick.xml
+[56.581s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/subtrees/subtree_goal_keeper_play.xml
+[56.582s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/subtrees/subtree_locate.xml
+[56.584s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/subtrees/subtree_striker_freekick.xml
+[56.584s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/subtrees/subtree_striker_play.xml
+[56.587s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/behavior_trees/test_adjust.xml
+[56.588s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/ament_index/resource_index/package_run_dependencies/brain
+[56.590s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/ament_index/resource_index/parent_prefix_path/brain
+[56.590s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/environment/ament_prefix_path.sh
+[56.591s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/environment/ament_prefix_path.dsv
+[56.592s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/environment/path.sh
+[56.594s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/environment/path.dsv
+[56.596s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/local_setup.bash
+[56.598s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/local_setup.sh
+[56.600s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/local_setup.zsh
+[56.601s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/local_setup.dsv
+[56.603s] -- Symlinking: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/package.dsv
+[56.644s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/ament_index/resource_index/packages/brain
+[56.644s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/rosidl_cmake-extras.cmake
+[56.644s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/ament_cmake_export_dependencies-extras.cmake
+[56.645s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/ament_cmake_export_include_directories-extras.cmake
+[56.646s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/ament_cmake_export_libraries-extras.cmake
+[56.646s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/ament_cmake_export_targets-extras.cmake
+[56.646s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[56.648s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[56.649s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/brainConfig.cmake
+[56.649s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/brainConfig-version.cmake
+[56.649s] -- Up-to-date symlink: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/package.xml
+[56.649s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib/libbrain__rosidl_generator_c.so
+[56.649s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib/libbrain__rosidl_typesupport_fastrtps_c.so
+[56.649s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib/libbrain__rosidl_typesupport_fastrtps_cpp.so
+[56.650s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib/libbrain__rosidl_typesupport_introspection_c.so
+[56.651s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib/libbrain__rosidl_typesupport_c.so
+[56.651s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib/libbrain__rosidl_typesupport_introspection_cpp.so
+[56.652s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib/libbrain__rosidl_typesupport_cpp.so
+[56.758s] Listing '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain'...
+[56.759s] Listing '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/local/lib/python3.10/dist-packages/brain/msg'...
+[56.773s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib/libbrain__rosidl_generator_py.so
+[56.774s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/export_brain__rosidl_generator_cExport.cmake
+[56.775s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/export_brain__rosidl_generator_cExport-noconfig.cmake
+[56.775s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/export_brain__rosidl_typesupport_fastrtps_cExport.cmake
+[56.775s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/export_brain__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[56.776s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/export_brain__rosidl_generator_cppExport.cmake
+[56.776s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/export_brain__rosidl_typesupport_fastrtps_cppExport.cmake
+[56.778s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/export_brain__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[56.778s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/brain__rosidl_typesupport_introspection_cExport.cmake
+[56.778s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/brain__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[56.778s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/brain__rosidl_typesupport_cExport.cmake
+[56.778s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/brain__rosidl_typesupport_cExport-noconfig.cmake
+[56.778s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/brain__rosidl_typesupport_introspection_cppExport.cmake
+[56.778s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/brain__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[56.779s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/brain__rosidl_typesupport_cppExport.cmake
+[56.779s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/brain__rosidl_typesupport_cppExport-noconfig.cmake
+[56.780s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/export_brain__rosidl_generator_pyExport.cmake
+[56.781s] -- Up-to-date: /home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/cmake/export_brain__rosidl_generator_pyExport-noconfig.cmake
+[56.791s] Invoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/brain' returned '0': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/brain

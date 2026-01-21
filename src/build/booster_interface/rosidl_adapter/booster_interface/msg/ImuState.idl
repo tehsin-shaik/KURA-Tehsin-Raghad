@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from booster_interface/msg/ImuState.msg
+// generated code does not contain a copyright notice
+
+
+module booster_interface {
+  module msg {
+    typedef float float__3[3];
+    @verbatim (language="comment", text=
+      "欧拉角信息（0 -> roll ,0 -> pitch ,0 -> yaw）")
+    struct ImuState {
+      float__3 rpy;
+
+      @verbatim (language="comment", text=
+        "角速度信息（0 -> x ,0 -> y ,0 -> z）")
+      float__3 gyro;
+
+      @verbatim (language="comment", text=
+        "加速度信息（0 -> x ,0 -> y ,0 -> z）")
+      float__3 acc;
+    };
+  };
+};

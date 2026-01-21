@@ -1,0 +1,4 @@
+pygame
+rclpy
+setuptools
+std_msgs

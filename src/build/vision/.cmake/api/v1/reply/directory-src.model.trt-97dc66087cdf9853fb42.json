@@ -1,0 +1,75 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"src/model/trt/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 31,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"src/model/trt/libyolov8_trt.so"
+			],
+			"targetId" : "yolov8_trt::@7281d2ee4857f8206782",
+			"targetIndex" : 10,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib/vision",
+			"paths" : 
+			[
+				"src/model/trt/yolov8_det"
+			],
+			"targetId" : "yolov8_det::@7281d2ee4857f8206782",
+			"targetIndex" : 7,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib/vision",
+			"paths" : 
+			[
+				"src/model/trt/yolov8_seg"
+			],
+			"targetId" : "yolov8_seg::@7281d2ee4857f8206782",
+			"targetIndex" : 9,
+			"type" : "target"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "src/model/trt",
+		"source" : "src/model/trt"
+	}
+}

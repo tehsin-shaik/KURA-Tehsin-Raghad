@@ -1,0 +1,31 @@
+[0.245s] Invoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface -- -j5 -l5
+[0.796s] [  0%] Built target booster_interface__cpp
+[1.042s] [  0%] Built target ament_cmake_python_symlink_booster_interface
+[1.307s] [ 12%] Built target booster_interface__rosidl_typesupport_introspection_cpp
+[2.391s] Traceback (most recent call last):
+[2.396s]   File "/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface/ament_cmake_python/booster_interface/setup.py", line 1, in <module>
+[2.396s]     from setuptools import find_packages
+[2.396s]   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 16, in <module>
+[2.396s]     import setuptools.version
+[2.402s]   File "/usr/lib/python3/dist-packages/setuptools/version.py", line 1, in <module>
+[2.403s]     import pkg_resources
+[2.403s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3267, in <module>
+[2.415s]     def _initialize_master_working_set():
+[2.417s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3241, in _call_aside
+[2.428s]     f(*args, **kwargs)
+[2.429s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3279, in _initialize_master_working_set
+[2.457s]     working_set = WorkingSet._build_master()
+[2.460s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 564, in _build_master
+[2.461s]     ws = cls()
+[2.464s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 557, in __init__
+[2.464s]     self.add_entry(entry)
+[2.465s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 613, in add_entry
+[2.483s]     for dist in find_distributions(entry, True):
+[2.483s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2075, in find_on_path
+[2.492s]     fullpath = os.path.join(path_item, entry)
+[2.493s]   File "/usr/lib/python3.10/posixpath.py", line 77, in join
+[2.493s]     sep = _get_sep(a)
+[2.493s] KeyboardInterrupt
+[2.687s] gmake[2]: *** [CMakeFiles/ament_cmake_python_build_booster_interface_egg.dir/build.make:70: CMakeFiles/ament_cmake_python_build_booster_interface_egg] Interrupt
+[2.689s] gmake[1]: *** [CMakeFiles/Makefile2:447: CMakeFiles/ament_cmake_python_build_booster_interface_egg.dir/all] Interrupt
+[2.689s] gmake: *** [Makefile:146: all] Interrupt

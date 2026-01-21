@@ -1,0 +1,743 @@
+[0.262s] [34mcolcon[0m [1;30mDEBUG[0m [32mCommand line arguments: ['/usr/bin/colcon', 'build', '--symlink-install', '--parallel-workers', '5'][0m
+[0.263s] [34mcolcon[0m [1;30mDEBUG[0m [32mParsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=5, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffff9c3e1630>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff9c622ef0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff9c622ef0>>)[0m
+[0.663s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) check parameters
+[0.664s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) check parameters
+[0.665s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) check parameters
+[0.665s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) check parameters
+[0.665s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) discover
+[0.665s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) discover
+[0.665s] [34mcolcon.colcon_core.package_discovery[0m [1;30mINFO[0m Crawling recursively for packages in '/home/booster/Workspace/Booster_T1_3v3_Demo'
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore'
+[0.666s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore_ament_install'
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_pkg']
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_pkg'
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_meta']
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_meta'
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ros']
+[0.667s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ros'
+[0.688s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['cmake', 'python']
+[0.688s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'cmake'
+[0.688s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python'
+[0.688s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['python_setup_py']
+[0.688s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python_setup_py'
+[0.688s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.689s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extension 'ignore'
+[0.689s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) ignored
+[0.689s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(configs) by extensions ['ignore', 'ignore_ament_install']
+[0.689s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(configs) by extension 'ignore'
+[0.689s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(configs) by extension 'ignore_ament_install'
+[0.689s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(configs) by extensions ['colcon_pkg']
+[0.689s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(configs) by extension 'colcon_pkg'
+[0.690s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(configs) by extensions ['colcon_meta']
+[0.690s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(configs) by extension 'colcon_meta'
+[0.690s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(configs) by extensions ['ros']
+[0.690s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(configs) by extension 'ros'
+[0.690s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(configs) by extensions ['cmake', 'python']
+[0.690s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(configs) by extension 'cmake'
+[0.690s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(configs) by extension 'python'
+[0.690s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(configs) by extensions ['python_setup_py']
+[0.690s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(configs) by extension 'python_setup_py'
+[0.690s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(distribution) by extensions ['ignore', 'ignore_ament_install']
+[0.691s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(distribution) by extension 'ignore'
+[0.691s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(distribution) by extension 'ignore_ament_install'
+[0.691s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(distribution) by extensions ['colcon_pkg']
+[0.691s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(distribution) by extension 'colcon_pkg'
+[0.691s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(distribution) by extensions ['colcon_meta']
+[0.691s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(distribution) by extension 'colcon_meta'
+[0.691s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(distribution) by extensions ['ros']
+[0.692s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(distribution) by extension 'ros'
+[0.693s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(distribution) by extensions ['cmake', 'python']
+[0.693s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(distribution) by extension 'cmake'
+[0.693s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(distribution) by extension 'python'
+[0.693s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(distribution) by extensions ['python_setup_py']
+[0.693s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(distribution) by extension 'python_setup_py'
+[0.693s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.694s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extension 'ignore'
+[0.694s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) ignored
+[0.694s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.694s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extension 'ignore'
+[0.695s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) ignored
+[0.695s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts) by extensions ['ignore', 'ignore_ament_install']
+[0.695s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts) by extension 'ignore'
+[0.695s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts) by extension 'ignore_ament_install'
+[0.695s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts) by extensions ['colcon_pkg']
+[0.695s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts) by extension 'colcon_pkg'
+[0.695s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts) by extensions ['colcon_meta']
+[0.695s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts) by extension 'colcon_meta'
+[0.695s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts) by extensions ['ros']
+[0.695s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts) by extension 'ros'
+[0.696s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts) by extensions ['cmake', 'python']
+[0.696s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts) by extension 'cmake'
+[0.696s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts) by extension 'python'
+[0.696s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts) by extensions ['python_setup_py']
+[0.696s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts) by extension 'python_setup_py'
+[0.696s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts/build) by extensions ['ignore', 'ignore_ament_install']
+[0.696s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts/build) by extension 'ignore'
+[0.696s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts/build) ignored
+[0.696s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts/install) by extensions ['ignore', 'ignore_ament_install']
+[0.697s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts/install) by extension 'ignore'
+[0.697s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts/install) ignored
+[0.697s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts/log) by extensions ['ignore', 'ignore_ament_install']
+[0.697s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts/log) by extension 'ignore'
+[0.697s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(scripts/log) ignored
+[0.697s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.697s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore'
+[0.697s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ignore_ament_install'
+[0.697s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_pkg']
+[0.698s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_pkg'
+[0.698s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['colcon_meta']
+[0.698s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'colcon_meta'
+[0.698s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['ros']
+[0.698s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'ros'
+[0.698s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['cmake', 'python']
+[0.698s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'cmake'
+[0.698s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python'
+[0.698s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extensions ['python_setup_py']
+[0.698s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src) by extension 'python_setup_py'
+[0.698s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.699s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_msgs) by extension 'ignore'
+[0.699s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_msgs) by extension 'ignore_ament_install'
+[0.699s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_msgs) by extensions ['colcon_pkg']
+[0.699s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_msgs) by extension 'colcon_pkg'
+[0.699s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_msgs) by extensions ['colcon_meta']
+[0.699s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_msgs) by extension 'colcon_meta'
+[0.699s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_msgs) by extensions ['ros']
+[0.699s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_msgs) by extension 'ros'
+[0.704s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/booster_msgs' with type 'ros.ament_cmake' and name 'booster_msgs'[0m
+[0.706s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_ros2_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.707s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_ros2_interface) by extension 'ignore'
+[0.707s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_ros2_interface) by extension 'ignore_ament_install'
+[0.707s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_ros2_interface) by extensions ['colcon_pkg']
+[0.707s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_ros2_interface) by extension 'colcon_pkg'
+[0.707s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_ros2_interface) by extensions ['colcon_meta']
+[0.707s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_ros2_interface) by extension 'colcon_meta'
+[0.707s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_ros2_interface) by extensions ['ros']
+[0.708s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/booster_ros2_interface) by extension 'ros'
+[0.709s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/booster_ros2_interface' with type 'ros.ament_cmake' and name 'booster_interface'[0m
+[0.709s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/brain) by extensions ['ignore', 'ignore_ament_install']
+[0.710s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/brain) by extension 'ignore'
+[0.710s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/brain) by extension 'ignore_ament_install'
+[0.710s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/brain) by extensions ['colcon_pkg']
+[0.710s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/brain) by extension 'colcon_pkg'
+[0.710s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/brain) by extensions ['colcon_meta']
+[0.710s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/brain) by extension 'colcon_meta'
+[0.710s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/brain) by extensions ['ros']
+[0.710s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/brain) by extension 'ros'
+[0.713s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/brain' with type 'ros.ament_cmake' and name 'brain'[0m
+[0.713s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/build) by extensions ['ignore', 'ignore_ament_install']
+[0.714s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/build) by extension 'ignore'
+[0.714s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/build) ignored
+[0.714s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/game_controller) by extensions ['ignore', 'ignore_ament_install']
+[0.714s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/game_controller) by extension 'ignore'
+[0.714s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/game_controller) by extension 'ignore_ament_install'
+[0.714s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/game_controller) by extensions ['colcon_pkg']
+[0.714s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/game_controller) by extension 'colcon_pkg'
+[0.715s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/game_controller) by extensions ['colcon_meta']
+[0.715s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/game_controller) by extension 'colcon_meta'
+[0.715s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/game_controller) by extensions ['ros']
+[0.715s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/game_controller) by extension 'ros'
+[0.716s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/game_controller' with type 'ros.ament_cmake' and name 'game_controller'[0m
+[0.717s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/install) by extensions ['ignore', 'ignore_ament_install']
+[0.717s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/install) by extension 'ignore'
+[0.717s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/install) ignored
+[0.717s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/log) by extensions ['ignore', 'ignore_ament_install']
+[0.717s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/log) by extension 'ignore'
+[0.717s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/log) ignored
+[0.717s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.718s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface) by extension 'ignore'
+[0.718s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface) by extension 'ignore_ament_install'
+[0.718s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface) by extensions ['colcon_pkg']
+[0.718s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface) by extension 'colcon_pkg'
+[0.718s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface) by extensions ['colcon_meta']
+[0.718s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface) by extension 'colcon_meta'
+[0.718s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface) by extensions ['ros']
+[0.718s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface) by extension 'ros'
+[0.718s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface) by extensions ['cmake', 'python']
+[0.718s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface) by extension 'cmake'
+[0.718s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface) by extension 'python'
+[0.719s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface) by extensions ['python_setup_py']
+[0.719s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface) by extension 'python_setup_py'
+[0.719s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src) by extensions ['ignore', 'ignore_ament_install']
+[0.719s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src) by extension 'ignore'
+[0.719s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src) by extension 'ignore_ament_install'
+[0.719s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src) by extensions ['colcon_pkg']
+[0.719s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src) by extension 'colcon_pkg'
+[0.719s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src) by extensions ['colcon_meta']
+[0.719s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src) by extension 'colcon_meta'
+[0.719s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src) by extensions ['ros']
+[0.719s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src) by extension 'ros'
+[0.720s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src) by extensions ['cmake', 'python']
+[0.720s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src) by extension 'cmake'
+[0.720s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src) by extension 'python'
+[0.720s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src) by extensions ['python_setup_py']
+[0.720s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src) by extension 'python_setup_py'
+[0.720s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/game_controller_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.720s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/game_controller_interface) by extension 'ignore'
+[0.720s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/game_controller_interface) by extension 'ignore_ament_install'
+[0.720s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/game_controller_interface) by extensions ['colcon_pkg']
+[0.720s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/game_controller_interface) by extension 'colcon_pkg'
+[0.722s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/game_controller_interface) by extensions ['colcon_meta']
+[0.722s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/game_controller_interface) by extension 'colcon_meta'
+[0.722s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/game_controller_interface) by extensions ['ros']
+[0.722s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/game_controller_interface) by extension 'ros'
+[0.724s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/robocup_ros2_interface/src/game_controller_interface' with type 'ros.ament_cmake' and name 'game_controller_interface'[0m
+[0.724s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/vision_interface) by extensions ['ignore', 'ignore_ament_install']
+[0.724s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/vision_interface) by extension 'ignore'
+[0.724s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/vision_interface) by extension 'ignore_ament_install'
+[0.724s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/vision_interface) by extensions ['colcon_pkg']
+[0.724s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/vision_interface) by extension 'colcon_pkg'
+[0.724s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/vision_interface) by extensions ['colcon_meta']
+[0.724s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/vision_interface) by extension 'colcon_meta'
+[0.725s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/vision_interface) by extensions ['ros']
+[0.725s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/robocup_ros2_interface/src/vision_interface) by extension 'ros'
+[0.726s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/robocup_ros2_interface/src/vision_interface' with type 'ros.ament_cmake' and name 'vision_interface'[0m
+[0.726s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/sound_play) by extensions ['ignore', 'ignore_ament_install']
+[0.726s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/sound_play) by extension 'ignore'
+[0.726s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/sound_play) by extension 'ignore_ament_install'
+[0.727s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/sound_play) by extensions ['colcon_pkg']
+[0.727s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/sound_play) by extension 'colcon_pkg'
+[0.727s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/sound_play) by extensions ['colcon_meta']
+[0.727s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/sound_play) by extension 'colcon_meta'
+[0.727s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/sound_play) by extensions ['ros']
+[0.727s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/sound_play) by extension 'ros'
+[0.729s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/sound_play' with type 'ros.ament_python' and name 'sound_play'[0m
+[0.730s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision) by extensions ['ignore', 'ignore_ament_install']
+[0.730s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision) by extension 'ignore'
+[0.730s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision) by extension 'ignore_ament_install'
+[0.731s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision) by extensions ['colcon_pkg']
+[0.731s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision) by extension 'colcon_pkg'
+[0.731s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision) by extensions ['colcon_meta']
+[0.731s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision) by extension 'colcon_meta'
+[0.731s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision) by extensions ['ros']
+[0.731s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(src/vision) by extension 'ros'
+[0.733s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'src/vision' with type 'ros.ament_cmake' and name 'vision'[0m
+[0.733s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils) by extensions ['ignore', 'ignore_ament_install']
+[0.733s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils) by extension 'ignore'
+[0.734s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils) by extension 'ignore_ament_install'
+[0.734s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils) by extensions ['colcon_pkg']
+[0.734s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils) by extension 'colcon_pkg'
+[0.734s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils) by extensions ['colcon_meta']
+[0.734s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils) by extension 'colcon_meta'
+[0.734s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils) by extensions ['ros']
+[0.734s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils) by extension 'ros'
+[0.734s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils) by extensions ['cmake', 'python']
+[0.734s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils) by extension 'cmake'
+[0.734s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils) by extension 'python'
+[0.734s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils) by extensions ['python_setup_py']
+[0.734s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils) by extension 'python_setup_py'
+[0.735s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils/service) by extensions ['ignore', 'ignore_ament_install']
+[0.735s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils/service) by extension 'ignore'
+[0.735s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils/service) by extension 'ignore_ament_install'
+[0.735s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils/service) by extensions ['colcon_pkg']
+[0.735s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils/service) by extension 'colcon_pkg'
+[0.735s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils/service) by extensions ['colcon_meta']
+[0.735s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils/service) by extension 'colcon_meta'
+[0.735s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils/service) by extensions ['ros']
+[0.735s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils/service) by extension 'ros'
+[0.735s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils/service) by extensions ['cmake', 'python']
+[0.735s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils/service) by extension 'cmake'
+[0.736s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils/service) by extension 'python'
+[0.736s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils/service) by extensions ['python_setup_py']
+[0.736s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(utils/service) by extension 'python_setup_py'
+[0.736s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) using defaults
+[0.736s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) discover
+[0.736s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) using defaults
+[0.736s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) discover
+[0.736s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) using defaults
+[0.799s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) check parameters
+[0.799s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) discover
+[0.803s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 281 installed packages in /opt/ros/humble[0m
+[0.805s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) using defaults
+[0.866s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_interface' build argument 'cmake_args' from command line to 'None'
+[0.866s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_interface' build argument 'cmake_target' from command line to 'None'
+[0.866s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_interface' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.866s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_interface' build argument 'cmake_clean_cache' from command line to 'False'
+[0.866s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_interface' build argument 'cmake_clean_first' from command line to 'False'
+[0.866s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_interface' build argument 'cmake_force_configure' from command line to 'False'
+[0.866s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_interface' build argument 'ament_cmake_args' from command line to 'None'
+[0.866s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_interface' build argument 'catkin_cmake_args' from command line to 'None'
+[0.866s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_interface' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.866s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'booster_interface' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface', 'merge_install': False, 'path': '/home/booster/Workspace/Booster_T1_3v3_Demo/src/booster_ros2_interface', 'symlink_install': True, 'test_result_base': None}[0m
+[0.867s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_msgs' build argument 'cmake_args' from command line to 'None'
+[0.867s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_msgs' build argument 'cmake_target' from command line to 'None'
+[0.867s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.867s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.867s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.867s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.867s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.867s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.868s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'booster_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.868s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'booster_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs', 'merge_install': False, 'path': '/home/booster/Workspace/Booster_T1_3v3_Demo/src/booster_msgs', 'symlink_install': True, 'test_result_base': None}[0m
+[0.868s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller_interface' build argument 'cmake_args' from command line to 'None'
+[0.868s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller_interface' build argument 'cmake_target' from command line to 'None'
+[0.868s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller_interface' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.868s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller_interface' build argument 'cmake_clean_cache' from command line to 'False'
+[0.868s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller_interface' build argument 'cmake_clean_first' from command line to 'False'
+[0.868s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller_interface' build argument 'cmake_force_configure' from command line to 'False'
+[0.868s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller_interface' build argument 'ament_cmake_args' from command line to 'None'
+[0.868s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller_interface' build argument 'catkin_cmake_args' from command line to 'None'
+[0.868s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller_interface' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.869s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'game_controller_interface' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller_interface', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface', 'merge_install': False, 'path': '/home/booster/Workspace/Booster_T1_3v3_Demo/src/robocup_ros2_interface/src/game_controller_interface', 'symlink_install': True, 'test_result_base': None}[0m
+[0.870s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'sound_play' build argument 'cmake_args' from command line to 'None'
+[0.870s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'sound_play' build argument 'cmake_target' from command line to 'None'
+[0.870s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'sound_play' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.870s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'sound_play' build argument 'cmake_clean_cache' from command line to 'False'
+[0.870s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'sound_play' build argument 'cmake_clean_first' from command line to 'False'
+[0.870s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'sound_play' build argument 'cmake_force_configure' from command line to 'False'
+[0.870s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'sound_play' build argument 'ament_cmake_args' from command line to 'None'
+[0.870s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'sound_play' build argument 'catkin_cmake_args' from command line to 'None'
+[0.870s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'sound_play' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.870s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'sound_play' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play', 'merge_install': False, 'path': '/home/booster/Workspace/Booster_T1_3v3_Demo/src/sound_play', 'symlink_install': True, 'test_result_base': None}[0m
+[0.871s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_interface' build argument 'cmake_args' from command line to 'None'
+[0.871s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_interface' build argument 'cmake_target' from command line to 'None'
+[0.871s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_interface' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.871s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_interface' build argument 'cmake_clean_cache' from command line to 'False'
+[0.871s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_interface' build argument 'cmake_clean_first' from command line to 'False'
+[0.871s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_interface' build argument 'cmake_force_configure' from command line to 'False'
+[0.871s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_interface' build argument 'ament_cmake_args' from command line to 'None'
+[0.871s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_interface' build argument 'catkin_cmake_args' from command line to 'None'
+[0.871s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision_interface' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.871s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'vision_interface' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface', 'merge_install': False, 'path': '/home/booster/Workspace/Booster_T1_3v3_Demo/src/robocup_ros2_interface/src/vision_interface', 'symlink_install': True, 'test_result_base': None}[0m
+[0.872s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'brain' build argument 'cmake_args' from command line to 'None'
+[0.872s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'brain' build argument 'cmake_target' from command line to 'None'
+[0.872s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'brain' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.872s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'brain' build argument 'cmake_clean_cache' from command line to 'False'
+[0.872s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'brain' build argument 'cmake_clean_first' from command line to 'False'
+[0.872s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'brain' build argument 'cmake_force_configure' from command line to 'False'
+[0.872s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'brain' build argument 'ament_cmake_args' from command line to 'None'
+[0.872s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'brain' build argument 'catkin_cmake_args' from command line to 'None'
+[0.872s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'brain' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.872s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'brain' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/build/brain', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain', 'merge_install': False, 'path': '/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain', 'symlink_install': True, 'test_result_base': None}[0m
+[0.873s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller' build argument 'cmake_args' from command line to 'None'
+[0.873s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller' build argument 'cmake_target' from command line to 'None'
+[0.873s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.873s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller' build argument 'cmake_clean_cache' from command line to 'False'
+[0.873s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller' build argument 'cmake_clean_first' from command line to 'False'
+[0.873s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller' build argument 'cmake_force_configure' from command line to 'False'
+[0.873s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller' build argument 'ament_cmake_args' from command line to 'None'
+[0.873s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller' build argument 'catkin_cmake_args' from command line to 'None'
+[0.873s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'game_controller' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.873s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'game_controller' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller', 'merge_install': False, 'path': '/home/booster/Workspace/Booster_T1_3v3_Demo/src/game_controller', 'symlink_install': True, 'test_result_base': None}[0m
+[0.874s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision' build argument 'cmake_args' from command line to 'None'
+[0.874s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision' build argument 'cmake_target' from command line to 'None'
+[0.874s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.874s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision' build argument 'cmake_clean_cache' from command line to 'False'
+[0.874s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision' build argument 'cmake_clean_first' from command line to 'False'
+[0.874s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision' build argument 'cmake_force_configure' from command line to 'False'
+[0.874s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision' build argument 'ament_cmake_args' from command line to 'None'
+[0.874s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision' build argument 'catkin_cmake_args' from command line to 'None'
+[0.874s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'vision' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.874s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'vision' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision', 'merge_install': False, 'path': '/home/booster/Workspace/Booster_T1_3v3_Demo/src/vision', 'symlink_install': True, 'test_result_base': None}[0m
+[0.874s] [34mcolcon.colcon_core.executor[0m [1;30mINFO[0m Executing jobs using 'parallel' executor
+[0.876s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete[0m
+[0.876s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/robocup_ros2_interface/src/game_controller_interface' with build type 'ament_cmake'
+[0.877s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/robocup_ros2_interface/src/game_controller_interface'
+[0.880s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.880s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.881s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.893s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/robocup_ros2_interface/src/vision_interface' with build type 'ament_cmake'
+[0.893s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/robocup_ros2_interface/src/vision_interface'
+[0.894s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.894s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.900s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/booster_ros2_interface' with build type 'ament_cmake'
+[0.900s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/booster_ros2_interface'
+[0.900s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.900s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.906s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/booster_msgs' with build type 'ament_cmake'
+[0.906s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/booster_msgs'
+[0.907s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.907s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.912s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/sound_play' with build type 'ament_python'
+[0.912s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('sound_play', 'ament_prefix_path')
+[0.913s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/share/sound_play/hook/ament_prefix_path.ps1'
+[0.914s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/share/sound_play/hook/ament_prefix_path.dsv'
+[0.915s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/share/sound_play/hook/ament_prefix_path.sh'
+[0.917s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.917s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.930s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller_interface -- -j5 -l5[0m
+[0.938s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface -- -j5 -l5[0m
+[0.949s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface -- -j5 -l5[0m
+[0.955s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs -- -j5 -l5[0m
+[1.872s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/sound_play'
+[1.873s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.873s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[3.090s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play': PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play/build --no-deps symlink_data[0m
+[3.822s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller_interface -- -j5 -l5[0m
+[3.853s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller_interface[0m
+[4.019s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface -- -j5 -l5[0m
+[4.021s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface[0m
+[4.060s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(game_controller_interface)
+[4.071s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller_interface[0m
+[4.074s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface' for CMake module files
+[4.076s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface' for CMake config files
+[4.078s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('game_controller_interface', 'cmake_prefix_path')
+[4.080s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/hook/cmake_prefix_path.ps1'
+[4.082s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/hook/cmake_prefix_path.dsv'
+[4.084s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/hook/cmake_prefix_path.sh'
+[4.088s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib'
+[4.092s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('game_controller_interface', 'ld_library_path_lib')
+[4.092s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/hook/ld_library_path_lib.ps1'
+[4.098s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/hook/ld_library_path_lib.dsv'
+[4.100s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/hook/ld_library_path_lib.sh'
+[4.103s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/bin'
+[4.105s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib/pkgconfig/game_controller_interface.pc'
+[4.106s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib/python3.10/site-packages'
+[4.106s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/bin'
+[4.112s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/package.ps1'
+[4.125s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/package.dsv'
+[4.149s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/package.sh'
+[4.157s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/package.bash'
+[4.165s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/package.zsh'
+[4.173s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/colcon-core/packages/game_controller_interface)
+[4.180s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(game_controller_interface)
+[4.183s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface' for CMake module files
+[4.189s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface' for CMake config files
+[4.205s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('game_controller_interface', 'cmake_prefix_path')
+[4.208s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/hook/cmake_prefix_path.ps1'
+[4.216s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/hook/cmake_prefix_path.dsv'
+[4.222s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/hook/cmake_prefix_path.sh'
+[4.226s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib'
+[4.227s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('game_controller_interface', 'ld_library_path_lib')
+[4.228s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/hook/ld_library_path_lib.ps1'
+[4.236s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/hook/ld_library_path_lib.dsv'
+[4.237s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/hook/ld_library_path_lib.sh'
+[4.239s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/bin'
+[4.241s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib/pkgconfig/game_controller_interface.pc'
+[4.242s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib/python3.10/site-packages'
+[4.244s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/bin'
+[4.245s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/package.ps1'
+[4.249s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/package.dsv'
+[4.260s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/package.sh'
+[4.273s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/package.bash'
+[4.276s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/game_controller_interface/package.zsh'
+[4.277s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/share/colcon-core/packages/game_controller_interface)
+[4.282s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/game_controller' with build type 'ament_cmake'
+[4.282s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/game_controller'
+[4.283s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.285s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[4.361s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface -- -j5 -l5[0m
+[4.363s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface[0m
+[4.389s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs -- -j5 -l5[0m
+[4.391s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs[0m
+[4.416s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller -- -j5 -l5[0m
+[4.629s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(vision_interface)
+[4.630s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface' for CMake module files
+[4.632s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface' for CMake config files
+[4.640s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('vision_interface', 'cmake_prefix_path')
+[4.640s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/hook/cmake_prefix_path.ps1'
+[4.643s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/hook/cmake_prefix_path.dsv'
+[4.644s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/hook/cmake_prefix_path.sh'
+[4.647s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib'
+[4.653s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('vision_interface', 'ld_library_path_lib')
+[4.655s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/hook/ld_library_path_lib.ps1'
+[4.661s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/hook/ld_library_path_lib.dsv'
+[4.669s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/hook/ld_library_path_lib.sh'
+[4.674s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/bin'
+[4.674s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib/pkgconfig/vision_interface.pc'
+[4.675s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib/python3.10/site-packages'
+[4.677s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/bin'
+[4.679s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/package.ps1'
+[4.686s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/package.dsv'
+[4.698s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/package.sh'
+[4.706s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/package.bash'
+[4.713s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/package.zsh'
+[4.719s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/colcon-core/packages/vision_interface)
+[4.732s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision_interface[0m
+[4.739s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(vision_interface)
+[4.740s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface' for CMake module files
+[4.744s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface' for CMake config files
+[4.776s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('vision_interface', 'cmake_prefix_path')
+[4.778s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/hook/cmake_prefix_path.ps1'
+[4.783s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/hook/cmake_prefix_path.dsv'
+[4.817s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/hook/cmake_prefix_path.sh'
+[4.822s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib'
+[4.824s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('vision_interface', 'ld_library_path_lib')
+[4.827s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/hook/ld_library_path_lib.ps1'
+[4.832s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/hook/ld_library_path_lib.dsv'
+[4.836s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/hook/ld_library_path_lib.sh'
+[4.840s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/bin'
+[4.841s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib/pkgconfig/vision_interface.pc'
+[4.842s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib/python3.10/site-packages'
+[4.844s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/bin'
+[4.847s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/package.ps1'
+[4.892s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/package.dsv'
+[4.895s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/package.sh'
+[4.899s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/package.bash'
+[4.901s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/vision_interface/package.zsh'
+[4.902s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/share/colcon-core/packages/vision_interface)
+[4.905s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/vision' with build type 'ament_cmake'
+[4.906s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/vision'
+[4.907s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.907s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[4.927s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(booster_msgs)
+[4.928s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs' for CMake module files
+[4.933s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_msgs[0m
+[4.942s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs' for CMake config files
+[4.945s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('booster_msgs', 'cmake_prefix_path')
+[4.946s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/hook/cmake_prefix_path.ps1'
+[4.948s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/hook/cmake_prefix_path.dsv'
+[4.949s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/hook/cmake_prefix_path.sh'
+[4.951s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib'
+[4.951s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('booster_msgs', 'ld_library_path_lib')
+[4.951s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/hook/ld_library_path_lib.ps1'
+[4.953s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/hook/ld_library_path_lib.dsv'
+[4.954s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/hook/ld_library_path_lib.sh'
+[4.959s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/bin'
+[4.959s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib/pkgconfig/booster_msgs.pc'
+[4.959s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib/python3.10/site-packages'
+[4.960s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/bin'
+[4.961s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/package.ps1'
+[4.963s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/package.dsv'
+[4.965s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/package.sh'
+[4.966s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/package.bash'
+[4.967s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/package.zsh'
+[4.968s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/colcon-core/packages/booster_msgs)
+[4.970s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(booster_msgs)
+[4.970s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs' for CMake module files
+[4.971s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs' for CMake config files
+[4.973s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('booster_msgs', 'cmake_prefix_path')
+[4.974s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/hook/cmake_prefix_path.ps1'
+[4.975s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/hook/cmake_prefix_path.dsv'
+[4.976s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/hook/cmake_prefix_path.sh'
+[4.977s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib'
+[4.978s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('booster_msgs', 'ld_library_path_lib')
+[4.979s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/hook/ld_library_path_lib.ps1'
+[4.979s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/hook/ld_library_path_lib.dsv'
+[4.980s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/hook/ld_library_path_lib.sh'
+[4.981s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/bin'
+[4.981s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib/pkgconfig/booster_msgs.pc'
+[5.000s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib/python3.10/site-packages'
+[5.005s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/bin'
+[5.007s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/package.ps1'
+[5.009s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/package.dsv'
+[5.011s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/package.sh'
+[5.013s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/package.bash'
+[5.018s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/booster_msgs/package.zsh'
+[5.024s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/share/colcon-core/packages/booster_msgs)
+[5.032s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(booster_interface)
+[5.033s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface' for CMake module files
+[5.035s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface' for CMake config files
+[5.036s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/booster_interface[0m
+[5.040s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('booster_interface', 'cmake_prefix_path')
+[5.040s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/hook/cmake_prefix_path.ps1'
+[5.041s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/hook/cmake_prefix_path.dsv'
+[5.042s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/hook/cmake_prefix_path.sh'
+[5.043s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib'
+[5.044s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('booster_interface', 'ld_library_path_lib')
+[5.044s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/hook/ld_library_path_lib.ps1'
+[5.045s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/hook/ld_library_path_lib.dsv'
+[5.046s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/hook/ld_library_path_lib.sh'
+[5.047s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/bin'
+[5.047s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib/pkgconfig/booster_interface.pc'
+[5.048s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib/python3.10/site-packages'
+[5.049s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/bin'
+[5.049s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/package.ps1'
+[5.051s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/package.dsv'
+[5.051s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/package.sh'
+[5.052s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/package.bash'
+[5.066s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/package.zsh'
+[5.067s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/colcon-core/packages/booster_interface)
+[5.068s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(booster_interface)
+[5.068s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface' for CMake module files
+[5.069s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface' for CMake config files
+[5.075s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('booster_interface', 'cmake_prefix_path')
+[5.076s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/hook/cmake_prefix_path.ps1'
+[5.077s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/hook/cmake_prefix_path.dsv'
+[5.078s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/hook/cmake_prefix_path.sh'
+[5.079s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib'
+[5.079s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('booster_interface', 'ld_library_path_lib')
+[5.080s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/hook/ld_library_path_lib.ps1'
+[5.080s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/hook/ld_library_path_lib.dsv'
+[5.081s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/hook/ld_library_path_lib.sh'
+[5.082s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/bin'
+[5.082s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib/pkgconfig/booster_interface.pc'
+[5.082s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib/python3.10/site-packages'
+[5.083s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/bin'
+[5.083s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/package.ps1'
+[5.084s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/package.dsv'
+[5.085s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/package.sh'
+[5.086s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/package.bash'
+[5.087s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/booster_interface/package.zsh'
+[5.088s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/share/colcon-core/packages/booster_interface)
+[5.093s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller' returned '0': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller -- -j5 -l5[0m
+[5.094s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller[0m
+[5.097s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain' with build type 'ament_cmake'
+[5.097s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain'
+[5.097s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.098s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[5.144s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision -- -j5 -l5[0m
+[5.156s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('sound_play', 'pythonpath_develop')
+[5.157s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play/share/sound_play/hook/pythonpath_develop.ps1'
+[5.158s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play' returned '0': PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play/build --no-deps symlink_data[0m
+[5.160s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play/share/sound_play/hook/pythonpath_develop.dsv'
+[5.161s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/build/sound_play/share/sound_play/hook/pythonpath_develop.sh'
+[5.167s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play' for CMake module files
+[5.167s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play' for CMake config files
+[5.169s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/lib'
+[5.169s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/bin'
+[5.170s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/lib/pkgconfig/sound_play.pc'
+[5.170s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/lib/python3.10/site-packages'
+[5.170s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('sound_play', 'pythonpath')
+[5.171s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/share/sound_play/hook/pythonpath.ps1'
+[5.172s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/share/sound_play/hook/pythonpath.dsv'
+[5.172s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/share/sound_play/hook/pythonpath.sh'
+[5.173s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/bin'
+[5.173s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(sound_play)
+[5.174s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/share/sound_play/package.ps1'
+[5.175s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/share/sound_play/package.dsv'
+[5.176s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/share/sound_play/package.sh'
+[5.177s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/share/sound_play/package.bash'
+[5.178s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/share/sound_play/package.zsh'
+[5.178s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/sound_play/share/colcon-core/packages/sound_play)
+[5.185s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(game_controller)
+[5.185s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller' for CMake module files
+[5.188s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller' for CMake config files
+[5.189s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('game_controller', 'cmake_prefix_path')
+[5.189s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/hook/cmake_prefix_path.ps1'
+[5.190s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/hook/cmake_prefix_path.dsv'
+[5.192s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/hook/cmake_prefix_path.sh'
+[5.193s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/lib'
+[5.193s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/bin'
+[5.193s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/lib/pkgconfig/game_controller.pc'
+[5.194s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/lib/python3.10/site-packages'
+[5.194s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/bin'
+[5.195s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/package.ps1'
+[5.196s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/package.dsv'
+[5.197s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/brain': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/brain -- -j5 -l5[0m
+[5.200s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/package.sh'
+[5.202s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/package.bash'
+[5.202s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller' returned '0': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller[0m
+[5.204s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/package.zsh'
+[5.205s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/colcon-core/packages/game_controller)
+[5.206s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(game_controller)
+[5.207s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller' for CMake module files
+[5.208s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller' for CMake config files
+[5.208s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('game_controller', 'cmake_prefix_path')
+[5.209s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/hook/cmake_prefix_path.ps1'
+[5.210s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/hook/cmake_prefix_path.dsv'
+[5.211s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/hook/cmake_prefix_path.sh'
+[5.213s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/lib'
+[5.213s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/bin'
+[5.213s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/lib/pkgconfig/game_controller.pc'
+[5.214s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/lib/python3.10/site-packages'
+[5.214s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/bin'
+[5.215s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/package.ps1'
+[5.216s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/package.dsv'
+[5.217s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/package.sh'
+[5.218s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/package.bash'
+[5.219s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/game_controller/package.zsh'
+[5.220s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller/share/colcon-core/packages/game_controller)
+[6.075s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision' returned '0': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision -- -j5 -l5[0m
+[6.085s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision[0m
+[6.149s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(vision)
+[6.150s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision' for CMake module files
+[6.151s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/vision' returned '0': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/vision[0m
+[6.153s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision' for CMake config files
+[6.159s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('vision', 'cmake_prefix_path')
+[6.160s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/hook/cmake_prefix_path.ps1'
+[6.164s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/hook/cmake_prefix_path.dsv'
+[6.165s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/hook/cmake_prefix_path.sh'
+[6.168s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib'
+[6.169s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('vision', 'ld_library_path_lib')
+[6.170s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/hook/ld_library_path_lib.ps1'
+[6.171s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/hook/ld_library_path_lib.dsv'
+[6.172s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/hook/ld_library_path_lib.sh'
+[6.174s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/bin'
+[6.174s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/pkgconfig/vision.pc'
+[6.175s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/python3.10/site-packages'
+[6.175s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/bin'
+[6.191s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/package.ps1'
+[6.195s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/package.dsv'
+[6.196s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/package.sh'
+[6.201s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/package.bash'
+[6.206s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/package.zsh'
+[6.207s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/colcon-core/packages/vision)
+[6.209s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(vision)
+[6.209s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision' for CMake module files
+[6.210s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision' for CMake config files
+[6.211s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('vision', 'cmake_prefix_path')
+[6.212s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/hook/cmake_prefix_path.ps1'
+[6.213s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/hook/cmake_prefix_path.dsv'
+[6.214s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/hook/cmake_prefix_path.sh'
+[6.216s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib'
+[6.216s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('vision', 'ld_library_path_lib')
+[6.217s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/hook/ld_library_path_lib.ps1'
+[6.219s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/hook/ld_library_path_lib.dsv'
+[6.220s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/hook/ld_library_path_lib.sh'
+[6.223s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/bin'
+[6.223s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/pkgconfig/vision.pc'
+[6.224s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/python3.10/site-packages'
+[6.225s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/bin'
+[6.227s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/package.ps1'
+[6.230s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/package.dsv'
+[6.232s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/package.sh'
+[6.235s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/package.bash'
+[6.236s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/vision/package.zsh'
+[6.238s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/share/colcon-core/packages/vision)
+[55.165s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/brain' returned '0': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/booster/Workspace/Booster_T1_3v3_Demo/build/brain -- -j5 -l5[0m
+[55.170s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/brain': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/brain[0m
+[55.336s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(brain)
+[55.337s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain' for CMake module files
+[55.339s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/booster/Workspace/Booster_T1_3v3_Demo/build/brain' returned '0': AMENT_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface:/opt/ros/humble LD_LIBRARY_PATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/lib:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/game_controller_interface/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_msgs/local/lib/python3.10/dist-packages:/home/booster/Workspace/Booster_T1_3v3_Demo/install/booster_interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/booster/Workspace/Booster_T1_3v3_Demo/build/brain[0m
+[55.340s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain' for CMake config files
+[55.341s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('brain', 'cmake_prefix_path')
+[55.342s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/hook/cmake_prefix_path.ps1'
+[55.343s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/hook/cmake_prefix_path.dsv'
+[55.344s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/hook/cmake_prefix_path.sh'
+[55.353s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib'
+[55.353s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('brain', 'ld_library_path_lib')
+[55.354s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/hook/ld_library_path_lib.ps1'
+[55.358s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/hook/ld_library_path_lib.dsv'
+[55.362s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/hook/ld_library_path_lib.sh'
+[55.365s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/bin'
+[55.365s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib/pkgconfig/brain.pc'
+[55.366s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib/python3.10/site-packages'
+[55.366s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/bin'
+[55.367s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/package.ps1'
+[55.368s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/package.dsv'
+[55.372s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/package.sh'
+[55.375s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/package.bash'
+[55.377s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/package.zsh'
+[55.379s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/colcon-core/packages/brain)
+[55.381s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(brain)
+[55.382s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain' for CMake module files
+[55.384s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain' for CMake config files
+[55.386s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('brain', 'cmake_prefix_path')
+[55.391s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/hook/cmake_prefix_path.ps1'
+[55.393s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/hook/cmake_prefix_path.dsv'
+[55.394s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/hook/cmake_prefix_path.sh'
+[55.397s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib'
+[55.398s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('brain', 'ld_library_path_lib')
+[55.399s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/hook/ld_library_path_lib.ps1'
+[55.402s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/hook/ld_library_path_lib.dsv'
+[55.404s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/hook/ld_library_path_lib.sh'
+[55.406s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/bin'
+[55.406s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib/pkgconfig/brain.pc'
+[55.406s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/lib/python3.10/site-packages'
+[55.407s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/bin'
+[55.408s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/package.ps1'
+[55.410s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/package.dsv'
+[55.412s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/package.sh'
+[55.414s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/package.bash'
+[55.416s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/brain/package.zsh'
+[55.417s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/booster/Workspace/Booster_T1_3v3_Demo/install/brain/share/colcon-core/packages/brain)
+[55.418s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mclosing loop[0m
+[55.419s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mloop closed[0m
+[55.419s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete finished with '0'[0m
+[55.420s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoining thread[0m
+[55.440s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[55.441s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[55.441s] [34mcolcon.colcon_notification.desktop_notification[0m [1;30mINFO[0m Sending desktop notification using 'notify2'
+[55.441s] [34mcolcon.colcon_notification.desktop_notification.notify2[0m [1;30mDEBUG[0m [32mFailed to initialize notify2: org.freedesktop.DBus.Error.NotSupported: Unable to autolaunch a dbus-daemon without a $DISPLAY for X11[0m
+[55.442s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoined thread[0m
+[55.442s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/local_setup.ps1'
+[55.444s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/booster/Workspace/Booster_T1_3v3_Demo/install/_local_setup_util_ps1.py'
+[55.448s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/setup.ps1'
+[55.450s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/local_setup.sh'
+[55.452s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/booster/Workspace/Booster_T1_3v3_Demo/install/_local_setup_util_sh.py'
+[55.457s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/setup.sh'
+[55.460s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/local_setup.bash'
+[55.460s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/setup.bash'
+[55.462s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/local_setup.zsh'
+[55.463s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/booster/Workspace/Booster_T1_3v3_Demo/install/setup.zsh'

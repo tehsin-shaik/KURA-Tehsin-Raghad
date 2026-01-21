@@ -1,0 +1,38 @@
+[  2%] Built target brain__cpp
+[  2%] Built target ament_cmake_python_symlink_brain
+[  9%] Built target brain__rosidl_typesupport_introspection_cpp
+running egg_info
+writing brain.egg-info/PKG-INFO
+writing dependency_links to brain.egg-info/dependency_links.txt
+writing top-level names to brain.egg-info/top_level.txt
+reading manifest file 'brain.egg-info/SOURCES.txt'
+writing manifest file 'brain.egg-info/SOURCES.txt'
+[  9%] Built target ament_cmake_python_build_brain_egg
+[ 17%] Built target brain__rosidl_typesupport_fastrtps_cpp
+[ 24%] Built target brain__rosidl_typesupport_cpp
+[ 31%] Built target brain__rosidl_generator_c
+[35m[1mConsolidate compiler generated dependencies of target brain_node[0m
+[ 34%] [32mBuilding CXX object CMakeFiles/brain_node.dir/src/brain_tree.cpp.o[0m
+[01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus GoToReadyPosition::tick()[m[K’:
+[01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:2424:5:[m[K [01;31m[Kerror: [m[K‘[01m[KsetEntry[m[K’ was not declared in this scope
+ 2424 |     [01;31m[KsetEntry[m[K<bool>("is_ready", true); // yaman
+      |     [01;31m[K^~~~~~~~[m[K
+[01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:2424:14:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kbool[m[K’
+ 2424 |     setEntry<[01;31m[Kbool[m[K>("is_ready", true); // yaman
+      |              [01;31m[K^~~~[m[K
+[01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus Y_Keeper::tick()[m[K’:
+[01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:2831:23:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around assignment used as truth value [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;[m[K]
+ 2831 |              if ([01;35m[KtmID = brain->config->playerId[m[K)
+      |                  [01;35m[K~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:64[m[K,
+                 from [01m[K/usr/include/c++/11/bits/specfun.h:45[m[K,
+                 from [01m[K/usr/include/c++/11/cmath:1935[m[K,
+                 from [01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:1[m[K:
+/usr/include/c++/11/bits/stl_pair.h: In instantiation of ‘[01m[Kconstexpr std::pair<typename std::__strip_reference_wrapper<typename std::decay<_Tp>::type>::__type, typename std::__strip_reference_wrapper<typename std::decay<_Tp2>::type>::__type> std::make_pair(_T1&&, _T2&&) [with _T1 = double; _T2 = const double&; typename std::__strip_reference_wrapper<typename std::decay<_Tp2>::type>::__type = double; typename std::decay<_Tp2>::type = double; typename std::__strip_reference_wrapper<typename std::decay<_Tp>::type>::__type = double; typename std::decay<_Tp>::type = double][m[K’:
+[01m[K/home/booster/Workspace/Booster_T1_3v3_Demo/src/brain/src/brain_tree.cpp:3105:26:[m[K   required from here
+[01m[K/usr/include/c++/11/bits/stl_pair.h:567:5:[m[K [01;36m[Knote: [m[Kparameter passing for argument of type ‘[01m[Kstd::pair<double, double>[m[K’ when C++17 is enabled changed to match C++14 ]8;;https://gcc.gnu.org/gcc-10/changes.html#empty_basein GCC 10.1]8;;
+  567 |     [01;36m[Kmake_pair[m[K(_T1&& __x, _T2&& __y)
+      |     [01;36m[K^~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/brain_node.dir/build.make:146: CMakeFiles/brain_node.dir/src/brain_tree.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:593: CMakeFiles/brain_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

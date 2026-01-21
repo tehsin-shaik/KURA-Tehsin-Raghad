@@ -1,0 +1,3 @@
+[console_scripts]
+sound_play_node = sound_play.sound_play_node:main
+

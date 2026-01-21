@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/booster/Workspace/Booster_T1_3v3_Demo/build/game_controller/game_controller_node" "TARGETS" "game_controller_node" "DESTINATION" "lib/game_controller")
