@@ -1,9 +1,0 @@
-[  2%] Built target booster_msgs__cpp
-[  2%] Built target ament_cmake_python_symlink_booster_msgs
-[ 12%] Built target booster_msgs__rosidl_typesupport_cpp
-running egg_info
-writing booster_msgs.egg-info/PKG-INFO
-writing dependency_links to booster_msgs.egg-info/dependency_links.txt
-writing top-level names to booster_msgs.egg-info/top_level.txt
-reading manifest file 'booster_msgs.egg-info/SOURCES.txt'
-writing manifest file 'booster_msgs.egg-info/SOURCES.txt'

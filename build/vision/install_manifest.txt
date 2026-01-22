@@ -1,3 +1,0 @@
-/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/libceres.so
-/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/libceres.so.4
-/home/booster/Workspace/Booster_T1_3v3_Demo/install/vision/lib/libceres.so.2.2.0

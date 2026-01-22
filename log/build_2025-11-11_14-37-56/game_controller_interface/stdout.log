@@ -1,9 +1,0 @@
-[  2%] Built target game_controller_interface__cpp
-[  2%] Built target ament_cmake_python_symlink_game_controller_interface
-[ 12%] Built target game_controller_interface__rosidl_typesupport_introspection_cpp
-running egg_info
-writing game_controller_interface.egg-info/PKG-INFO
-writing dependency_links to game_controller_interface.egg-info/dependency_links.txt
-writing top-level names to game_controller_interface.egg-info/top_level.txt
-reading manifest file 'game_controller_interface.egg-info/SOURCES.txt'
-writing manifest file 'game_controller_interface.egg-info/SOURCES.txt'
