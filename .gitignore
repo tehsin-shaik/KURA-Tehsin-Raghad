@@ -1,0 +1,14 @@
+build/
+install/
+log/
+.vscode/
+logs/
+__pycache__/
+venv
+.ipynb_checkpoints/
+.env
+venvs
+1-files
+site/
+joystick.log
+vision.log
