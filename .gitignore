@@ -12,3 +12,8 @@ venvs
 site/
 joystick.log
 vision.log
+src/GPATH
+src/GRTAGS
+src/GTAGS
+
+
