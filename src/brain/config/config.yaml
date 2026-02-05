@@ -13,9 +13,9 @@ brain_node:
       odom_factor: 1.2 
       vx_factor: 0.50 
       yaw_offset: 0.0 
-      vx_limit: 1.2 
-      vy_limit: 0.4
-      vtheta_limit: 1.2 
+      vx_limit: 1.5 
+      vy_limit: 0.6
+      vtheta_limit: 1.4 
       kick_api_id: 100012
       kick_body: "{\"kick_speed\":2.5,\"kick_dir\":0.0}"
 
@@ -86,3 +86,4 @@ brain_node:
     sound:
       enable: false 
       sound_pack: "espeak" 
+
