@@ -13,7 +13,7 @@
             <RunOnce><Script code="control_state=3" /></RunOnce>
             <ReactiveSequence _while="control_state==1 || assist_kick || go_manual || assist_chase" >
                 <Speak text="manual" />
-                <SimpleChase _while="assist_chase" vx_limit="1.5" vy_limit="0.15" stop_dist="0.0" stop_angle="0.3" />
+                <SimpleChase _while="assist_chase" vx_limit="1.5" vy_limit="0.2" stop_dist="0.0" stop_angle="0.3" />
                 <Sequence _while="assist_kick">
                     <Kick speed_limit="2.2" min_msec_kick="900"/>
                </Sequence>
