@@ -92,6 +92,12 @@ public:
     bool soundEnable = false;
     string soundPack = "espeak";
 
+    bool whistleEnable = false;
+    string whistleTopic = "/whistle_detection/detected";
+    double whistleMemoryMsecs = 2000.0;
+    bool whistleOverrideGameController = true;
+    bool whistlePlaySound = false;
+
     void calcMapLines();
     void calcMapMarkings();
 

@@ -5,6 +5,7 @@
 #include <rerun.hpp>
 #include <opencv2/opencv.hpp>
 #include <std_msgs/msg/string.hpp>
+#include <std_msgs/msg/bool.hpp>
 #include <sensor_msgs/msg/joy.hpp>
 #include <sensor_msgs/msg/image.hpp>
 #include <geometry_msgs/msg/pose.hpp>
@@ -158,6 +159,7 @@ public:
     void headPoseCallback(const geometry_msgs::msg::Pose &msg);
 
     void recoveryStateCallback(const booster_interface::msg::RawBytesMsg &msg);
+    void whistleDetectionCallback(const std_msgs::msg::Bool &msg);
 
     void updateRelativePos(GameObject &obj);
 
@@ -245,6 +247,7 @@ private:
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr depthImageSubscription;
     rclcpp::Subscription<geometry_msgs::msg::Pose>::SharedPtr headPoseSubscription;
     rclcpp::Subscription<booster_interface::msg::RawBytesMsg>::SharedPtr recoveryStateSubscription;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr whistleDetectionSubscription;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr pubSoundPlay;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr pubSpeak;
     rclcpp::TimerBase::SharedPtr timer_;

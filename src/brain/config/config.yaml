@@ -87,3 +87,10 @@ brain_node:
       enable: false 
       sound_pack: "espeak" 
 
+    whistle:
+      enable: false
+      topic: "/whistle_detection/detected"
+      memory_msecs: 2000.0
+      override_game_controller: true
+      play_sound: false
+

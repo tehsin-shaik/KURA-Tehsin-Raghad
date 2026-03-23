@@ -111,6 +111,11 @@ Brain::Brain() : rclcpp::Node("brain_node")
 
     declare_parameter<bool>("sound.enable", false);
     declare_parameter<string>("sound.sound_pack", "espeak");
+    declare_parameter<bool>("whistle.enable", false);
+    declare_parameter<string>("whistle.topic", "/whistle_detection/detected");
+    declare_parameter<double>("whistle.memory_msecs", 2000.0);
+    declare_parameter<bool>("whistle.override_game_controller", true);
+    declare_parameter<bool>("whistle.play_sound", false);
 
     declare_parameter<string>("vision.image_topic", "/camera/camera/color/image_raw");
     declare_parameter<string>("vision.depth_image_topic", "/camera/camera/aligned_depth_to_color/image_raw");
@@ -166,6 +171,7 @@ void Brain::init()
     data->timeLastLineDet = get_clock()->now();
     data->timeLastGamecontrolMsg = get_clock()->now();
     data->ball.timePoint = get_clock()->now();
+    data->lastWhistleTime = rclcpp::Time(0, 0, get_clock()->get_clock_type());
 
     
     auto now = get_clock()->now();
@@ -182,6 +188,12 @@ void Brain::init()
     lowStateSubscription = create_subscription<booster_interface::msg::LowState>("/low_state", SUB_STATE_QUEUE_SIZE, bind(&Brain::lowStateCallback, this, _1));
     headPoseSubscription = create_subscription<geometry_msgs::msg::Pose>("/head_pose", SUB_STATE_QUEUE_SIZE, bind(&Brain::headPoseCallback, this, _1));
     recoveryStateSubscription = create_subscription<booster_interface::msg::RawBytesMsg>("fall_down_recovery_state", SUB_STATE_QUEUE_SIZE, bind(&Brain::recoveryStateCallback, this, _1));
+    if (config->whistleEnable) {
+        whistleDetectionSubscription = create_subscription<std_msgs::msg::Bool>(
+            config->whistleTopic,
+            SUB_STATE_QUEUE_SIZE,
+            bind(&Brain::whistleDetectionCallback, this, _1));
+    }
 
     if (config->rerunLogEnableFile || config->rerunLogEnableTCP) {
         string imageTopic = get_parameter("vision.image_topic").as_string();
@@ -236,6 +248,11 @@ void Brain::loadConfig()
 
     get_parameter("sound.enable", config->soundEnable);
     get_parameter("sound.sound_pack", config->soundPack);
+    get_parameter("whistle.enable", config->whistleEnable);
+    get_parameter("whistle.topic", config->whistleTopic);
+    get_parameter("whistle.memory_msecs", config->whistleMemoryMsecs);
+    get_parameter("whistle.override_game_controller", config->whistleOverrideGameController);
+    get_parameter("whistle.play_sound", config->whistlePlaySound);
 
     get_parameter("tree_file_path", config->treeFilePath);
 
@@ -314,12 +331,35 @@ void Brain::tick()
 void Brain::handleSpecialStates() {
 
     const double KICKOFF_DURATION = 10.0; 
-    string gameState = tree->getEntry<string>("gc_game_state");
+    auto whistleRecentlyDetected = [this]() {
+        return config->whistleEnable
+            && data->lastWhistleTime.nanoseconds() > 0
+            && msecsSince(data->lastWhistleTime) <= config->whistleMemoryMsecs;
+    };
+
+    string gameState = data->rawGameState.empty() ? tree->getEntry<string>("gc_game_state") : data->rawGameState;
     bool isKickoffSide = tree->getEntry<bool>("gc_is_kickoff_side");
-    string gameSubStateType = tree->getEntry<string>("gc_game_sub_state_type");
-    string gameSubState = tree->getEntry<string>("gc_game_sub_state");
+    string gameSubStateType = data->rawGameSubStateType.empty() ? tree->getEntry<string>("gc_game_sub_state_type") : data->rawGameSubStateType;
+    string gameSubState = data->rawGameSubState.empty() ? tree->getEntry<string>("gc_game_sub_state") : data->rawGameSubState;
     bool isFreekickKickoffSide = tree->getEntry<bool>("gc_is_sub_state_kickoff_side");
     auto now = get_clock()->now();
+    const bool whistle_recent = whistleRecentlyDetected();
+
+    if (config->whistleOverrideGameController && whistle_recent) {
+        if (gameState == "SET") {
+            gameState = "PLAY";
+        }
+        if (gameState == "PLAY" && gameSubStateType == "FREE_KICK" && gameSubState == "SET") {
+            gameSubStateType = "NONE";
+            gameSubState = "";
+        }
+        tree->setEntry<bool>("wait_for_opponent_kickoff", false);
+    }
+
+    tree->setEntry<string>("gc_game_state", gameState);
+    tree->setEntry<string>("gc_game_sub_state_type", gameSubStateType);
+    tree->setEntry<string>("gc_game_sub_state", gameSubState);
+    tree->setEntry<bool>("whistle_detected_recently", whistle_recent);
 
     if (gameState == "SET" && isKickoffSide) {
         data->isKickingOff = true;
@@ -1227,6 +1267,7 @@ void Brain::gameControlCallback(const game_controller_interface::msg::GameContro
         "END"      // 比赛结束
     };
     string gameState = gameStateMap[static_cast<int>(msg.state)];
+    data->rawGameState = gameState;
     tree->setEntry<string>("gc_game_state", gameState);
     bool isKickOffSide = (msg.kick_off_team == config->teamId); // 我方是否是开球方
     tree->setEntry<bool>("gc_is_kickoff_side", isKickOffSide);
@@ -1282,6 +1323,8 @@ void Brain::gameControlCallback(const game_controller_interface::msg::GameContro
     }
     vector<string> gameSubStateMap = {"STOP", "GET_READY", "SET"};                               // STOP: 停下来; -> GET_READY: 移动到进攻或防守位置; -> SET: 站住不动
     string gameSubState = gameSubStateMap[static_cast<int>(msg.secondary_state_info[1])];
+    data->rawGameSubStateType = gameSubStateType;
+    data->rawGameSubState = gameSubState;
     tree->setEntry<string>("gc_game_sub_state_type", gameSubStateType);
     tree->setEntry<string>("gc_game_sub_state", gameSubState);
     bool isSubStateKickOffSide = (static_cast<int>(msg.secondary_state_info[0]) == config->teamId); // 在二级状态下, 我方是否是开球方. 例如, 当前二级状态为任意球, 我方是否是开任意球的一方
@@ -1418,6 +1461,22 @@ void Brain::detectionsCallback(const vision_interface::msg::Detections &msg)
 
     // logVisionBox(timePoint);
     logDetection(gameObjects);
+}
+
+void Brain::whistleDetectionCallback(const std_msgs::msg::Bool &msg)
+{
+    if (!msg.data) {
+        return;
+    }
+
+    data->lastWhistleTime = get_clock()->now();
+    tree->setEntry<bool>("whistle_detected_recently", true);
+    log->setTimeNow();
+    log->log("event/whistle", rerun::TextLog("whistle detected"));
+
+    if (config->whistlePlaySound) {
+        playSound("beep-whistle", 100, true);
+    }
 }
 
 void Brain::updateLinePosToField(FieldLine& line) {

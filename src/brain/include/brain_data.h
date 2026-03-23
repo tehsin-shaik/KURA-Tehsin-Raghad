@@ -34,6 +34,10 @@ public:
     int liveCount = 0; 
     int oppoLiveCount = 0; 
     string realGameSubState; 
+    string rawGameState = "";
+    string rawGameSubStateType = "NONE";
+    string rawGameSubState = "";
+    rclcpp::Time lastWhistleTime;
 
     /* ------------------------------------ 数据记录 ------------------------------------ */
     

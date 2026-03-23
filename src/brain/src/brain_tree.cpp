@@ -131,6 +131,7 @@ void BrainTree::initEntry()
     setEntry<bool>("we_just_scored", false);
     setEntry<bool>("wait_for_opponent_kickoff", false);
     setEntry<bool>("is_defender", true);
+    setEntry<bool>("whistle_detected_recently", false);
 
 
     // 自动视觉校准相关
