@@ -6,6 +6,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_gtest REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(ament_index_cpp REQUIRED)
@@ -94,5 +95,16 @@ install(DIRECTORY include/
 install(DIRECTORY data launch
   DESTINATION share/${PROJECT_NAME}
 )
+
+if(BUILD_TESTING)
+  ament_add_gtest(test_whistle_detection
+    test/test_whistle_detection.cpp
+  )
+  target_link_libraries(test_whistle_detection ${PROJECT_NAME}_core)
+  target_compile_features(test_whistle_detection PUBLIC cxx_std_17)
+  target_compile_definitions(test_whistle_detection PRIVATE
+    WHISTLE_DETECTOR_TEST_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data"
+  )
+endif()
 
 ament_package()
