@@ -1,8 +1,8 @@
 #include "whistle_detector/tflite_whistle_detection.hpp"
 
 #include <algorithm>
-#include <array>
 #include <cmath>
+#include <stdexcept>
 
 namespace whistle_detector
 {
@@ -12,15 +12,26 @@ namespace
 constexpr double kPi = 3.14159265358979323846;
 }
 
-TFLiteWhistleDetection::TFLiteWhistleDetection(const std::string &model_dir)
+TFLiteWhistleDetection::TFLiteWhistleDetection(const std::string &model_dir, int num_threads)
+#ifdef WHISTLE_DETECTOR_USE_FFTW
+    : fft_real_buffer_(frame_size),
+      fft_complex_buffer_(fft_spec_size)
+#endif
 {
     const std::string model_path = model_dir + "/whistle-classifier.tflite";
-    classifier_zero_.loadModelFromFile(model_path, {1, ffts_per_patch, patch_height, 1});
-    classifier_half_.loadModelFromFile(model_path, {1, ffts_per_patch, patch_height, 1});
+    const int effective_threads = std::max(1, num_threads);
+    classifier_zero_.loadModelFromFile(model_path, {1, ffts_per_patch, patch_height, 1}, effective_threads);
+    classifier_half_.loadModelFromFile(model_path, {1, ffts_per_patch, patch_height, 1}, effective_threads);
 
     input_c_zero_ = classifier_zero_.getInputTensor();
     input_c_half_ = classifier_half_.getInputTensor();
 
+#ifdef WHISTLE_DETECTOR_USE_FFTW
+    fft_plan_ = fftwf_plan_dft_r2c_1d(frame_size, fft_real_buffer_.data(), fft_complex_buffer_.data(), FFTW_ESTIMATE);
+    if (fft_plan_ == nullptr) {
+        throw std::runtime_error("failed to create FFTW plan for whistle detection");
+    }
+#else
     for (size_t k = 0; k < patch_height; ++k) {
         for (size_t n = 0; n < frame_size; ++n) {
             const float angle = static_cast<float>(2.0 * kPi * k * n / frame_size);
@@ -28,8 +39,19 @@ TFLiteWhistleDetection::TFLiteWhistleDetection(const std::string &model_dir)
             sin_table_[k][n] = std::sin(angle);
         }
     }
+#endif
 }
 
+TFLiteWhistleDetection::~TFLiteWhistleDetection()
+{
+#ifdef WHISTLE_DETECTOR_USE_FFTW
+    if (fft_plan_ != nullptr) {
+        fftwf_destroy_plan(fft_plan_);
+    }
+#endif
+}
+
+#ifndef WHISTLE_DETECTOR_USE_FFTW
 void TFLiteWhistleDetection::computeSpectrum(
     const std::vector<int16_t> &frame,
     std::array<std::complex<float>, patch_height> &spectrum) const
@@ -45,6 +67,7 @@ void TFLiteWhistleDetection::computeSpectrum(
         spectrum[k] = {real, imag};
     }
 }
+#endif
 
 bool TFLiteWhistleDetection::process(const std::vector<int16_t> &vals, float &max_probability)
 {
@@ -57,26 +80,38 @@ bool TFLiteWhistleDetection::process(const std::vector<int16_t> &vals, float &ma
     bool c_zero_result = false;
     bool c_half_result = false;
     max_probability = 0.0f;
+#ifndef WHISTLE_DETECTOR_USE_FFTW
     std::array<std::complex<float>, patch_height> spectrum{};
+#endif
 
     while (buffer_.size() >= frame_size) {
-        std::vector<int16_t> frame(buffer_.begin(), buffer_.begin() + frame_size);
+#ifdef WHISTLE_DETECTOR_USE_FFTW
+        std::copy_n(buffer_.begin(), frame_size, fft_real_buffer_.begin());
+        fftwf_execute(fft_plan_);
+#else
+        std::vector<int16_t> frame(buffer_.begin(), buffer_.begin() + static_cast<std::vector<int16_t>::difference_type>(frame_size));
         computeSpectrum(frame, spectrum);
+#endif
 
         for (int i = 0; i < patch_height; ++i) {
+#ifdef WHISTLE_DETECTOR_USE_FFTW
+            fftwf_complex &c = fft_complex_buffer_[static_cast<size_t>(i)];
+            float tmp = std::sqrt(c[0] * c[0] + c[1] * c[1]);
+#else
             const auto &c = spectrum[static_cast<size_t>(i)];
             float tmp = std::abs(c);
-            tmp = std::log(tmp) / 15.f;
+#endif
+            tmp = std::log(tmp) / 15.0f;
 
             if (std::isnan(tmp) || std::isinf(tmp)) {
-                tmp = 0.f;
+                tmp = 0.0f;
             }
 
-            input_c_zero_[c_zero_offset + i] = tmp;
-            input_c_half_[c_half_offset + i] = tmp;
+            input_c_zero_[c_zero_offset + static_cast<size_t>(i)] = tmp;
+            input_c_half_[c_half_offset + static_cast<size_t>(i)] = tmp;
         }
 
-        std::vector<int16_t>(buffer_.begin() + frame_size, buffer_.end()).swap(buffer_);
+        buffer_.erase(buffer_.begin(), buffer_.begin() + static_cast<std::vector<int16_t>::difference_type>(frame_size));
 
         ++c_zero_current_patch_fft;
         if (c_zero_current_patch_fft == ffts_per_patch) {

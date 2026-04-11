@@ -2,6 +2,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/bool.hpp>
 
+#include <algorithm>
 #include <atomic>
 #include <memory>
 #include <thread>
@@ -11,6 +12,15 @@
 namespace whistle_detector
 {
 
+namespace
+{
+int defaultNumThreads()
+{
+    const unsigned int concurrency = std::thread::hardware_concurrency();
+    return static_cast<int>(std::max(1u, std::min(2u, concurrency == 0 ? 1u : concurrency)));
+}
+}
+
 class WhistleDetectorNode : public rclcpp::Node
 {
 public:
@@ -19,12 +29,15 @@ public:
         declare_parameter<std::string>("device_name", "default");
         declare_parameter<std::string>("publish_topic", "/whistle_detection/detected");
         declare_parameter<double>("cooldown_ms", 1500.0);
+        declare_parameter<int>("num_threads", defaultNumThreads());
         declare_parameter<double>("publish_confidence_threshold", TFLiteWhistleDetection::prob_threshold);
 
         const auto share_dir = ament_index_cpp::get_package_share_directory("whistle_detector");
         const auto model_dir = share_dir + "/data";
 
-        detector_ = std::make_unique<AlsaWhistleDetector>(model_dir);
+        detector_ = std::make_unique<AlsaWhistleDetector>(
+            model_dir,
+            get_parameter("num_threads").as_int());
         publisher_ = create_publisher<std_msgs::msg::Bool>(
             get_parameter("publish_topic").as_string(), 10);
 

@@ -7,6 +7,7 @@
 #include <cstdio>
 #include <stdexcept>
 #include <thread>
+#include <utility>
 
 namespace whistle_detector
 {
@@ -17,10 +18,10 @@ constexpr size_t kLeftFrontMic = 0;
 constexpr size_t kRightFrontMic = 1;
 }
 
-AlsaWhistleDetector::AlsaWhistleDetector(std::string model_dir)
+AlsaWhistleDetector::AlsaWhistleDetector(std::string model_dir, int num_threads)
     : model_dir_(std::move(model_dir)),
-      whistle_detection_left_(model_dir_),
-      whistle_detection_right_(model_dir_)
+      whistle_detection_left_(model_dir_, num_threads),
+      whistle_detection_right_(model_dir_, num_threads)
 {
 }
 
