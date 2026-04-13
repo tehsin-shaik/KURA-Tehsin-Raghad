@@ -1471,6 +1471,10 @@ void Brain::whistleDetectionCallback(const std_msgs::msg::Bool &msg)
 
     data->lastWhistleTime = get_clock()->now();
     tree->setEntry<bool>("whistle_detected_recently", true);
+    RCLCPP_WARN(
+        get_logger(),
+        "whistleDetectionCallback triggered: whistle detected at %.3f s",
+        data->lastWhistleTime.seconds());
     log->setTimeNow();
     log->log("event/whistle", rerun::TextLog("whistle detected"));
 

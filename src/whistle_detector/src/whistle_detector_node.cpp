@@ -47,7 +47,10 @@ public:
             std_msgs::msg::Bool msg;
             msg.data = true;
             publisher_->publish(msg);
-            RCLCPP_INFO(get_logger(), "whistle detected with confidence %.6f", confidence);
+            RCLCPP_WARN(
+                get_logger(),
+                "upstream whistle detector hit: published detection with confidence %.6f",
+                confidence);
         });
 
         worker_ = std::thread([this]() {
