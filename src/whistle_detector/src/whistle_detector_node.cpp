@@ -14,6 +14,8 @@ namespace whistle_detector
 
 namespace
 {
+constexpr double kDefaultPublishConfidenceThreshold = 0.998600;
+
 int defaultNumThreads()
 {
     const unsigned int concurrency = std::thread::hardware_concurrency();
@@ -30,7 +32,7 @@ public:
         declare_parameter<std::string>("publish_topic", "/whistle_detection/detected");
         declare_parameter<double>("cooldown_ms", 1500.0);
         declare_parameter<int>("num_threads", defaultNumThreads());
-        declare_parameter<double>("publish_confidence_threshold", TFLiteWhistleDetection::prob_threshold);
+        declare_parameter<double>("publish_confidence_threshold", kDefaultPublishConfidenceThreshold);
 
         const auto share_dir = ament_index_cpp::get_package_share_directory("whistle_detector");
         const auto model_dir = share_dir + "/data";
