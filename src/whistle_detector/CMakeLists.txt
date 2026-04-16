@@ -17,16 +17,76 @@ find_path(FFTW3_INCLUDE_DIR fftw3.h)
 find_library(FFTW3F_LIBRARY NAMES fftw3f)
 
 set(TFLITE_THIRDPARTY_DIR ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/tflite)
-set(TFLITE_X64_DIR ${TFLITE_THIRDPARTY_DIR}/x64)
+set(TFLITE_BUNDLED_ARCH_DIR "")
+set(TFLITE_BUNDLED_ARCH_NAME "")
+set(TFLITE_REPO_LIBRARY "")
+set(TFLITE_REPO_INCLUDE_DIR "")
+set(TFLITE_BUNDLED_REQUIRED_LIBS
+  libtensorflow-lite.a
+  libruy.a
+  libfarmhash.a
+  libflatbuffers.a
+  libfft2d_fftsg.a
+  libfft2d_fftsg2d.a
+)
+set(TFLITE_BUNDLED_XNNPACK_LIBS
+  libXNNPACK.a
+  libcpuinfo.a
+  libclog.a
+  libpthreadpool.a
+)
 set(TFLITE_LIBRARY "" CACHE FILEPATH "Path to a TensorFlow Lite library for non-bundled builds")
 set(TFLITE_INCLUDE_DIR "" CACHE PATH "Additional TensorFlow Lite include path for non-bundled builds")
 set(WHISTLE_DETECTOR_TFLITE_MODE_OVERRIDE "auto" CACHE STRING "Override TensorFlow Lite backend selection: auto, bundled, system, or stub")
 set_property(CACHE WHISTLE_DETECTOR_TFLITE_MODE_OVERRIDE PROPERTY STRINGS auto bundled system stub)
 option(WHISTLE_DETECTOR_ALLOW_STUB_FALLBACK "Build a disabled stub if no TensorFlow Lite library is available" ON)
-if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
+if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64" OR CMAKE_SYSTEM_PROCESSOR STREQUAL "amd64")
   option(WHISTLE_DETECTOR_ENABLE_XNNPACK "Enable the TensorFlow Lite XNNPACK delegate" ON)
 else()
   option(WHISTLE_DETECTOR_ENABLE_XNNPACK "Enable the TensorFlow Lite XNNPACK delegate" OFF)
+endif()
+
+if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64" OR CMAKE_SYSTEM_PROCESSOR STREQUAL "amd64")
+  set(TFLITE_BUNDLED_ARCH_NAME x64)
+elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64" OR CMAKE_SYSTEM_PROCESSOR STREQUAL "arm64")
+  set(TFLITE_BUNDLED_ARCH_NAME aarch64)
+endif()
+
+if(TFLITE_BUNDLED_ARCH_NAME)
+  set(TFLITE_BUNDLED_ARCH_DIR ${TFLITE_THIRDPARTY_DIR}/${TFLITE_BUNDLED_ARCH_NAME})
+  if(EXISTS ${TFLITE_BUNDLED_ARCH_DIR}/libtensorflowlite_c.so)
+    set(TFLITE_REPO_LIBRARY ${TFLITE_BUNDLED_ARCH_DIR}/libtensorflowlite_c.so)
+  elseif(EXISTS ${TFLITE_BUNDLED_ARCH_DIR}/libtensorflowlite.so)
+    set(TFLITE_REPO_LIBRARY ${TFLITE_BUNDLED_ARCH_DIR}/libtensorflowlite.so)
+  endif()
+endif()
+
+if(EXISTS ${TFLITE_THIRDPARTY_DIR}/include)
+  set(TFLITE_REPO_INCLUDE_DIR ${TFLITE_THIRDPARTY_DIR}/include)
+elseif(EXISTS ${TFLITE_THIRDPARTY_DIR}/tensorflow/lite/c/c_api.h OR EXISTS ${TFLITE_THIRDPARTY_DIR}/tflite_c_api.h)
+  set(TFLITE_REPO_INCLUDE_DIR ${TFLITE_THIRDPARTY_DIR})
+endif()
+
+set(TFLITE_BUNDLED_COMPLETE FALSE)
+set(_tflite_missing_bundled_libs "")
+if(TFLITE_BUNDLED_ARCH_DIR)
+  foreach(_bundled_lib IN LISTS TFLITE_BUNDLED_REQUIRED_LIBS)
+    if(NOT EXISTS ${TFLITE_BUNDLED_ARCH_DIR}/${_bundled_lib})
+      list(APPEND _tflite_missing_bundled_libs ${_bundled_lib})
+    endif()
+  endforeach()
+
+  if(WHISTLE_DETECTOR_ENABLE_XNNPACK)
+    foreach(_bundled_lib IN LISTS TFLITE_BUNDLED_XNNPACK_LIBS)
+      if(NOT EXISTS ${TFLITE_BUNDLED_ARCH_DIR}/${_bundled_lib})
+        list(APPEND _tflite_missing_bundled_libs ${_bundled_lib})
+      endif()
+    endforeach()
+  endif()
+
+  if(NOT _tflite_missing_bundled_libs)
+    set(TFLITE_BUNDLED_COMPLETE TRUE)
+  endif()
 endif()
 
 if(NOT TFLITE_INCLUDE_DIR)
@@ -48,8 +108,14 @@ elseif(WHISTLE_DETECTOR_TFLITE_MODE_OVERRIDE STREQUAL "stub")
   set(WHISTLE_DETECTOR_TFLITE_MODE "stub")
 elseif(NOT WHISTLE_DETECTOR_TFLITE_MODE_OVERRIDE STREQUAL "auto")
   message(FATAL_ERROR "Invalid WHISTLE_DETECTOR_TFLITE_MODE_OVERRIDE='${WHISTLE_DETECTOR_TFLITE_MODE_OVERRIDE}'. Expected auto, bundled, system, or stub.")
-elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64" AND EXISTS ${TFLITE_X64_DIR}/libtensorflow-lite.a)
+elseif(TFLITE_BUNDLED_COMPLETE)
   set(WHISTLE_DETECTOR_TFLITE_MODE "bundled")
+elseif(TFLITE_REPO_LIBRARY)
+  set(TFLITE_LIBRARY ${TFLITE_REPO_LIBRARY})
+  if(NOT TFLITE_INCLUDE_DIR AND TFLITE_REPO_INCLUDE_DIR)
+    set(TFLITE_INCLUDE_DIR ${TFLITE_REPO_INCLUDE_DIR})
+  endif()
+  set(WHISTLE_DETECTOR_TFLITE_MODE "system")
 elseif(TFLITE_LIBRARY)
   set(WHISTLE_DETECTOR_TFLITE_MODE "system")
 else()
@@ -69,27 +135,40 @@ if(WHISTLE_DETECTOR_TFLITE_MODE STREQUAL "bundled")
   add_library(flatbuffers STATIC IMPORTED)
   add_library(fft2d_fftsg STATIC IMPORTED)
   add_library(fft2d_fftsg2d STATIC IMPORTED)
-  add_library(xnnpack STATIC IMPORTED)
-  add_library(cpuinfo STATIC IMPORTED)
-  add_library(clog STATIC IMPORTED)
-  add_library(pthreadpool STATIC IMPORTED)
 
-  set_target_properties(tensorflow-lite PROPERTIES IMPORTED_LOCATION ${TFLITE_X64_DIR}/libtensorflow-lite.a)
-  set_target_properties(ruy PROPERTIES IMPORTED_LOCATION ${TFLITE_X64_DIR}/libruy.a)
-  set_target_properties(farmhash PROPERTIES IMPORTED_LOCATION ${TFLITE_X64_DIR}/libfarmhash.a)
-  set_target_properties(flatbuffers PROPERTIES IMPORTED_LOCATION ${TFLITE_X64_DIR}/libflatbuffers.a)
-  set_target_properties(fft2d_fftsg PROPERTIES IMPORTED_LOCATION ${TFLITE_X64_DIR}/libfft2d_fftsg.a)
-  set_target_properties(fft2d_fftsg2d PROPERTIES IMPORTED_LOCATION ${TFLITE_X64_DIR}/libfft2d_fftsg2d.a)
-  set_target_properties(xnnpack PROPERTIES IMPORTED_LOCATION ${TFLITE_X64_DIR}/libXNNPACK.a)
-  set_target_properties(cpuinfo PROPERTIES IMPORTED_LOCATION ${TFLITE_X64_DIR}/libcpuinfo.a)
-  set_target_properties(clog PROPERTIES IMPORTED_LOCATION ${TFLITE_X64_DIR}/libclog.a)
-  set_target_properties(pthreadpool PROPERTIES IMPORTED_LOCATION ${TFLITE_X64_DIR}/libpthreadpool.a)
+  set_target_properties(tensorflow-lite PROPERTIES IMPORTED_LOCATION ${TFLITE_BUNDLED_ARCH_DIR}/libtensorflow-lite.a)
+  set_target_properties(ruy PROPERTIES IMPORTED_LOCATION ${TFLITE_BUNDLED_ARCH_DIR}/libruy.a)
+  set_target_properties(farmhash PROPERTIES IMPORTED_LOCATION ${TFLITE_BUNDLED_ARCH_DIR}/libfarmhash.a)
+  set_target_properties(flatbuffers PROPERTIES IMPORTED_LOCATION ${TFLITE_BUNDLED_ARCH_DIR}/libflatbuffers.a)
+  set_target_properties(fft2d_fftsg PROPERTIES IMPORTED_LOCATION ${TFLITE_BUNDLED_ARCH_DIR}/libfft2d_fftsg.a)
+  set_target_properties(fft2d_fftsg2d PROPERTIES IMPORTED_LOCATION ${TFLITE_BUNDLED_ARCH_DIR}/libfft2d_fftsg2d.a)
   set_target_properties(tensorflow-lite PROPERTIES INTERFACE_INCLUDE_DIRECTORIES ${TFLITE_THIRDPARTY_DIR})
+
+  if(WHISTLE_DETECTOR_ENABLE_XNNPACK)
+    add_library(xnnpack STATIC IMPORTED)
+    add_library(cpuinfo STATIC IMPORTED)
+    add_library(clog STATIC IMPORTED)
+    add_library(pthreadpool STATIC IMPORTED)
+    set_target_properties(xnnpack PROPERTIES IMPORTED_LOCATION ${TFLITE_BUNDLED_ARCH_DIR}/libXNNPACK.a)
+    set_target_properties(cpuinfo PROPERTIES IMPORTED_LOCATION ${TFLITE_BUNDLED_ARCH_DIR}/libcpuinfo.a)
+    set_target_properties(clog PROPERTIES IMPORTED_LOCATION ${TFLITE_BUNDLED_ARCH_DIR}/libclog.a)
+    set_target_properties(pthreadpool PROPERTIES IMPORTED_LOCATION ${TFLITE_BUNDLED_ARCH_DIR}/libpthreadpool.a)
+  endif()
+
+  message(STATUS "whistle_detector using bundled TensorFlow Lite libraries from ${TFLITE_BUNDLED_ARCH_DIR}")
 elseif(WHISTLE_DETECTOR_TFLITE_MODE STREQUAL "system")
-  message(STATUS "whistle_detector using system TensorFlow Lite library: ${TFLITE_LIBRARY}")
+  if(TFLITE_LIBRARY STREQUAL TFLITE_REPO_LIBRARY)
+    message(STATUS "whistle_detector using repo TensorFlow Lite library: ${TFLITE_LIBRARY}")
+  else()
+    message(STATUS "whistle_detector using system TensorFlow Lite library: ${TFLITE_LIBRARY}")
+  endif()
 elseif(NOT WHISTLE_DETECTOR_ALLOW_STUB_FALLBACK)
   message(FATAL_ERROR "No TensorFlow Lite library available. Set TFLITE_LIBRARY or provide bundled libraries.")
 else()
+  if(TFLITE_BUNDLED_ARCH_DIR AND _tflite_missing_bundled_libs)
+    list(JOIN _tflite_missing_bundled_libs ", " _tflite_missing_bundled_libs_message)
+    message(WARNING "Bundled TensorFlow Lite directory '${TFLITE_BUNDLED_ARCH_DIR}' is incomplete; missing: ${_tflite_missing_bundled_libs_message}")
+  endif()
   message(WARNING "No TensorFlow Lite library available; whistle detection will be built as a disabled stub.")
 endif()
 
@@ -111,7 +190,6 @@ endif()
 target_include_directories(${PROJECT_NAME}_core PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
-  ${TFLITE_THIRDPARTY_DIR}
   ${ALSA_INCLUDE_DIR}
 )
 
@@ -144,11 +222,15 @@ if(WHISTLE_DETECTOR_TFLITE_MODE STREQUAL "bundled")
     flatbuffers
     fft2d_fftsg
     fft2d_fftsg2d
-    xnnpack
-    cpuinfo
-    clog
-    pthreadpool
   )
+  if(WHISTLE_DETECTOR_ENABLE_XNNPACK)
+    target_link_libraries(${PROJECT_NAME}_core
+      xnnpack
+      cpuinfo
+      clog
+      pthreadpool
+    )
+  endif()
 endif()
 
 if((WHISTLE_DETECTOR_TFLITE_MODE STREQUAL "bundled" OR WHISTLE_DETECTOR_TFLITE_MODE STREQUAL "system") AND WHISTLE_DETECTOR_ENABLE_XNNPACK)
