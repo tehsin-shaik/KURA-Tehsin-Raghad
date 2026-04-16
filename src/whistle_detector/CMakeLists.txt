@@ -190,6 +190,7 @@ endif()
 target_include_directories(${PROJECT_NAME}_core PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
+  ${TFLITE_THIRDPARTY_DIR}
   ${ALSA_INCLUDE_DIR}
 )
 
