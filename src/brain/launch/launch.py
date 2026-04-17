@@ -52,21 +52,10 @@ def handle_configuration(context, *args, **kwargs):
         config['enable_com'] = False
 
     enable_whistle = context.perform_substitution(LaunchConfiguration('enable_whistle'))
-    whistle_device = context.perform_substitution(LaunchConfiguration('whistle_device'))
-    whistle_nodes = []
     if enable_whistle in ['true', 'True', '1']:
         config['whistle.enable'] = True
-        whistle_nodes.append(
-            Node(
-                package='whistle_detector',
-                executable='whistle_detector_node',
-                output='screen',
-                parameters=[{
-                    'device_name': whistle_device,
-                    'publish_topic': config.get('whistle.topic', '/whistle_detection/detected'),
-                }]
-            )
-        )
+    else:
+        config['whistle.enable'] = False
 
     return [
         Node(
@@ -79,7 +68,7 @@ def handle_configuration(context, *args, **kwargs):
                 config
             ]
         )
-    ] + whistle_nodes
+    ]
 
 
 def generate_launch_description():
@@ -117,13 +106,8 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             'enable_whistle',
-            default_value='false',
-            description='是否同时启动 whistle detector'
-        ),
-        DeclareLaunchArgument(
-            'whistle_device',
-            default_value='default',
-            description='ALSA capture device used by whistle detector'
+            default_value='true',
+            description='Enable whistle subscription logic in brain'
         ),
         OpaqueFunction(function=handle_configuration) # 转到 handle_configuration 中继续处理
     ])

@@ -20,6 +20,8 @@ echo "[START VISION]"
 # nohup ros2 run ros2_sync_package sync_node > sync_node.log 2>&1 &
 # nohup sh src/vision_segmentation/run.sh > vision_segmentation.log 2>&1 &
 bash -c 'bash ./scripts/start_vision.sh > vision_wrapper.log 2>&1 &'
+echo "[START WHISTLE DETECTOR]"
+bash -c 'bash ./scripts/start_whistle.sh > whistle.log 2>&1 &'
 echo "[START BRAIN]"
 bash -c 'source ./install/setup.bash && nohup ros2 launch brain launch.py "$@" > brain.log 2>&1 &' _ "$@"
 # nohup ros2 launch brain launch.py "$@"  > brain.log 2>&1 &
