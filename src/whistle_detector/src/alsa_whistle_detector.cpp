@@ -1,6 +1,7 @@
 #include "whistle_detector/alsa_whistle_detector.hpp"
 
 #include <alsa/asoundlib.h>
+#include <rclcpp/rclcpp.hpp>
 
 #include <algorithm>
 #include <chrono>
@@ -16,6 +17,12 @@ namespace
 {
 constexpr size_t kLeftFrontMic = 0;
 constexpr size_t kRightFrontMic = 1;
+
+const rclcpp::Logger &logger()
+{
+    static const auto kLogger = rclcpp::get_logger("whistle_detector.alsa");
+    return kLogger;
+}
 }
 
 AlsaWhistleDetector::AlsaWhistleDetector(std::string model_dir, int num_threads)
@@ -65,6 +72,7 @@ void AlsaWhistleDetector::run(
     if (rc < 0) {
         throw std::runtime_error("unable to open pcm device: " + std::string(snd_strerror(rc)));
     }
+    RCLCPP_INFO(logger(), "opened ALSA capture device '%s' for whistle detection", device_name.c_str());
 
     snd_pcm_hw_params_t *params = nullptr;
     snd_pcm_hw_params_alloca(&params);
@@ -123,17 +131,40 @@ void AlsaWhistleDetector::run(
     }
 
     snd_pcm_nonblock(handle, 1);
+    RCLCPP_INFO(
+        logger(),
+        "microphone capture configured: device='%s', channels=%u, rate=%u Hz, frame_size=%lu, format=S16_LE, access=RW_INTERLEAVED",
+        device_name.c_str(),
+        TFLiteWhistleDetection::num_channels,
+        req_rate,
+        static_cast<unsigned long>(req_frame_size));
 
     std::vector<int16_t> buffer(req_frame_size * TFLiteWhistleDetection::num_channels);
     auto last_publish = std::chrono::steady_clock::time_point::min();
+    bool audio_input_logged = false;
+    bool waiting_for_audio_logged = false;
+    size_t recoverable_read_error_count = 0;
 
     while (!stop_requested_.load()) {
         rc = snd_pcm_readi(handle, buffer.data(), req_frame_size);
         if (rc == -EPIPE) {
+            ++recoverable_read_error_count;
+            RCLCPP_WARN(
+                logger(),
+                "audio input overrun on device '%s'; preparing ALSA device and continuing (recoverable error count=%zu)",
+                device_name.c_str(),
+                recoverable_read_error_count);
             snd_pcm_prepare(handle);
             continue;
         }
         if (rc == -EAGAIN) {
+            if (!waiting_for_audio_logged) {
+                RCLCPP_INFO(
+                    logger(),
+                    "ALSA device '%s' is open but no audio frames are ready yet; waiting for microphone input",
+                    device_name.c_str());
+                waiting_for_audio_logged = true;
+            }
             std::this_thread::sleep_for(std::chrono::milliseconds(5));
             continue;
         }
@@ -144,6 +175,15 @@ void AlsaWhistleDetector::run(
         if (rc == 0) {
             continue;
         }
+        if (!audio_input_logged) {
+            RCLCPP_INFO(
+                logger(),
+                "microphone input is active on device '%s'; received %d frames from ALSA",
+                device_name.c_str(),
+                rc);
+            audio_input_logged = true;
+        }
+        waiting_for_audio_logged = false;
 
         float confidence = 0.0f;
         const bool detected = processChannels(buffer, static_cast<size_t>(rc), confidence);

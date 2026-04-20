@@ -243,6 +243,7 @@ if(WHISTLE_DETECTOR_TFLITE_MODE STREQUAL "system")
 endif()
 
 target_compile_features(${PROJECT_NAME}_core PUBLIC cxx_std_17)
+ament_target_dependencies(${PROJECT_NAME}_core rclcpp)
 
 add_executable(whistle_detector_node src/whistle_detector_node.cpp)
 target_link_libraries(whistle_detector_node ${PROJECT_NAME}_core)
