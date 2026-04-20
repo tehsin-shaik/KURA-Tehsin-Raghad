@@ -146,8 +146,8 @@ void AlsaWhistleDetector::run(
         static_cast<unsigned long>(req_frame_size));
 
     std::vector<int16_t> buffer(req_frame_size * TFLiteWhistleDetection::num_channels);
-    //auto last_publish = std::chrono::steady_clock::time_point::min();
-    auto last_publish = std::chrono::steady_clock::now() - cooldown - std::chrono::milliseconds(1); 
+    auto last_publish = std::chrono::steady_clock::now();
+    bool has_published = false;
     bool audio_input_logged = false;
     bool waiting_for_audio_logged = false;
     size_t recoverable_read_error_count = 0;
@@ -199,10 +199,11 @@ void AlsaWhistleDetector::run(
         }
 
         const auto now = std::chrono::steady_clock::now();
-        if (now - last_publish < cooldown) {
+        if (has_published && now - last_publish < cooldown) {
             continue;
         }
         last_publish = now;
+        has_published = true;
 
         if (detection_callback_) {
             detection_callback_(confidence);
