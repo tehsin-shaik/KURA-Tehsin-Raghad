@@ -79,7 +79,7 @@ void AlsaWhistleDetector::run(
 
     auto cleanup = [&]() {
         if (handle != nullptr) {
-            snd_pcm_drain(handle);
+            snd_pcm_drop(handle);
             snd_pcm_close(handle);
         }
     };
@@ -128,6 +128,12 @@ void AlsaWhistleDetector::run(
     if (rc < 0) {
         cleanup();
         throw std::runtime_error("snd_pcm_hw_params failed: " + std::string(snd_strerror(rc)));
+    }
+
+    rc = snd_pcm_prepare(handle);
+    if (rc < 0) {
+        cleanup();
+        throw std::runtime_error("snd_pcm_prepare failed: " + std::string(snd_strerror(rc)));
     }
 
     snd_pcm_nonblock(handle, 1);
