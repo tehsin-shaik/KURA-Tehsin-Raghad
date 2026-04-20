@@ -16,5 +16,13 @@ src/GPATH
 src/GRTAGS
 src/GTAGS
 .cache/
+brain.log
+game_controller.log
+sound.log
+vision_wrapper.log
+whistle.log
+
+
+
 
 
