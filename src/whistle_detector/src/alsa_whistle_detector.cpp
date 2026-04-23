@@ -17,6 +17,8 @@ namespace
 {
 constexpr size_t kLeftFrontMic = 0;
 constexpr size_t kRightFrontMic = 1;
+constexpr int kRequiredConfirmedHits = 2;
+const auto kConfirmationWindow = std::chrono::milliseconds(350);
 
 const rclcpp::Logger &logger()
 {
@@ -147,7 +149,10 @@ void AlsaWhistleDetector::run(
 
     std::vector<int16_t> buffer(req_frame_size * TFLiteWhistleDetection::num_channels);
     auto last_publish = std::chrono::steady_clock::now();
+    auto first_confirmed_hit = std::chrono::steady_clock::time_point{};
     bool has_published = false;
+    int confirmed_hit_count = 0;
+    float max_confirmed_confidence = 0.0f;
     bool audio_input_logged = false;
     bool waiting_for_audio_logged = false;
     size_t recoverable_read_error_count = 0;
@@ -194,11 +199,31 @@ void AlsaWhistleDetector::run(
 
         float confidence = 0.0f;
         const bool detected = processChannels(buffer, static_cast<size_t>(rc), confidence);
+        const auto now = std::chrono::steady_clock::now();
         if (!detected || confidence < publish_confidence_threshold) {
+            if (confirmed_hit_count > 0 && now - first_confirmed_hit > kConfirmationWindow) {
+                confirmed_hit_count = 0;
+                max_confirmed_confidence = 0.0f;
+            }
             continue;
         }
 
-        const auto now = std::chrono::steady_clock::now();
+        if (confirmed_hit_count == 0 || now - first_confirmed_hit > kConfirmationWindow) {
+            first_confirmed_hit = now;
+            confirmed_hit_count = 1;
+            max_confirmed_confidence = confidence;
+            continue;
+        }
+
+        ++confirmed_hit_count;
+        max_confirmed_confidence = std::max(max_confirmed_confidence, confidence);
+        if (confirmed_hit_count < kRequiredConfirmedHits) {
+            continue;
+        }
+
+        const float publish_confidence = max_confirmed_confidence;
+        confirmed_hit_count = 0;
+        max_confirmed_confidence = 0.0f;
         if (has_published && now - last_publish < cooldown) {
             continue;
         }
@@ -206,7 +231,7 @@ void AlsaWhistleDetector::run(
         has_published = true;
 
         if (detection_callback_) {
-            detection_callback_(confidence);
+            detection_callback_(publish_confidence);
         }
     }
 
