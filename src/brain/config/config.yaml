@@ -90,7 +90,7 @@ brain_node:
     whistle:
       enable: false
       topic: "/whistle_detection/detected"
-      memory_msecs: 2000.0
+      memory_msecs: 11000.0
       override_game_controller: true
       play_sound: false
 

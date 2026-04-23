@@ -113,7 +113,7 @@ Brain::Brain() : rclcpp::Node("brain_node")
     declare_parameter<string>("sound.sound_pack", "espeak");
     declare_parameter<bool>("whistle.enable", false);
     declare_parameter<string>("whistle.topic", "/whistle_detection/detected");
-    declare_parameter<double>("whistle.memory_msecs", 2000.0);
+    declare_parameter<double>("whistle.memory_msecs", 11000.0);
     declare_parameter<bool>("whistle.override_game_controller", true);
     declare_parameter<bool>("whistle.play_sound", false);
 
@@ -344,16 +344,21 @@ void Brain::handleSpecialStates() {
     bool isFreekickKickoffSide = tree->getEntry<bool>("gc_is_sub_state_kickoff_side");
     auto now = get_clock()->now();
     const bool whistle_recent = whistleRecentlyDetected();
+    const bool whistle_can_start_play = whistle_recent && gameState == "SET";
+    const bool whistle_can_release_penalty_kick = whistle_recent
+        && gameState == "PLAY"
+        && gameSubStateType == "FREE_KICK"
+        && gameSubState == "SET"
+        && data->realGameSubState == "PENALTY_KICK";
 
-    if (config->whistleOverrideGameController && whistle_recent) {
-        if (gameState == "SET") {
+    if (config->whistleOverrideGameController) {
+        if (whistle_can_start_play) {
             gameState = "PLAY";
         }
-        if (gameState == "PLAY" && gameSubStateType == "FREE_KICK" && gameSubState == "SET") {
+        if (whistle_can_release_penalty_kick) {
             gameSubStateType = "NONE";
             gameSubState = "";
         }
-        tree->setEntry<bool>("wait_for_opponent_kickoff", false);
     }
 
     tree->setEntry<string>("gc_game_state", gameState);
