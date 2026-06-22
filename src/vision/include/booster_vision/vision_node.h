@@ -46,6 +46,7 @@ public:
     void CalParamCallback(const vision_interface::msg::CalParam::SharedPtr msg);
     void ProcessData(SyncedDataBlock &synced_data, vision_interface::msg::Detections &detections);
     void ProcessSegmentationData(SyncedDataBlock &synced_data, vision_interface::msg::LineSegments &field_line_segs_msg);
+    void NormalizeColorImage(const sensor_msgs::msg::Image &msg, cv::Mat &img) const;
 
 private:
     bool use_depth_ = false;
