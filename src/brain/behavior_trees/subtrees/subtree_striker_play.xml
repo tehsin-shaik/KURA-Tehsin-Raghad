@@ -1,43 +1,153 @@
-<root BTCPP_format="4" >
-   <include path="./subtree_cam_find_and_track_ball.xml" />
-   <include path="./subtree_find_ball.xml" />
-   <include path="./subtree_locate.xml" />
-   <BehaviorTree ID="StrikerPlay">
-      <ReactiveSequence>
-         <SelfLocate mode="trust_direction" />
-         <SubTree ID="Locate" _autoremap="true" _while="decision!='find'" />
-         <ReactiveSequence _while="wait_for_opponent_kickoff" name="等待对方开球">
-            <SubTree ID="CamFindAndTrackBall" _autoremap="true" />
-            <SetVelocity />
-         </ReactiveSequence>
-         <ReactiveSequence _while="!wait_for_opponent_kickoff" name="/正常比赛, 即已方开球或对方已经开球">
-            <Sequence _while="ball_out">
-               <SubTree ID="CamFindAndTrackBall" _autoremap="true" />
-               <GoBackInField />
-               <SubTree ID="Locate" _autoremap="true" _while="decision!='find'" />
-            </Sequence>
-            <ReactiveSequence _while="!ball_out">
-               <ReactiveSequence >
-                  <SelfLocate mode="trust_direction" msecs_interval="300"/>    
-		            <SubTree ID="CamFindAndTrackBall" _autoremap="true" />
-                  <CalcKickDirPF opponent_repulse_gain = "2" goal_attract_gain = "5" goal_reward_gain="9.0" />
-                  <Sequence>
-                     <ReactiveSequence>
-                        <StrikerDecide decision_out="{decision}" decision_in="{decision}" chase_threshold="3.0" />
-                        <SubTree ID="FindBall" _while="decision=='find'" _autoremap="true" />
-                     </ReactiveSequence>
-                        <DefenceChase _while="decision == 'retreat'" vx_limit = "0.2" vy_limit="0.8" />
-                        <Chase   _while="decision == 'chase'"  speed = "1" vx_limit="1.5"  vy_limit="0.6"  vtheta_limit="1.4"  dist="0.1" safe_dist="0.5" />
-                        <Adjust _while="decision =='adjust'" turn_threshold="0.2" range="0.75" vx_limit="2.3" vy_limit="1.7" vtheta_limit="3.2" vtheta_factor="5.0" tangential_speed_far="1.5" tangential_speed_near="0.5" turn_first_threshold="0.5" />
-                        <KickLeg _while="decision == 'shoot'" />
-                        <Kick _while="decision == 'kick'" speed_limit="2.4" min_msec_kick="800" msecs_stablize="500"/>
-                        <Kick _while="decision == 'cross'" speed_limit="0.6" min_msec_kick="300"/>
-                  </Sequence>
-               </ReactiveSequence>
+<root BTCPP_format="4">
+    <include path="./subtree_cam_find_and_track_ball.xml"/>
+    <include path="./subtree_find_ball.xml"/>
+    <include path="./subtree_locate.xml"/>
+
+    <BehaviorTree ID="StrikerPlay">
+        <ReactiveSequence>
+            <SelfLocate mode="trust_direction"/>
+            <SubTree ID="Locate" _autoremap="true" _while="decision!='find'"/>
+
+            <ReactiveSequence _while="wait_for_opponent_kickoff" name="等待对方开球">
+                <SubTree ID="CamFindAndTrackBall" _autoremap="true"/>
+                <SetVelocity/>
             </ReactiveSequence>
-         </ReactiveSequence>
-      </ReactiveSequence>
-   </BehaviorTree>
+
+            <ReactiveSequence _while="!wait_for_opponent_kickoff" name="/正常比赛, 即已方开球或对方已经开球">
+                <Sequence _while="ball_out">
+                    <SubTree ID="CamFindAndTrackBall" _autoremap="true"/>
+                    <GoBackInField/>
+                    <SubTree ID="Locate" _autoremap="true" _while="decision!='find'"/>
+                </Sequence>
+
+                <ReactiveSequence _while="!ball_out">
+                    <ReactiveSequence>
+                        <SelfLocate mode="trust_direction" msecs_interval="300"/>
+                        <SubTree ID="CamFindAndTrackBall" _autoremap="true"/>
+
+                        <CalcKickDirPF
+                            goal_attract_gain="5.0"
+                            teammate_repulse_gain="1.2"
+                            teammate_facing_gain="0.8"
+                            opponent_repulse_gain="1.5"
+                            edge_repulse_gain="0.8"
+                            edge_influence_dist="0.8"
+                            obstacle_clearance="0.35"
+                            obstacle_check_dist="3.0"
+                            search_angle_step="0.12"
+                            search_max_angle="1.0"
+                            min_forward_dot="0.2"
+                            min_force="0.15"
+                            saturate_force="3.0"/>
+                        <CalcPassTarget
+                            min_ball_x="-3.5"
+                            max_ball_x="0.0"
+                            has_ball_range="0.8"
+                            min_opponents="2"
+                            pressure_radius="2.0"
+                            lane_clearance="0.55"
+                            target_clearance="1.0"
+                            side_margin="3.0"
+                            min_pass_dist="1.5"
+                            max_pass_dist="9.0"
+                            speed_min="0.6"
+                            speed_max="2.4"/>
+
+                        <Sequence>
+                            <ReactiveSequence>
+                                <StrikerDecide
+                                    chase_threshold="1.0"
+                                    decision_in="{decision}"
+                                    decision_out="{decision}"
+                                    position="offense"
+
+                                    role_kcost="1.5"
+                                    role_takeover_margin="0.9"
+                                    role_takeover_confirm_msec="1000"
+                                    role_min_hold_msec="2000"
+                                    role_no_attacker_timeout_msec="3000"
+                                    role_comm_timeout_msec="4500"
+                                    role_initial_attacker_id="1"
+                                />
+                            </ReactiveSequence>
+
+                            <MoveToPoseOnField
+                                _while="decision == 'go_long'"
+                                x="{pass_target_x}"
+                                y="{pass_target_y}"
+                                theta="{pass_target_theta}"
+                                vx_limit="1.0"
+                                vy_limit="0.6"
+                                vtheta_limit="1.0"
+                                x_tolerance="0.25"
+                                y_tolerance="0.25"
+                                theta_tolerance="0.4"
+                                avoid_obstacle="true"/>
+
+                            <Goal_Block
+                                _while="decision == 'goal_block'"
+                                x="-11.0"
+                                y="0.0"
+                                theta="0.0"
+                                vx_limit="0.8"
+                                vy_limit="0.5"
+                                vtheta_limit="0.8"
+                                x_tolerance="0.25"
+                                y_tolerance="0.25"
+                                theta_tolerance="0.4"
+                                avoid_obstacle="true"/>
+
+                            <DefenceChase
+                                _while="decision == 'retreat'"
+                                vx_limit="0.2"
+                                vy_limit="0.8"/>
+
+                            <Chase
+                                _while="decision == 'chase'"
+                                speed="1"
+                                vx_limit="1.2"
+                                vy_limit="0.4"
+                                vtheta_limit="1.2"
+                                dist="0.1"
+                                safe_dist="0.5"/>
+
+                            <Adjust
+                                _while="decision =='adjust' || decision == 'pass_adjust'"
+                                turn_threshold="0.2"
+                                range="0.75"
+                                vx_limit="2.0"
+                                vy_limit="1.4"
+                                vtheta_limit="2.0"
+                                vtheta_factor="5.0"
+                                tangential_speed_far="1.5"
+                                tangential_speed_near="0.5"
+                                near_threshold="0.10"
+                                no_turn_threshold="0.06"
+                                turn_first_threshold="0.5"/>
+
+                            <!-- Automatic kickoff/start leg shot disabled; manual kickLeg() support remains in code. -->
+                            <!-- <KickLeg _while="decision == 'shoot'"/> -->
+
+                            <Kick
+                                _while="decision == 'pass'"
+                                speed_limit="{pass_speed_limit}"
+                                min_msec_kick="800"
+                                msecs_stablize="500"/>
+
+                            <Kick
+                                _while="decision == 'kick'"
+                                speed_limit="2.4"
+                                min_msec_kick="800"
+                                msecs_stablize="500"/>
+
+                            <Kick
+                                _while="decision == 'cross'"
+                                speed_limit="0.6"
+                                min_msec_kick="300"/>
+                        </Sequence>
+                    </ReactiveSequence>
+                </ReactiveSequence>
+            </ReactiveSequence>
+        </ReactiveSequence>
+    </BehaviorTree>
 </root>
-
-

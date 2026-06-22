@@ -320,10 +320,26 @@ void Brain::tick()
     logStatusToConsole();
     playSoundForFun();
     updateLogFile();
-    
+
     updateMemory();
     handleSpecialStates();
     handleCooperation();
+
+    // ---- Stop Play (rule game.tex:65-86) ----
+    // "All robots must immediately cease all motion and behave as if in the SET
+    //  state. No locomotion is permitted, not even for getting up."
+    // The BT's AutoGetUpAndLocate runs unconditionally and would otherwise call
+    // standUp() for a fallen robot during Stop Play. Skipping the BT entirely
+    // is the only way to honour the "not even for getting up" clause.
+    const bool gameActive = (data->rawGameState == "READY"
+                          || data->rawGameState == "SET"
+                          || data->rawGameState == "PLAY");
+    const bool manualOverride = tree->getEntry<bool>("go_manual")
+                             || tree->getEntry<int>("control_state") == 1;
+    if (data->isStopped && gameActive && !manualOverride) {
+        if (client) client->setVelocity(0., 0., 0.);
+        return;
+    }
 
     tree->tick();
 }
@@ -344,7 +360,9 @@ void Brain::handleSpecialStates() {
     bool isFreekickKickoffSide = tree->getEntry<bool>("gc_is_sub_state_kickoff_side");
     auto now = get_clock()->now();
     const bool whistle_recent = whistleRecentlyDetected();
-    const bool whistle_can_start_play = whistle_recent && gameState == "SET";
+    // Use the raw gameState (not any future override) and an explicit !isStopped
+    // guard so a whistle during Stop Play cannot fire SET → PLAY.
+    const bool whistle_can_start_play = whistle_recent && gameState == "SET" && !data->isStopped;
     const bool whistle_can_release_penalty_kick = whistle_recent
         && gameState == "PLAY"
         && gameSubStateType == "FREE_KICK"
@@ -724,28 +742,46 @@ void Brain::updateRobotMemory() {
 }
 
 void Brain::updateKickoffMemory() {
-    
+
     static Point ballPos;
-    const double BALL_MOVE_THRESHOLD_FACTOR = 0.15; 
-    const double BALL_MOVE_THRESHOLD_MIN = 0.3; 
+    const double MIDLINE_CROSS_MARGIN = 0.1;
+    const double BALL_MOVE_THRESHOLD_FACTOR = 0.15;
+    const double BALL_MOVE_THRESHOLD_MIN = 0.3;
+    auto whistleRecentlyDetected = [this]() {
+        return config->whistleEnable
+            && data->lastWhistleTime.nanoseconds() > 0
+            && msecsSince(data->lastWhistleTime) <= config->whistleMemoryMsecs;
+    };
     auto ballMoved = [=]() {
-        if (!data->ballDetected) return false; 
+        if (!data->ballDetected) return false;
         double range = data->ball.range;
         double threshold = max(range * BALL_MOVE_THRESHOLD_FACTOR, BALL_MOVE_THRESHOLD_MIN);
         double posChange = norm(data->ball.posToRobot.x - ballPos.x, data->ball.posToRobot.y - ballPos.y);
         return posChange > threshold;
     };
+    auto opponentKickoffBallCrossedMidline = [=]() {
+        return whistleRecentlyDetected()
+            && tree->getEntry<bool>("ball_location_known")
+            && data->ball.posToField.x < -MIDLINE_CROSS_MARGIN;
+    };
     static rclcpp::Time kickOffTime;
-    const double TIMEOUT = 1000 * 10; 
+    const double TIMEOUT = 1000 * 10;
     auto timeReached = [=]() {
         return msecsSince(kickOffTime) > TIMEOUT;
     };
+    string gameState = data->rawGameState.empty() ? tree->getEntry<string>("gc_game_state") : data->rawGameState;
+    string gameSubStateType = data->rawGameSubStateType.empty() ? tree->getEntry<string>("gc_game_sub_state_type") : data->rawGameSubStateType;
+    string gameSubState = data->rawGameSubState.empty() ? tree->getEntry<string>("gc_game_sub_state") : data->rawGameSubState;
+    if (config->whistleOverrideGameController && whistleRecentlyDetected() && gameState == "SET") {
+        gameState = "PLAY";
+    }
     bool isWaitingForKickoff = (
-        (tree->getEntry<string>("gc_game_state") == "SET"  || tree->getEntry<string>("gc_game_state") == "READY")
+        (gameState == "SET"  || gameState == "READY")
         && !tree->getEntry<bool>("gc_is_kickoff_side")
     );
     bool isWaitingForFreekickKickoff = (
-        (tree->getEntry<string>("gc_game_sub_state") == "SET" || tree->getEntry<string>("gc_game_sub_state") == "GET_READY")
+        gameSubStateType == "FREE_KICK"
+        && (gameSubState == "SET" || gameSubState == "GET_READY")
         && !tree->getEntry<bool>("gc_is_sub_state_kickoff_side")
     );
     if ( isWaitingForFreekickKickoff || isWaitingForKickoff) {
@@ -753,12 +789,17 @@ void Brain::updateKickoffMemory() {
         kickOffTime = get_clock()->now();
         tree->setEntry<bool>("wait_for_opponent_kickoff", true);
     } else if (tree->getEntry<bool>("wait_for_opponent_kickoff")) {
-        if (ballMoved() || timeReached()) {
+        if (opponentKickoffBallCrossedMidline()) {
+            tree->setEntry<bool>("wait_for_opponent_kickoff", false);
+            RCLCPP_INFO(
+                get_logger(),
+                "opponent kickoff released after whistle: ball crossed midline at x=%.2f",
+                data->ball.posToField.x);
+        } else if (ballMoved() || timeReached()) {
             tree->setEntry<bool>("wait_for_opponent_kickoff", false);
         }
     }
 }
-
 vector<double> Brain::getGoalPostAngles(const double margin)
 {
     double leftX, leftY, rightX, rightY; 
@@ -1262,81 +1303,108 @@ void Brain::gameControlCallback(const game_controller_interface::msg::GameContro
 {
     data->timeLastGamecontrolMsg = get_clock()->now();
 
-    // 处理比赛的一级状态
-    auto lastGameState = tree->getEntry<string>("gc_game_state"); // 比赛的一级状态
+    // ----- Stop Play (rule game.tex:65-86) -----
+    // Update isStopped on every packet so it flips back to false within ~200ms
+    // when the operator clicks Resume Play (5 Hz packet boost while stopped).
+    data->isStopped = (msg.stopped != 0);
+    tree->setEntry<bool>("gc_is_stopped", data->isStopped);
+
+    // ----- Game phase (NORMAL / PENALTY_SHOOT_OUT / EXTRA_TIME / TIMEOUT) -----
+    data->gamePhase = static_cast<int>(msg.game_phase);
+
+    // ----- Primary state (defensive bounds check; new GC sends 0..4) -----
+    auto lastGameState = tree->getEntry<string>("gc_game_state");
     vector<string> gameStateMap = {
-        "INITIAL", // 初始化状态, 球员在场外准备
-        "READY",   // 准备状态, 球员进场, 并走到自己的始发位置
-        "SET",     // 停止动作, 等待裁判机发出开始比赛的指令
-        "PLAY",    // 正常比赛
-        "END"      // 比赛结束
+        "INITIAL",
+        "READY",
+        "SET",
+        "PLAY",
+        "END"
     };
-    string gameState = gameStateMap[static_cast<int>(msg.state)];
+    string gameState = "INITIAL";
+    if (static_cast<size_t>(msg.state) < gameStateMap.size()) {
+        gameState = gameStateMap[static_cast<int>(msg.state)];
+    }
     data->rawGameState = gameState;
     tree->setEntry<string>("gc_game_state", gameState);
-    bool isKickOffSide = (msg.kick_off_team == config->teamId); // 我方是否是开球方
+
+    // KICKING_TEAM_NONE (255) means neither team — comparison naturally returns false.
+    bool isKickOffSide = (static_cast<int>(msg.kicking_team) == config->teamId);
     tree->setEntry<bool>("gc_is_kickoff_side", isKickOffSide);
 
-    // 处理比赛的二级状态
-    string gameSubStateType;
-    switch (static_cast<int>(msg.secondary_state)) {
-        case 0:
-            gameSubStateType = "NONE";
-            data->realGameSubState = "NONE";
-            break;
-        case 3:
-            gameSubStateType = "TIMEOUT"; // 包含两队 timeout 和 裁判 timeout
-            data->realGameSubState = "TIMEOUT";
-            break;
-        // 暂时不处理其它状态, 除 TIMEOUT 外, 都按 FREE_KICK 处理
-        case 4:
-            // gameSubStateType = "DIRECT_FREEKICK";
-            gameSubStateType = "FREE_KICK";
-            data->realGameSubState = "DIRECT_FREEKICK";
-            data->isDirectShoot = true;
-            break;
-        case 5:
-            // gameSubStateType = "INDIRECT_FREEKICK";
-            gameSubStateType = "FREE_KICK";
-            data->realGameSubState = "INDIRECT_FREEKICK";
-            break;
-        case 6:
-            // gameSubStateType = "PENALTY_KICK";
-            gameSubStateType = "FREE_KICK";
-            data->realGameSubState = "PENALTY_KICK";
-            data->isDirectShoot = true;
-            break;
-        case 7:
-            // gameSubStateType = "CORNER_KICK";
-            gameSubStateType = "FREE_KICK";
-            data->realGameSubState = "CORNER_KICK";
-            break;
-        case 8:
-            // gameSubStateType = "GOAL_KICK";
-            gameSubStateType = "FREE_KICK";
-            data->realGameSubState = "GOAL_KICK";
-            data->isDirectShoot = true;
-            break;
-        case 9:
-            // gameSubStateType = "THROW_IN";
-            gameSubStateType = "FREE_KICK";
-            data->realGameSubState = "THROW_IN";
-            break;
-        default:
-            gameSubStateType = "FREE_KICK";
-            break;
+    // ----- Sub-state type (TIMEOUT / FREE_KICK / NONE) -----
+    string gameSubStateType = "NONE";
+    string gameSubState     = "";
+    data->realGameSubState  = "NONE";
+    data->isDirectShoot     = false;
+
+    if (msg.game_phase == GAME_PHASE_TIMEOUT) {
+        gameSubStateType       = "TIMEOUT";
+        data->realGameSubState = "TIMEOUT";
+    } else {
+        switch (static_cast<int>(msg.set_play)) {
+            case SET_PLAY_NONE:
+                gameSubStateType = "NONE";
+                data->realGameSubState = "NONE";
+                break;
+            case SET_PLAY_DIRECT_FREE_KICK:
+                gameSubStateType = "FREE_KICK";
+                data->realGameSubState = "DIRECT_FREEKICK";
+                data->isDirectShoot = true;
+                break;
+            case SET_PLAY_INDIRECT_FREE_KICK:
+                gameSubStateType = "FREE_KICK";
+                data->realGameSubState = "INDIRECT_FREEKICK";
+                break;
+            case SET_PLAY_PENALTY_KICK:
+                gameSubStateType = "FREE_KICK";
+                data->realGameSubState = "PENALTY_KICK";
+                data->isDirectShoot = true;
+                break;
+            case SET_PLAY_THROW_IN:
+                gameSubStateType = "FREE_KICK";
+                data->realGameSubState = "THROW_IN";
+                break;
+            case SET_PLAY_GOAL_KICK:
+                gameSubStateType = "FREE_KICK";
+                data->realGameSubState = "GOAL_KICK";
+                data->isDirectShoot = true;
+                break;
+            case SET_PLAY_CORNER_KICK:
+                gameSubStateType = "FREE_KICK";
+                data->realGameSubState = "CORNER_KICK";
+                break;
+            default:
+                gameSubStateType = "NONE";
+                data->realGameSubState = "NONE";
+                break;
+        }
     }
-    vector<string> gameSubStateMap = {"STOP", "GET_READY", "SET"};                               // STOP: 停下来; -> GET_READY: 移动到进攻或防守位置; -> SET: 站住不动
-    string gameSubState = gameSubStateMap[static_cast<int>(msg.secondary_state_info[1])];
+
+    // ----- Sub-state phase (STOP / GET_READY / SET) -----
+    // The old GC sent a precise byte (secondary_state_info[1]). The new GC does
+    // not have a direct equivalent; we approximate from `stopped`, `secondary_time`,
+    // and `set_play`. Defensive ordering: stopped wins, then GET_READY (timer counting
+    // down), then SET (timer at zero but a set play is still active).
+    if (gameSubStateType == "FREE_KICK") {
+        if      (msg.stopped)                              gameSubState = "STOP";
+        else if (msg.secondary_time > 0)                   gameSubState = "GET_READY";
+        else if (msg.set_play != SET_PLAY_NONE)            gameSubState = "SET";
+        else                                               gameSubState = "";
+    } else {
+        gameSubState = "";
+    }
     data->rawGameSubStateType = gameSubStateType;
-    data->rawGameSubState = gameSubState;
+    data->rawGameSubState     = gameSubState;
     tree->setEntry<string>("gc_game_sub_state_type", gameSubStateType);
     tree->setEntry<string>("gc_game_sub_state", gameSubState);
-    bool isSubStateKickOffSide = (static_cast<int>(msg.secondary_state_info[0]) == config->teamId); // 在二级状态下, 我方是否是开球方. 例如, 当前二级状态为任意球, 我方是否是开任意球的一方
+
+    // The new GC has only ONE kicking_team (used both for kick-off and set plays),
+    // so the sub-state-kickoff flag mirrors the primary one.
+    bool isSubStateKickOffSide = (static_cast<int>(msg.kicking_team) == config->teamId);
     tree->setEntry<bool>("gc_is_sub_state_kickoff_side", isSubStateKickOffSide);
 
-    // cout << "game state: " << gameState << " game sub state type: " << gameSubStateType << endl;
-    // 找到队的信息
+    // ----- Find our team / opponent -----
     game_controller_interface::msg::TeamInfo myTeamInfo;
     game_controller_interface::msg::TeamInfo oppoTeamInfo;
     if (msg.teams[0].team_number == config->teamId)
@@ -1351,69 +1419,60 @@ void Brain::gameControlCallback(const game_controller_interface::msg::GameContro
     }
     else
     {
-        // 数据包中没有包含我们的队，不应该再处理了
         prtErr(format("received invalid game controller message team0 %d, team1 %d, teamId %d",
             msg.teams[0].team_number, msg.teams[1].team_number, config->teamId));
         return;
     }
 
+    // ----- Penalty / live-count loop -----
+    // In v19, red/yellow cards are no longer separate counters; they live inside
+    // `penalty` (PENALTY_SENT_OFF, PENALTY_SUBSTITUTE). A robot is "alive" iff
+    // penalty == PENALTY_NONE.
     int liveCount = 0;
     int oppoLiveCount = 0;
-    // 处理判罚状态. penalty[playerId - 1] 代表我方的球员是否处于判罚状态, 处理判罚状态意味着不能移动
     for (int i = 0; i < HL_MAX_NUM_PLAYERS; i++) {
-        data->penalty[i] = static_cast<int>(myTeamInfo.players[i].penalty);
-        
-        if (static_cast<int>(myTeamInfo.players[i].red_card_count) > 0) {
-            data->penalty[i] = PENALTY_SUBSTITUTE;
-        }
+        int myPenalty   = PENALTY_SUBSTITUTE;
+        int oppoPenalty = PENALTY_SUBSTITUTE;
+        if (i < static_cast<int>(myTeamInfo.players.size()))
+            myPenalty   = static_cast<int>(myTeamInfo.players[i].penalty);
+        if (i < static_cast<int>(oppoTeamInfo.players.size()))
+            oppoPenalty = static_cast<int>(oppoTeamInfo.players[i].penalty);
 
-        if (data->penalty[i] == PENALTY_NONE) liveCount++;
-        data->oppoPenalty[i] = static_cast<int>(oppoTeamInfo.players[i].penalty);
-
-        if (static_cast<int>(oppoTeamInfo.players[i].red_card_count) > 0) {
-            data->oppoPenalty[i] = PENALTY_SUBSTITUTE;
-        }
-
-        if (data->oppoPenalty[i] == PENALTY_NONE) oppoLiveCount++;
+        data->penalty[i]     = myPenalty;
+        data->oppoPenalty[i] = oppoPenalty;
+        if (myPenalty   == PENALTY_NONE) liveCount++;
+        if (oppoPenalty == PENALTY_NONE) oppoLiveCount++;
     }
-    data->liveCount = liveCount;
+    data->liveCount     = liveCount;
     data->oppoLiveCount = oppoLiveCount;
 
-    // cout << "penalty: " << data->penalty[0] << " " << data->penalty[1] << " " << data->penalty[2] << " " << data->penalty[3] << endl;
-    // cout << "oppo penalty: " << data->oppoPenalty[0] << " " << data->oppoPenalty[1] << " " << data->oppoPenalty[2] << " " << data->oppoPenalty[3] << endl;
     bool lastIsUnderPenalty = tree->getEntry<bool>("gc_is_under_penalty");
-    bool isUnderPenalty = (data->penalty[config->playerId - 1] != PENALTY_NONE); // 当前 robot 是否被判罚中
+    bool isUnderPenalty = (data->penalty[config->playerId - 1] != PENALTY_NONE);
     tree->setEntry<bool>("gc_is_under_penalty", isUnderPenalty);
-    if (isUnderPenalty && !lastIsUnderPenalty) tree->setEntry<bool>("odom_calibrated", false); // 被判罚了, 则需要重新进场, 因此需要重新定位
+    if (isUnderPenalty && !lastIsUnderPenalty) tree->setEntry<bool>("odom_calibrated", false);
 
-    // log game state   
+    // ----- Log -----
     log->setTimeNow();
     log->logToScreen(
         "tick/gamecontrol",
-        format("Player: %d  Role: %s PrimaryStriker: %s GameState: %s  SubStateType: %s  SubState: %s UnderPenalty: %d isKickoff: %d isSubStateKickoff: %d", 
-            config->playerId, tree->getEntry<string>("player_role").c_str(), isPrimaryStriker() ? "Yes" : "No", gameState.c_str(), gameSubStateType.c_str(), gameSubState.c_str(), isUnderPenalty, isKickOffSide, isSubStateKickOffSide
+        format("Player: %d  Role: %s PrimaryStriker: %s GameState: %s  SubStateType: %s  SubState: %s UnderPenalty: %d isKickoff: %d isSubStateKickoff: %d Stopped: %d Phase: %d",
+            config->playerId,
+            tree->getEntry<string>("player_role").c_str(),
+            isPrimaryStriker() ? "Yes" : "No",
+            gameState.c_str(),
+            gameSubStateType.c_str(),
+            gameSubState.c_str(),
+            isUnderPenalty,
+            isKickOffSide,
+            isSubStateKickOffSide,
+            data->isStopped ? 1 : 0,
+            data->gamePhase
             ),
         0xFFFFFFFF,
         30.0
     );
 
-    // // If we just transitioned into PLAY and we are kickoff side, trigger mechanical kick immediately
-    // // (avoid kicking if we're waiting for opponent kickoff)
-    // if (lastGameState != "PLAY" && gameState == "PLAY" && isKickOffSide) {
-    //     // During kickoff, we should be the one kicking
-    //     bool waitForOpponent = tree->getEntry<bool>("wait_for_opponent_kickoff");
-    //     if (!waitForOpponent) {
-    //         prtDebug("Auto-kick: entering PLAY and we are kickoff side");
-    //         // stop any movement and perform the leg kick
-    //         if (client) {
-    //             client->setVelocity(0., 0., 0.);
-    //             data->isKickingOff = true;
-    //             client->kickLeg();
-    //         }
-    //     }
-    // }
-
-    // FOR FUN 处理进球后的庆祝挥手的逻辑
+    // ----- Score (unchanged from v15 mapping) -----
     data->score = static_cast<int>(myTeamInfo.score);
     data->oppoScore = static_cast<int>(oppoTeamInfo.score);
 }
@@ -1802,7 +1861,12 @@ void Brain::recoveryStateCallback(const booster_interface::msg::RawBytesMsg &msg
         this->data->recoveryState = recoveryStateMap[static_cast<int>(recoveryState.state)];
         this->data->isRecoveryAvailable = static_cast<bool>(recoveryState.is_recovery_available);
         this->data->currentRobotModeIndex = static_cast<int>(recoveryState.current_planner_index);
-        
+
+        // Sent to GC as the `fallen` byte in the v4 status packet. Validator
+        // rejects values >1, so this MUST stay a clean 0/1 (the cast does that).
+        this->data->isFallen = (this->data->recoveryState == RobotRecoveryState::HAS_FALLEN
+                             || this->data->recoveryState == RobotRecoveryState::IS_FALLING);
+
         // cout << "recoveryState: " << static_cast<int>(recoveryState.state) << endl;
         // cout << "recovery is available: " << static_cast<int>(recoveryState.is_recovery_available) << endl;
         // cout << "current planner idx: " << static_cast<int>(recoveryState.current_planner_index) << endl;
@@ -2158,6 +2222,47 @@ void Brain::detectProcessBalls(const vector<GameObject> &ballObjs)
         data->ball = ballObjs[indexRealBall];
         data->ball.confidence = bestConfidence;
 
+        { // Compute ball velocity in field frame using finite differences
+            const auto &p = data->ball.posToField;
+            auto t = data->ball.timePoint;
+
+            const double dt = (t - data->ballPrevTimePoint).seconds();
+            const double dt_min = 1e-3;
+            const double dt_max = 0.5;
+            const double max_speed = 10.0;
+            const double alpha = 0.35; // low-pass filter coefficient
+
+            if (dt > dt_min && dt < dt_max)
+            {
+                const double vx_meas = (p.x - data->ballPrevPosToField.x) / dt;
+                const double vy_meas = (p.y - data->ballPrevPosToField.y) / dt;
+
+                double vx = vx_meas;
+                double vy = vy_meas;
+
+                const double speed_meas = std::sqrt(vx_meas * vx_meas + vy_meas * vy_meas);
+
+                if (speed_meas <= max_speed)
+                {
+                    if (data->ballVelValid)
+                    {
+                        vx = alpha * vx_meas + (1.0 - alpha) * data->ballVelToField.x;
+                        vy = alpha * vy_meas + (1.0 - alpha) * data->ballVelToField.y;
+                    }
+
+                    data->ballVelToField.x = vx;
+                    data->ballVelToField.y = vy;
+                    data->ballSpeedToField = std::sqrt(vx * vx + vy * vy);
+                    data->ballVelDirToField = std::atan2(vy, vx);
+                    data->ballVelValid = true;
+                }
+            }
+
+            data->ballPrevPosToField.x = p.x;
+            data->ballPrevPosToField.y = p.y;
+            data->ballPrevTimePoint = t;
+        }
+
         tree->setEntry<bool>("ball_location_known", true);
         updateBallOut();        
     }
@@ -2411,39 +2516,59 @@ void Brain::logDetection(const vector<GameObject> &gameObjects, bool logBounding
     {
         auto obj = gameObjects[i];
         auto label = obj.label;
-        labels.push_back(rerun::Text(
-            format("%s x:%.2f y:%.2f c:%.1f", 
-                label == "Opponent" || label == "Person" ? (label + "[" + obj.color + "]").c_str() : label.c_str(), 
-                obj.posToRobot.x, 
-                obj.posToRobot.y, 
-                obj.confidence)
-            )
-        );
-        points.push_back(rerun::Vec2D{obj.posToField.x, -obj.posToField.y}); // y 取反是因为 rerun Viewer 的坐标系是左手系。转一下看起来更方便。
-        points_r.push_back(rerun::Vec2D{obj.posToRobot.x, -obj.posToRobot.y});
-        mins.push_back(rerun::Vec2D{obj.boundingBox.xmin, obj.boundingBox.ymin});
-        sizes.push_back(rerun::Vec2D{obj.boundingBox.xmax - obj.boundingBox.xmin, obj.boundingBox.ymax - obj.boundingBox.ymin});
+        if (label != "Ball") {
+            labels.push_back(rerun::Text(
+                format("%s x:%.2f y:%.2f c:%.1f",
+                    label == "Opponent" || label == "Person" ? (label + "[" + obj.color + "]").c_str() : label.c_str(),
+                    obj.posToRobot.x,
+                    obj.posToRobot.y,
+                    obj.confidence)
+                )
+            );
+            points.push_back(rerun::Vec2D{obj.posToField.x, -obj.posToField.y}); // y 取反是因为 rerun Viewer 的坐标系是左⼿系。转⼀下看起来更⽅便。
+            points_r.push_back(rerun::Vec2D{obj.posToRobot.x, -obj.posToRobot.y});
+            mins.push_back(rerun::Vec2D{obj.boundingBox.xmin, obj.boundingBox.ymin});
+            sizes.push_back(rerun::Vec2D{obj.boundingBox.xmax - obj.boundingBox.xmin, obj.boundingBox.ymax - obj.boundingBox.ymin});
+            // if (obj.label == "Opponent") radiis.push_back(0.5);
+            radiis.push_back(0.1);
 
-        // if (obj.label == "Opponent") radiis.push_back(0.5);
-        radiis.push_back(0.1);
-
-        auto color = rerun::Color(0xFFFFFFFF);
-
-        auto it = detectColorMap.find(label);
-        if (it != detectColorMap.end())
-        {
-            color = detectColorMap[label];
+            auto color = rerun::Color(0xFFFFFFFF);
+            auto it = detectColorMap.find(label);
+            if (it != detectColorMap.end())
+            {
+                color = detectColorMap[label];
+            }
+            else
+            {
+                // do nothing, use default
+                // colors.push_back(rerun::Color(0xFFFFFFFF));
+            }
+            colors.push_back(color);
         }
-        else
-        {
-            // do nothing, use default
-            // colors.push_back(rerun::Color(0xFFFFFFFF));
+        else {
+            // JUMP HERE FOR LOGGING
+            labels.push_back(rerun::Text(
+                format("%s x:%.2f y:%.2f vx:%.1f vy:%.1f c:%.1f",
+                    "Ball",
+                    obj.posToRobot.x,
+                    obj.posToRobot.y,
+                    data->ballVelToField.x,
+                    data->ballVelToField.y,
+                    obj.confidence)
+                )
+            );
+            points.push_back(rerun::Vec2D{obj.posToField.x, -obj.posToField.y}); // y 取反是因为 rerun Viewer 的坐标系是左⼿系。转⼀下看起来更⽅便。
+            points_r.push_back(rerun::Vec2D{obj.posToRobot.x, -obj.posToRobot.y});
+            mins.push_back(rerun::Vec2D{obj.boundingBox.xmin, obj.boundingBox.ymin});
+            sizes.push_back(rerun::Vec2D{obj.boundingBox.xmax - obj.boundingBox.xmin, obj.boundingBox.ymax - obj.boundingBox.ymin});
+
+            auto color = rerun::Color(0xFFFFFFFF);
+            if (label == "Ball" && isBallOut(0.2, 10.0))
+                color = rerun::Color(0x000000FF);
+            if (label == "Ball" && obj.confidence < config->ballConfidenceThreshold)
+                color = rerun::Color(0xAAAAAAFF);
+            colors.push_back(color);
         }
-        if (label == "Ball" && isBallOut(0.2, 10.0))
-            color = rerun::Color(0x000000FF);
-        if (label == "Ball" && obj.confidence < config->ballConfidenceThreshold)
-            color = rerun::Color(0xAAAAAAFF);
-        colors.push_back(color);
     }
 
     

@@ -1,6 +1,0 @@
-source;share/sound_play/hook/pythonpath.ps1
-source;share/sound_play/hook/pythonpath.dsv
-source;share/sound_play/hook/pythonpath.sh
-source;share/sound_play/hook/ament_prefix_path.ps1
-source;share/sound_play/hook/ament_prefix_path.dsv
-source;share/sound_play/hook/ament_prefix_path.sh

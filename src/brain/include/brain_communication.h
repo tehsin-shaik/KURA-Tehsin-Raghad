@@ -37,7 +37,9 @@ private:
     bool _unicast_gamecontrol_flag = false;
     int _gc_send_socket = -1;
     sockaddr_in _gcsaddr;
-    HlRoboCupGameControlReturnData gc_return_data;
+    RoboCupGameControlReturnData gc_return_data;
+    // 1 Hz, in [0.5, 2.0] Hz range required by GameController-master/README.md.
+    // DO NOT change without re-checking the rule range.
     static constexpr int BROADCAST_GAME_CONTROL_INTERVAL_MS = 1000;
 
     const char* MULTICAST_ADDR = "239.255.255.250"; // 组播地址
@@ -82,7 +84,14 @@ private:
     int _unicast_socket = -1;
     int _unicast_udp_port = 0;
     sockaddr_in _unicast_saddr;
+    rclcpp::Time _last_team_msg_time;
+    // Tick rate of the team-comms thread. Each tick will only actually send
+    // when the rule-mandated rate-limit (TEAM_MSG_MIN_INTERVAL_MS) has elapsed
+    // and the game state is Ready/Set/Playing.
     static constexpr int UNICAST_INTERVAL_MS = 100;
+    // Rule cap: 12000 messages per game (HSL-Rules-main/common/variables.tex \UDPPacketLimit).
+    // 0.5 Hz over a 20-min match = 600 messages, ~5% of budget. Conservative & safe.
+    static constexpr int TEAM_MSG_MIN_INTERVAL_MS = 500;
 
 
     void initCommunicationReceiver();

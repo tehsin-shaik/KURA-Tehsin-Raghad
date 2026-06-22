@@ -1,28 +1,25 @@
+# ROS2 build artifacts
 build/
 install/
 log/
+
+src/build/
+src/install/
+src/log/
+
+# Mac files
+.DS_Store
+
+# Logs
+*.log
+nohup.out
+
+# VS Code
 .vscode/
-logs/
+
+# Temporary files
+*.tmp
+
+# Python
 __pycache__/
-venv
-.ipynb_checkpoints/
-.env
-venvs
-1-files
-site/
-joystick.log
-vision.log
-src/GPATH
-src/GRTAGS
-src/GTAGS
-.cache/
-brain.log
-game_controller.log
-sound.log
-vision_wrapper.log
-whistle.log
-
-
-
-
-
+*.pyc

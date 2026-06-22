@@ -3,7 +3,8 @@
 
 BrainData::BrainData()
 {
-    std::fill(std::begin(penalty), std::end(penalty), SUBSTITUTE);
+    std::fill(std::begin(penalty), std::end(penalty), PENALTY_SUBSTITUTE);
+    std::fill(std::begin(oppoPenalty), std::end(oppoPenalty), PENALTY_SUBSTITUTE);
 }
 
 vector<GameObject> BrainData::getMarkingsByType(set<string> types) {

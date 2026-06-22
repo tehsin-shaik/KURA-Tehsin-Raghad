@@ -1,9 +1,9 @@
 brain_node:
   ros__parameters:
     game:
-      team_id: 62 # must be consistant with GameControl
+      team_id: 45 # must be consistant with GameControl
       player_id: 3 # 1 | 2 | 3 | 4 | 5
-      field_type: "adult_size" # adult_size | kid_size | robo_league
+      field_type: "robo_league" # adult_size | kid_size | robo_league
       player_role: "striker" # striker | goal_keeper
       treat_person_as_robot: true 
       number_of_players: 3
@@ -57,7 +57,7 @@ brain_node:
 
     locator:
       min_marker_count: 5
-      max_residual: 0.3 
+      max_residual: 0.3
 
     enable_com: true 
 
@@ -80,7 +80,8 @@ brain_node:
         cam_fov_x: 90.0 
         cam_fov_y: 60.0 
     
-    game_control_ip: "192.168.1.2"
+    # IP of the new HSL GameController-master laptop. Update before each game.
+    game_control_ip: "192.168.41.2"
 
     # for fun and debug
     sound:

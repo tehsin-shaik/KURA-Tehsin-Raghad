@@ -14,17 +14,21 @@ def generate_launch_description():
             output='screen',
             parameters=[
                 {
-                    # 监听的端口，默认为 GameController 广播端口 3838
+                    # GC broadcast port (rule-fixed, do not change)
                     "port": 3838,
 
-                    # 是否开启 IP 白名单，开启后会忽略非白名单 IP 发的广播消息，默认不应该开启
+                    # Disable IP whitelist for the migration. Re-enable for the
+                    # competition by setting True and listing the GC laptop IP(s)
+                    # in ip_white_list below.
                     "enable_ip_white_list": True,
 
-                    # 只接收指定
+                    # Add the new GC laptop's IP(s) here before re-enabling.
                     "ip_white_list": [
-                        "192.168.1.2"
+                        "192.168.0.126",
+                        "192.168.0.206",
+                        "192.168.41.2",
                     ],
                 }
-            ]             
+            ]
         ),
     ])

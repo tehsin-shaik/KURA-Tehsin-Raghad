@@ -56,7 +56,49 @@ public:
     static PortsList providedPorts()
     {
         return {
-            InputPort<double>("cross_threshold", 0.2, "可进门的角度范围小于这个值时, 则传中")
+            InputPort<double>("cross_threshold", 0.2, "可进门的角度范围小于这个值时, 则传中"),
+            InputPort<double>("goal_attract_gain", 3.0, "Attractive gain toward opponent goal center"),
+            InputPort<double>("teammate_repulse_gain", 0.8, "Repulsive gain away from teammates"),
+            InputPort<double>("teammate_facing_gain", 1.0, "Extra scaling when teammate faces ball"),
+            InputPort<double>("opponent_repulse_gain", 1.5, "Repulsive gain away from opponents"),
+            InputPort<double>("edge_repulse_gain", 1.0, "Repulsive gain from field edges"),
+            InputPort<double>("edge_influence_dist", 1.0, "Distance from edges where repulsion acts"),
+            InputPort<double>("obstacle_clearance", 0.3, "Required lateral clearance from obstacles for kick ray (m)"),
+            InputPort<double>("obstacle_check_dist", 2.0, "Forward distance to check obstacles along kick ray"),
+            InputPort<double>("search_angle_step", 0.15, "Angle step when searching alternative directions (rad)"),
+            InputPort<double>("search_max_angle", 1.0, "Maximum angle deviation for search (rad)"),
+            InputPort<double>("min_forward_dot", 0.2, "Minimum cosine alignment with goal direction"),
+            InputPort<double>("min_force", 0.01, "Minimum norm to accept force"),
+            InputPort<double>("saturate_force", 5.0, "Force magnitude saturation before converting to angle")
+        };
+    }
+
+    NodeStatus tick() override;
+
+private:
+    Brain *brain;
+};
+
+class CalcPassTarget : public SyncActionNode
+{
+public:
+    CalcPassTarget(const string &name, const NodeConfig &config, Brain *_brain) : SyncActionNode(name, config), brain(_brain) {}
+
+    static PortsList providedPorts()
+    {
+        return {
+            InputPort<double>("min_ball_x", -3.5, "Minimum field x for pass mode"),
+            InputPort<double>("max_ball_x", 0.0, "Maximum field x for pass mode"),
+            InputPort<double>("has_ball_range", 0.8, "Robot is treated as having the ball below this range"),
+            InputPort<int>("min_opponents", 2, "Number of nearby robots required before passing"),
+            InputPort<double>("pressure_radius", 2.0, "Opponent pressure radius around the ball"),
+            InputPort<double>("lane_clearance", 0.55, "Minimum obstacle clearance along pass lane"),
+            InputPort<double>("target_clearance", 1.0, "Minimum obstacle clearance around pass target"),
+            InputPort<double>("side_margin", 3.0, "Keep pass target at least this far from each sideline"),
+            InputPort<double>("min_pass_dist", 1.5, "Minimum pass distance"),
+            InputPort<double>("max_pass_dist", 6.0, "Maximum pass distance"),
+            InputPort<double>("speed_min", 0.6, "Minimum pass kick speed"),
+            InputPort<double>("speed_max", 2.4, "Maximum pass kick speed")
         };
     }
 
@@ -70,7 +112,8 @@ private:
 class StrikerDecide : public SyncActionNode
 {
 public:
-    StrikerDecide(const string &name, const NodeConfig &config, Brain *_brain) : SyncActionNode(name, config), brain(_brain) {}
+    StrikerDecide(const string &name, const NodeConfig &config, Brain *_brain)
+        : SyncActionNode(name, config), brain(_brain) {}
 
     static PortsList providedPorts()
     {
@@ -78,17 +121,41 @@ public:
             InputPort<double>("chase_threshold", 1.0, "超过这个距离, 执行追球动作"),
             InputPort<string>("decision_in", "", "用于读取上一次的 decision"),
             InputPort<string>("position", "offense", "offense | defense, 决定了向哪个方向踢球"),
-            OutputPort<string>("decision_out")};
+
+            // Role switching parameters
+            InputPort<double>("role_kcost", 1.5, "Angle cost weight for attacker selection"),
+            InputPort<double>("role_takeover_margin", 0.9, "Required cost advantage before taking attacker role"),
+            InputPort<double>("role_takeover_confirm_msec", 1000.0, "How long advantage must remain before taking attacker role"),
+            InputPort<double>("role_min_hold_msec", 2000.0, "Minimum time to keep role before switching again"),
+            InputPort<double>("role_no_attacker_timeout_msec", 3000.0, "Become attacker if no valid attacker is visible for this long"),
+            InputPort<double>("role_comm_timeout_msec", 4500.0, "How long teammate role communication remains valid"),
+            InputPort<int>("role_initial_attacker_id", 1, "Initial attacker player_id, one-based"),
+
+            OutputPort<string>("decision_out")
+        };
     }
 
     NodeStatus tick() override;
 
 private:
     Brain *brain;
-    double lastDeltaDir; 
-    rclcpp::Time timeLastTick; 
-};
 
+    double lastDeltaDir = 0.0;
+    rclcpp::Time timeLastTick;
+
+    // Stable attacker/defender role switching state
+    bool _roleInitialized = false;
+    bool _iAmAttacker = false;
+
+    bool _noValidAttackerTimerActive = false;
+    rclcpp::Time _noValidAttackerSince;
+
+    bool _takeoverTimerActive = false;
+    rclcpp::Time _takeoverSince;
+    int _takeoverCandidateIdx = -1;
+
+    rclcpp::Time _lastRoleChangeTime;
+};
 
 class GoalieDecide : public SyncActionNode
 {
@@ -324,6 +391,9 @@ private:
     double _speed; 
     double _minRange; 
     tuple<double, double, double> _calcSpeed();
+
+    double _kickSpeedLimit = 0.0;
+    void _logKickTrial(const string &reason);
 };
 
 // 触发机械踢球（调用底层 Loco API），快速返回
@@ -398,6 +468,36 @@ class MoveToPoseOnField : public SyncActionNode
 {
 public:
     MoveToPoseOnField(const std::string &name, const NodeConfig &config, Brain *_brain) : SyncActionNode(name, config), brain(_brain) {}
+
+    static BT::PortsList providedPorts()
+    {
+        return {
+            InputPort<double>("x", 0, "目标 x 坐标, Field 坐标系"),
+            InputPort<double>("y", 0, "目标 y 坐标, Field 坐标系"),
+            InputPort<double>("theta", 0, "目标最终朝向, Field 坐标系"),
+            InputPort<double>("long_range_threshold", 1.5, "目标点的距离超过这个值时, 优先走过去, 而不是细调位置和方向"),
+            InputPort<double>("turn_threshold", 0.4, "长距离时, 目标点的方向超这个数值时, 先转向目标点"),
+            InputPort<double>("vx_limit", 0.8, "x 限速"),
+            InputPort<double>("vy_limit", 0.5, "y 限速"),
+            InputPort<double>("vtheta_limit", 0.2, "theta 限速"),
+            InputPort<double>("x_tolerance", 0.5, "x 容差"),
+            InputPort<double>("y_tolerance", 0.5, "y 容差"),
+            InputPort<double>("theta_tolerance", 0.5, "theta 容差"),
+            InputPort<bool>("avoid_obstacle", false, "是否避障")
+        };
+    }
+
+    BT::NodeStatus tick() override;
+
+private:
+    Brain *brain;
+};
+
+
+class Goal_Block : public SyncActionNode
+{
+public:
+    Goal_Block(const std::string &name, const NodeConfig &config, Brain *_brain) : SyncActionNode(name, config), brain(_brain) {}
 
     static BT::PortsList providedPorts()
     {
@@ -782,18 +882,20 @@ public:
     static BT::PortsList providedPorts()
     {
         return {
-            InputPort<double>("chase_threshold", 1.0, "Perform the chasing action if the distance exceeds this threshold"),
-            InputPort<double>("adjust_angle_tolerance", 0.1, "Consider the adjustment successful if the angle is smaller than this value"),
-            InputPort<double>("adjust_y_tolerance", 0.1, "Consider the y-direction adjustment successful if the offset is smaller than this value"),
-            InputPort<string>("decision_in", "", "Used to read the last decision"),
-            OutputPort<string>("decision_out"),
-        };
+            InputPort<double>("chase_threshold", 1.0, "超过这个距离, 执行追球动作"),
+            InputPort<string>("decision_in", "", "用于读取上一次的 decision"),
+            InputPort<string>("position", "offense", "offense | defense, 决定了向哪个方向踢球"),
+            OutputPort<string>("decision_out")};
     }
  
-    BT::NodeStatus tick() override;
+    NodeStatus tick() override;
  
 private:
     Brain *brain;
+    double lastDeltaDir;
+    rclcpp::Time timeLastTick;
+    bool _chaseCondActive = false;
+    rclcpp::Time _chaseCondStart;
 };
  
 
@@ -815,12 +917,6 @@ public:
             InputPort<double>("y_tolerance", 0.2, "y tolerance"),
             InputPort<double>("theta_tolerance", 0.1, "theta tolerance"),
 
-            // // NEW: Goalie box + kick offset (with defaults)
-            // InputPort<double>("goalie_box_x_min", -7.5, "Back boundary of goalie work zone"),
-            // InputPort<double>("goalie_box_x_max", -5.0, "Front boundary of goalie work zone"),
-            // InputPort<double>("goalie_box_half_y", 1.2,  "Half-height of goalie work zone"),
-            // InputPort<double>("kick_offset", 0.28,       "Stand-off behind ball before kick")
-
         };
     }
  
@@ -829,33 +925,6 @@ public:
 private:
     Brain *brain;
 };
-
-
-// class Y_Keeper : public SyncActionNode
-// {
-// public:
-//     Y_Keeper(const std::string &name, const NodeConfig &config, Brain *_brain) : SyncActionNode(name, config), brain(_brain) {}
- 
-//     static BT::PortsList providedPorts()
-//     {
-//         return {            
-//             InputPort<double>("theta", 0, "Final orientation of the target in the Field coordinate system"),
-//             InputPort<double>("long_range_threshold", 1.5, "When the distance to the target point exceeds this value, prioritize moving towards it rather than fine-tuning position and orientation"),
-//             InputPort<double>("turn_threshold", 0.4, "For long distances, if the angle to the target point exceeds this threshold, turn towards the target point first"),
-//             InputPort<double>("vx_limit", 1.0, "x limit"),
-//             InputPort<double>("vy_limit", 0.5, "y limit"),
-//             InputPort<double>("vtheta_limit", 0.4, "theta limit"),
-//             InputPort<double>("x_tolerance", 0.2, "X tolerance"),
-//             InputPort<double>("y_tolerance", 0.2, "y tolerance"),
-//             InputPort<double>("theta_tolerance", 0.1, "theta tolerance"),
-//         };
-//     }
- 
-//     BT::NodeStatus tick() override;
- 
-// private:
-//     Brain *brain;
-// };
 
 
 class DefenderDecide : public SyncActionNode
@@ -908,47 +977,28 @@ private:
     Brain *brain;
 };
 
-
-class CalcKickDirPF : public SyncActionNode {
+class CalcKickDirPF : public SyncActionNode
+{
 public:
     CalcKickDirPF(const string &name, const NodeConfig &config, Brain *_brain)
-    : SyncActionNode(name, config), brain(_brain) {}
+        : SyncActionNode(name, config), brain(_brain) {}
 
-    static PortsList providedPorts() {
+    static PortsList providedPorts()
+    {
         return {
-            // --- Your legacy PF knobs (kept for compatibility; ignored by this implementation) ---
-            InputPort<double>("goal_attract_gain",     3.0, "IGNORED"),
-            InputPort<double>("teammate_repulse_gain", 0.8, "IGNORED"),
-            InputPort<double>("teammate_facing_gain",  1.0, "IGNORED"),
-            InputPort<double>("opponent_repulse_gain", 1.5, "IGNORED"),
-            InputPort<double>("edge_repulse_gain",     1.0, "IGNORED"),
-            InputPort<double>("edge_influence_dist",   1.0, "IGNORED"),
-            InputPort<double>("obstacle_clearance",    0.30,"IGNORED"),
-            InputPort<double>("obstacle_check_dist",   2.00,"IGNORED"),
-            InputPort<double>("search_angle_step",     0.15,"IGNORED"),
-            InputPort<double>("search_max_angle",      1.00,"IGNORED"),
-            InputPort<double>("min_forward_dot",       0.20,"IGNORED"),
-            InputPort<double>("min_force",             0.01,"IGNORED"),
-            InputPort<double>("saturate_force",        5.00,"IGNORED"),
-
-            // --- Python-logic knobs (these map to the scorer below; all optional) ---
-            InputPort<double>("goal_half",           0.6,  "Half goal height (m)"),
-            InputPort<double>("ball_speed",          8.0,  "v_ball (m/s)"),
-            InputPort<double>("open_space_D",        3.2,  "Open-space cap distance (m)"),
-            InputPort<double>("w_open_space",        2.6,  "Open-space weight"),
-            InputPort<double>("w_flank",             3.8,  "Flank weight"),
-            InputPort<double>("goal_reward_gain",    10.0,  "Goal reward gain"),
-            InputPort<double>("out_penalty",         8.0,  "Out-of-bounds penalty"),
-            InputPort<double>("near_post_repulse",   0.18, "Near-post repulse range (m)"),
-            InputPort<double>("min_kick_clearance",  0.30, "Min lateral clearance (m)"),
-            InputPort<double>("jitter_deg",          7.0,  "Angle jitter sigma (deg)"),
-            InputPort<int   >("jitter_samples",      5,    "Samples for robust avg"),
-            InputPort<bool  >("use_smoothed_peak",   true, "Smooth scores before peak pick"),
-            InputPort<double>("smooth_sigma_deg",    8.0,  "Gaussian smooth sigma (deg)"),
-            InputPort<double>("peak_margin",         0.5,  "Accept within (max - margin)"),
-
-            // (Optional) publish on BT blackboard
-            OutputPort<double>("kick_dir")
+            InputPort<double>("goal_attract_gain", 3.0, "Attractive gain toward opponent goal center"),
+            InputPort<double>("teammate_repulse_gain", 0.8, "Repulsive gain away from teammates"),
+            InputPort<double>("teammate_facing_gain", 1.0, "Extra scaling when teammate faces ball"),
+            InputPort<double>("opponent_repulse_gain", 1.5, "Repulsive gain away from opponents"),
+            InputPort<double>("edge_repulse_gain", 1.0, "Repulsive gain from field edges"),
+            InputPort<double>("edge_influence_dist", 1.0, "Distance from edges where repulsion acts"),
+            InputPort<double>("obstacle_clearance", 0.3, "Required lateral clearance from obstacles for kick ray (m)"),
+            InputPort<double>("obstacle_check_dist", 2.0, "Forward distance to check obstacles along kick ray"),
+            InputPort<double>("search_angle_step", 0.15, "Angle step when searching alternative directions (rad)"),
+            InputPort<double>("search_max_angle", 1.0, "Maximum angle deviation for search (rad)"),
+            InputPort<double>("min_forward_dot", 0.2, "Minimum cosine alignment with goal direction"),
+            InputPort<double>("min_force", 0.01, "Minimum norm to accept force"),
+            InputPort<double>("saturate_force", 5.0, "Force magnitude saturation before converting to angle")
         };
     }
 
@@ -957,5 +1007,4 @@ public:
 private:
     Brain *brain;
     rclcpp::Time lastExecutionTime;
-    double prev_angle_rad_ = 0.0;  // sticky memory across ticks
 };

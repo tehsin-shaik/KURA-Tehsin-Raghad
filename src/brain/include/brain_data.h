@@ -33,11 +33,22 @@ public:
     rclcpp::Time freekickKickoffStartTime; 
     int liveCount = 0; 
     int oppoLiveCount = 0; 
-    string realGameSubState; 
+    string realGameSubState;
     string rawGameState = "";
     string rawGameSubStateType = "NONE";
     string rawGameSubState = "";
     rclcpp::Time lastWhistleTime;
+
+    // New (v19 migration): true when GC operator has pressed Stop Play.
+    // Rule game.tex:70 — robots must immediately cease all motion and behave as
+    // if in SET. No locomotion is permitted, not even for getting up.
+    bool isStopped = false;
+
+    // New (v19 migration): set from RobotRecoveryState; sent to GC as `fallen` byte.
+    bool isFallen = false;
+
+    // New (v19 migration): exposed for future penalty-shoot-out gating.
+    int gamePhase = 0;
 
     /* ------------------------------------ 数据记录 ------------------------------------ */
     
@@ -55,6 +66,18 @@ public:
     GameObject ball;              
     GameObject tmBall;           
     double robotBallAngleToField; 
+
+    // Ball velocity in field frame (computed when a new ball detection is accepted)
+    bool ballVelValid = false;
+    // vx, vy in meters/second
+    Point2D ballVelToField{0.0, 0.0};
+    // speed = hypot(vx, vy) in meters/second
+    double ballSpeedToField = 0.0;
+    // direction of velocity in field frame (rad)
+    double ballVelDirToField = 0.0;
+    // Previous ball position/time sample used for velocity computation
+    Point2D ballPrevPosToField{0.0, 0.0};
+    rclcpp::Time ballPrevTimePoint{0, 0, RCL_ROS_TIME};
 
 
     inline vector<GameObject> getRobots() const {

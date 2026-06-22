@@ -34,9 +34,29 @@ def handle_configuration(context, *args, **kwargs):
             "vision_config_local_path": vision_config_local_file,
     }
 
+    profile = context.perform_substitution(LaunchConfiguration('profile')).strip()
+    profiles = {
+        'goalkeeper': {
+            'game.player_role': 'goal_keeper',
+            'game.player_id': 1,
+        },
+        'striker': {
+            'game.player_role': 'striker',
+            'game.player_id': 3,
+        },
+    }
+    if profile:
+        if profile not in profiles:
+            raise RuntimeError(f"Unknown profile '{profile}'. Expected one of: {', '.join(profiles)}")
+        config.update(profiles[profile])
+
     role = context.perform_substitution(LaunchConfiguration('role'))
     if not role == '':
         config['game.player_role'] = role
+
+    player_id = context.perform_substitution(LaunchConfiguration('player_id')).strip()
+    if player_id:
+        config['game.player_id'] = int(player_id)
 
     sim = context.perform_substitution(LaunchConfiguration('sim'))
     if sim in ['true', 'True', '1']:
@@ -88,6 +108,16 @@ def generate_launch_description():
             'role', 
             default_value='',
             description='如果需要覆盖 config.yaml 中的 game.player_role, 可以在 launch 时指定参数 role:=striker'
+        ),
+        DeclareLaunchArgument(
+            'profile',
+            default_value='',
+            description='Set a robot profile. Supported values: goalkeeper, striker'
+        ),
+        DeclareLaunchArgument(
+            'player_id',
+            default_value='',
+            description='Override config.yaml game.player_id, for example player_id:=1'
         ),
         DeclareLaunchArgument(
             'sim', 

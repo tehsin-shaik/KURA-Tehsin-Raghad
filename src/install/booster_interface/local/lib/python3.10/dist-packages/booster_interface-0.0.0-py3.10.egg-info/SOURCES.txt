@@ -1,6 +1,0 @@
-setup.py
-booster_interface/__init__.py
-booster_interface.egg-info/PKG-INFO
-booster_interface.egg-info/SOURCES.txt
-booster_interface.egg-info/dependency_links.txt
-booster_interface.egg-info/top_level.txt

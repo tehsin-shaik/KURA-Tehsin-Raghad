@@ -31,7 +31,7 @@ struct FieldDimensions
 };
 const FieldDimensions FD_KIDSIZE{9, 6, 1.5, 2.6, 0.75, 2, 5, 1, 3};
 const FieldDimensions FD_ADULTSIZE{14, 9, 2.1, 2.6, 1.5, 3, 6, 1, 4};
-const FieldDimensions FD_ROBOLEAGUE{22, 14, 3.6, 2.6, 2, 2.25, 6.9, 0.75, 3.9};
+const FieldDimensions FD_ROBOLEAGUE{22, 14, 2.5, 2.4, 2, 3.5, 7, 0.9, 5};
 // const FieldDimensions FD_ROBOLEAGUE{22, 14, 3.5, 2.6, 2, 5, 8, 2, 5};
 
 // Pose2D, 记录平面上的一个点以及朝向
@@ -197,6 +197,11 @@ struct TMStatus {
     Pose2D robotPoseToField;
     double kickDir = 0.; 
     double thetaRb = 0.; 
+    bool passActive = false;
+    int passReceiverId = -1;
+    Point passTargetToField;
+    double passSpeedLimit = 0.;
+    int passSeq = 0;
     int cmd = 0; 
     int cmdId = 0;
     rclcpp::Time timeLastCom; 
