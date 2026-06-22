@@ -1,0 +1,38 @@
+# Jersey-color classifier settings used after the base detector finds robots.
+# This file is the main runtime config to move when enabling team-color mapping
+# on a new robot.
+robot_color_classifier:
+  # Master enable for jersey-color classification.
+  enabled: true
+  # Runtime ONNX model path on the robot.
+  # Update this if you switch to a newer exported model, for example v4.
+  model_path: /home/booster/Workspace/KURA-latest/src/vision/model/robot_color_classifier_v3.onnx
+  # Output class order must match the order used during model training/export.
+  classnames: [black, blue, brown, gray, green, orange, purple, red, white, yellow]
+  # Minimum model confidence before the prediction is accepted directly.
+  confidence_threshold: 0.60
+  # Input image size expected by the classifier model.
+  input_width: 224
+  input_height: 224
+  # Only run jersey-color classification on these detector labels.
+  # We use Opponent here because the base detector's robot-like class is Opponent.
+  target_labels: [Opponent]
+  # HSV fallback safety thresholds used only if the ONNX path cannot be used.
+  # These help reject weak color noise from turf, limbs, or shirtless robots.
+  hsv_min_color_ratio: 0.08
+  hsv_min_dominance_ratio: 1.35
+  # The robot currently falls back to HSV because OpenCV 4.8 cannot parse the
+  # exported ONNX model. Keep the fallback conservative and multi-color so
+  # shirtless robots stay unknown and yellow/orange jerseys do not spill into red.
+  # Green is disabled because the turf/background can otherwise dominate.
+  green_bounds: []
+  crop:
+    # Crop only the torso area before color classification.
+    # This removes more legs, arms, and background from the color decision.
+    use_torso_crop: true
+    # Torso crop box as fractions of the detected robot bounding box.
+    # x0/x1 = left/right bounds, y0/y1 = top/bottom bounds.
+    x0: 0.20
+    x1: 0.80
+    y0: 0.15
+    y1: 0.65
